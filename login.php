@@ -19,7 +19,7 @@ session_start();
         <img src="./images/profissionais.jpg" alt="medicos">
         <!-- Formulário do login -->
         <form action="./backend/functionLogin.php" method="POST">
-            <h1 class="titulo">Total Care</h1>
+            <h1 class="titulo">Login</h1>
 
             <?php
             if (isset($_SESSION['nao_autenticado'])) :

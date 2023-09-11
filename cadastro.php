@@ -48,12 +48,12 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label for="cpf" class="form-label">CPF:</label>
-                                    <input type="text" class="form-control" id="cpf" maxlength="11" oninput="formCPF(this)" placeholder="Apenas números" required>
+                                    <input type="text" class="form-control" id="cpf" name="cpf" maxlength="11" oninput="formCPF(this)" placeholder="Apenas números" required>
                                     <div class="invalid-feedback">CPF Inválido</div>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="telefone" class="form-label">Telefone:</label>
-                                    <input type="text" class="form-control" id="telefone" placeholder="Apenas números" required>
+                                    <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Apenas números" required>
                                 </div>
                             </div>
                         </div>
@@ -63,15 +63,15 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <label for="cep" class="form-label">CEP:</label>
-                                    <input type="text" class="form-control" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" onkeyup="formatarCEP(this);" placeholder="Apenas n.º" required>
+                                    <input type="text" class="form-control" id="cep" name="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" onkeyup="formatarCEP(this);" placeholder="Apenas n.º" required>
                                 </div>
                                 <div class="col-md-7">
                                     <label for="rua" class="form-label">Rua:</label>
-                                    <input type="text" class="form-control" id="rua" placeholder="Sua rua" required>
+                                    <input type="text" class="form-control" id="rua" name="rua" placeholder="Sua rua" required>
                                 </div>
                                 <div class="col-md-2">
                                     <label for="num" class="form-label">Nº/Apto:</label>
-                                    <input type="text" class="form-control" id="num" placeholder="202-A" required>
+                                    <input type="text" class="form-control" id="num" name="num" placeholder="202-A" required>
                                 </div>
                             </div>
                         </div>
@@ -81,15 +81,15 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <label for="bairro" class="form-label">Bairro:</label>
-                                    <input type="text" class="form-control" id="bairro" placeholder="Seu bairro">
+                                    <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Seu bairro">
                                 </div>
                                 <div class="col-md-7">
                                     <label for="cidade" class="form-label">Cidade:</label>
-                                    <input type="text" class="form-control" id="cidade" placeholder="Cidade" disabled>
+                                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" disabled>
                                 </div>
                                 <div class="col-md-2">
                                     <label for="uf" class="form-label">UF:</label>
-                                    <input type="text" class="form-control" id="uf" placeholder="UF" disabled>
+                                    <input type="text" class="form-control" id="uf" name="uf" placeholder="UF" disabled>
                                 </div>
                             </div>
                         </div>
@@ -98,11 +98,11 @@
                         <div class="row g-2 align-items-center">
                             <div class="mx-auto">
                                 <label for="email" class="form-label">E-mail:</label>
-                                <input type="email" class="form-control" id="email" placeholder="nome@email.com" required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="nome@email.com" required>
                             </div>
                             <div class="mx-auto">
                                 <label for="senha" class="form-label">Senha:</label>
-                                <input type="password" class="form-control" id="senha" placeholder="*********">
+                                <input type="password" class="form-control" id="senha" name="senha" placeholder="*********">
                                 <div id="passwordHelpBlock" class="form-text mb-3">
                                     Sua senha deve ter no mínimo 8 caracteres, com no mínimo 1 letra maiúscula.
                                 </div>
