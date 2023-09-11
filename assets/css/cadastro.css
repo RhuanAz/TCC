@@ -1,0 +1,11 @@
+
+form {
+    box-shadow: 15px 15px 42px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+}
+
+btn btn-primary btn-lg {
+    background-color: red;
+    
+}
