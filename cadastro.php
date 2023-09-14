@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-end ">
                 <div class="col-md-7">
-                   
+
                 </div>
                 <div class="col-md-5">
                     <!--FORMULÁRIO-->
@@ -29,7 +29,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="nome" class="form-label">Nome:</label>
-                                    <input type="text" class="form-control" id="nome" name="nome" placeholder="João" required>
+                                    <input type="text" class="form-control" id="nome" pattern="[^0-9]*" name="nome" placeholder="João" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="sobrenome" class="form-label">Sobrenome:</label>
@@ -52,12 +52,13 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label for="cpf" class="form-label">CPF:</label>
-                                    <input type="text" class="form-control" id="cpf" name="cpf" maxlength="11" oninput="formCPF(this)" placeholder="Apenas números" required>
-                                    <div class="invalid-feedback">CPF Inválido</div>
+                                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Apenas números" required>
+                                    <span class="span-required">CPF em uso</span>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="telefone" class="form-label">Telefone:</label>
-                                    <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Apenas números" required>
+                                    <input type="text" class="form-control" id="telefone" name="telefone" maxlength="11" placeholder="Apenas números" required>
+                                    <span class="span-required">Telefone em uso</span>
                                 </div>
                             </div>
                         </div>
@@ -68,6 +69,7 @@
                                 <div class="col-md-3">
                                     <label for="cep" class="form-label">CEP:</label>
                                     <input type="text" class="form-control" id="cep" name="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" onkeyup="formatarCEP(this);" placeholder="Apenas n.º" required>
+                                    <span class="span-required">CEP Inválido</span>
                                 </div>
                                 <div class="col-md-7">
                                     <label for="rua" class="form-label">Rua:</label>
@@ -103,6 +105,7 @@
                             <div class="mx-auto">
                                 <label for="email" class="form-label">E-mail:</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="nome@email.com" required>
+                                <span class="span-required">E-mail em uso</span>
                             </div>
                             <div class="mx-auto">
                                 <label for="senha" class="form-label">Senha:</label>
@@ -118,6 +121,7 @@
         </div>
     </section>
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="assets/js/cadastro.js"></script>
 </body>
 

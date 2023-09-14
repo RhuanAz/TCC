@@ -1,19 +1,62 @@
-document.getElementById('cpf').addEventListener('input', function (e) {
-    // Remove caracteres não numéricos do valor atual do campo CPF
-    var cpf = e.target.value.replace(/\D/g, '');
+//VERIFICAR SE O DADO JÁ ESTÁ NO BD
+$(document).ready(function (){
+    //Executar quando o campo "CPF" perde o foco
+    $("#cpf").blur(function(){
+        var metodo = "verifCPF";
+        var cpf = $("#cpf").val();
 
-    // Verifica se o CPF possui pelo menos 11 dígitos
-    if (cpf.length >= 11) {
-        // Formata o CPF no formato XXX.XXX.XXX-XX
-        cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+        //Criando objeto para enviar para o "verificaDado.php"
+        var parametros = {
+            'metodo': metodo,
+            'column': cpf
+        };
+ 
+        //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
+        $.post('backend/verificaDado.php', parametros, function (data){
+            console.log(data);
+        })
+    })
 
-        // Define o valor formatado de volta no campo de entrada
-        e.target.value = cpf;
-    }
-});
+    //Executar quando o campo "Email" perde o foco
+    $("#email").blur(function(){
+        var metodo = "verifEmail";
+        var email = $("#email").val();
+
+        //Criando objeto para enviar para o "verificaDado.php"
+        var parametros = {
+            'metodo': metodo,
+            'column': email
+        };
+
+        //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
+        $.post('backend/verificaDado.php', parametros, function (data){
+            if(data == "true"){
+                console.log("retornou true");
+            };
+        })
+    })
+
+    //Executar quando o campo "Telefone" perde o foco
+    $("#telefone").blur(function(){
+        var metodo = "verifTelefone";
+        var email = $("#telefone").val();
+
+        //Criando objeto para enviar para o "verificaDado.php"
+        var parametros = {
+            'metodo': metodo,
+            'column': email
+        };
+
+        //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
+        $.post('backend/verificaDado.php', parametros, function (data){
+            console.log(data);
+        })
+    })
+
+})
+
 
 //--BUSCAR CEP NA API--
-
 function limpa_formulário_cep() {
     //Limpa valores do formulário de endereco.
     document.getElementById('rua').value = ("");
@@ -91,23 +134,24 @@ function pesquisacep(valor) {
         limpa_formulário_cep();
     }
 };
+//------
 
-//Formtar CPF
-function formCPF(cpfInput) {
+//Formatar CPF
+document.getElementById('cpf').addEventListener('input', function (e) {
+    // Remove caracteres não numéricos do valor atual do campo CPF
+    var cpf = e.target.value.replace(/\D/g, '');
 
-    // Obtém o valor atual do campo CPF
-    var cpf = cpfInput.value;
+    // Verifica se o CPF possui pelo menos 11 dígitos
+    if (cpf.length >= 11) {
+        // Formata o CPF no formato XXX.XXX.XXX-XX
+        cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
 
-    // Remove caracteres não numéricos do CPF
-    cpf = cpf.replace(/\D/g, '');
+        // Define o valor formatado de volta no campo de entrada
+        e.target.value = cpf;
 
-    // Formata o CPF no formato XXX.XXX.XXX-XX
-    cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+    }
+});
 
-    // Define o valor formatado de volta no campo de entrada
-    cpfInput.value = cpf;
-
-}
 
 //Formatar CEP
 function formatarCEP(cepInput) {

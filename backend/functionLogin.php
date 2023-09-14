@@ -11,25 +11,12 @@ if (empty($_POST['email']) || empty($_POST['senha'])) {
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $senha = mysqli_real_escape_string($conn, $_POST['senha']);
 
-$sql = "SELECT * FROM cliente WHERE (email = ?) AND (senha = ?)";
+$sql = "SELECT * FROM cliente WHERE (email = '".$email ."') AND (senha = '". $senha. "')";
 
-$stmt = $conn->prepare($sql);
+$result = mysqli_query($conn, $sql);
 
-if ($stmt) {
-    // Vincule os valores dos parâmetros ("ss" = String/String)
-    $stmt->bind_param("ss", $email, $senha);
-    // Execute a consulta
-    $stmt->execute();
-    // Obtenha o resultado da consulta
-    $stmt->store_result();
-    // Verifique o número de linhas retornadas
-    $row = $stmt->num_rows;
+$row = mysqli_num_rows($result);
 
-    // Feche a declaração
-    $stmt->close();
-} else {
-    die("Falha na preparação da consulta: ");
-}
 
 if ($row == 1) {
     $_SESSION['email'] = $email;
