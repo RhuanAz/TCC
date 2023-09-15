@@ -19,7 +19,7 @@ $usuario = $sql_exec->fetch_assoc();
 if(password_verify($senha, $usuario['senha'])){
     echo "Usuário Logado";
     $_SESSION['email'] = $email;
-    header('Location: ../list.php');
+    header('Location: ../barbearias.php');
     exit();
 }else{
     echo "Falha ao logar";
