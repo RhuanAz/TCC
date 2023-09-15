@@ -53,12 +53,12 @@
                                 <div class="col-md-4">
                                     <label for="cpf" class="form-label">CPF:</label>
                                     <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Apenas números" required>
-                                    <span class="span-required">CPF em uso</span>
+                                    <span class="span-required">CPF em uso!</span>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="telefone" class="form-label">Telefone:</label>
-                                    <input type="text" class="form-control" id="telefone" name="telefone" maxlength="11" placeholder="Apenas números" required>
-                                    <span class="span-required">Telefone em uso</span>
+                                    <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Apenas números" required>
+                                    <span class="span-required">Telefone em uso!</span>
                                 </div>
                             </div>
                         </div>
@@ -69,11 +69,12 @@
                                 <div class="col-md-3">
                                     <label for="cep" class="form-label">CEP:</label>
                                     <input type="text" class="form-control" id="cep" name="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" onkeyup="formatarCEP(this);" placeholder="Apenas n.º" required>
-                                    <span class="span-required">CEP Inválido</span>
+                                    <span class="span-required">CEP Inválido!</span>
                                 </div>
                                 <div class="col-md-7">
                                     <label for="rua" class="form-label">Rua:</label>
                                     <input type="text" class="form-control" id="rua" name="rua" placeholder="Sua rua" required>
+                                    <input type="hidden" name="rua_oculto" value="Este é um campo oculto">
                                 </div>
                                 <div class="col-md-2">
                                     <label for="num" class="form-label">Nº/Apto:</label>
@@ -88,14 +89,17 @@
                                 <div class="col-md-3">
                                     <label for="bairro" class="form-label">Bairro:</label>
                                     <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Seu bairro" required>
+                                    <input type="hidden" name="bairro_oculto" value="Este é um campo oculto">
                                 </div>
                                 <div class="col-md-7">
                                     <label for="cidade" class="form-label">Cidade:</label>
                                     <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" required disabled>
+                                    <input type="hidden" name="cidade_oculto" value="Este é um campo oculto">
                                 </div>
                                 <div class="col-md-2">
                                     <label for="uf" class="form-label">UF:</label>
                                     <input type="text" class="form-control" id="uf" name="uf" placeholder="UF" required disabled>
+                                    <input type="hidden" name="uf_oculto" value="Este é um campo oculto">
                                 </div>
                             </div>
                         </div>
