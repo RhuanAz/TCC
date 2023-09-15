@@ -76,13 +76,16 @@ const form = document.getElementById('form');
 
 
 form.addEventListener('submit', (event) => {
+
     const rua = document.getElementById('rua').value;
-    const uf = document.getElementById('uf').value;
     const bairro = document.getElementById('bairro').value;
     const cidade = document.getElementById('cidade').value;
+    const uf = document.getElementById('uf').value;
 
-    console.log(rua);
-    console.log(document.getElementById('rua_oculto').value);
+    document.getElementById('rua_oculto').value = rua;
+    document.getElementById('bairro_oculto').value = bairro;
+    document.getElementById('cidade_oculto').value = cidade;
+    document.getElementById('uf_oculto').value = uf;
 
     if (verifError()) {
         event.preventDefault(); // Impede o envio do formulário se houver erros

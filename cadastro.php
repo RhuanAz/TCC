@@ -74,7 +74,7 @@
                                 <div class="col-md-7">
                                     <label for="rua" class="form-label">Rua:</label>
                                     <input type="text" class="form-control" id="rua" name="rua" placeholder="Sua rua" required>
-                                    <input type="hidden" name="rua_oculto" value="Este é um campo oculto">
+                                    <input type="hidden" id="rua_oculto" name="rua_oculto" value="">
                                 </div>
                                 <div class="col-md-2">
                                     <label for="num" class="form-label">Nº/Apto:</label>
@@ -89,17 +89,17 @@
                                 <div class="col-md-3">
                                     <label for="bairro" class="form-label">Bairro:</label>
                                     <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Seu bairro" required>
-                                    <input type="hidden" name="bairro_oculto" value="Este é um campo oculto">
+                                    <input type="hidden" id="bairro_oculto" name="bairro_oculto" value="">
                                 </div>
                                 <div class="col-md-7">
                                     <label for="cidade" class="form-label">Cidade:</label>
                                     <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" required disabled>
-                                    <input type="hidden" name="cidade_oculto" value="Este é um campo oculto">
+                                    <input type="hidden" id="cidade_oculto" name="cidade_oculto" value="">
                                 </div>
                                 <div class="col-md-2">
                                     <label for="uf" class="form-label">UF:</label>
                                     <input type="text" class="form-control" id="uf" name="uf" placeholder="UF" required disabled>
-                                    <input type="hidden" name="uf_oculto" value="Este é um campo oculto">
+                                    <input type="hidden" id="uf_oculto" name="uf_oculto" value="">
                                 </div>
                             </div>
                         </div>

@@ -14,13 +14,9 @@ $bairro = $_POST['bairro_oculto'];
 $cidade = $_POST['cidade_oculto'];
 $uf = $_POST['uf_oculto'];
 
-$email = $_POST['email'];
+$email = mysqli_real_escape_string($conn, $_POST['email']);
 $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-$email = mysqli_real_escape_string($conn, $_POST['email']);
-$senha = mysqli_real_escape_string($conn, $_POST['senha']);
-
-
-
-?>
+$conn->query("INSERT INTO cliente (nome, sobrenome, sexo, cpf, telefone, cep, rua, bairro, numero, cidade, uf, email, senha) 
+VALUES ('$nome', '$sobrenome', '$sexo', '$cpf', '$telefone', '$cep', '$rua', '$bairro', '$num', '$cidade', '$uf', '$email', '$senha')");
 
