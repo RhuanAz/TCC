@@ -43,7 +43,9 @@ session_start();
             <button type="submit">Entrar</button>
             <div class="links">
                 <!-- Botaão para ir para a página de cadastro -->
-                <a href="register.php">Cadastre-se</a>
+                <span>Não tem login?</span>
+                <!-- Botaão para ir para a página de cadastro -->
+                <a href="cadastro.php">Cadastre-se!</a>
             </div>
         </form>
     </div>
