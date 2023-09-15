@@ -16,7 +16,7 @@ session_start();
 <body>
     <div class="container">
         <!-- Imagem dos profissionais de saúde -->
-        <img src="./images/profissionais.jpg" alt="medicos">
+        <img src="./assets/img/barberConn.svg" alt="Logo">
         <!-- Formulário do login -->
         <form action="./backend/functionLogin.php" method="POST">
             <h1 class="titulo">Login</h1>
