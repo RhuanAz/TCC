@@ -1,7 +1,7 @@
 <?php
 
-//define('HOST', 'localhost:3307');
-define('HOST', 'localhost');
+define('HOST', 'localhost:3307');
+//define('HOST', 'localhost');
 define('USER', 'root');
 define('PASSWORD', '');
 define('DB', 'barberconnect');
