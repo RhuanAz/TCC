@@ -15,3 +15,10 @@ btn btn-primary btn-lg {
     color: red;
     display: none;
 }
+
+.container{
+    padding-top: 140px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 480px;
+}

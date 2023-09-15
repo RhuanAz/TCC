@@ -11,15 +11,15 @@
 
 </head>
 
-<body style="background-image: url('../TCC/assets/img/2.jpg');">
+<body style="background-image: url('../TCC/assets/img/2.jpg'); background-repeat:no-repeat">
 
     <section class="main">
         <div class="container">
             <div class="row align-items-center justify-content-end ">
-                <div class="col-md-7">
+                <div class="col-md-11">
 
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <!--FORMULÁRIO-->
                     <form id="form" action="./backend/functionCadastro.php" method="POST" class="row g-3 p-3 needs-validation">
                         <h1>Cadastre-se</h1>
