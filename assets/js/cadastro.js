@@ -1,7 +1,7 @@
 //VERIFICAR SE O DADO JÁ ESTÁ NO BD
-$(document).ready(function (){
+$(document).ready(function () {
     //Executar quando o campo "CPF" perde o foco
-    $("#cpf").blur(function(){
+    $("#cpf").blur(function () {
         var metodo = "verifCPF";
         var cpf = $("#cpf").val();
 
@@ -10,15 +10,15 @@ $(document).ready(function (){
             'metodo': metodo,
             'column': cpf
         };
- 
+
         //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
-        $.post('backend/verificaDado.php', parametros, function (data){
+        $.post('backend/verificaDado.php', parametros, function (data) {
             console.log(data);
         })
     })
 
     //Executar quando o campo "Email" perde o foco
-    $("#email").blur(function(){
+    $("#email").blur(function () {
         var metodo = "verifEmail";
         var email = $("#email").val();
 
@@ -29,15 +29,15 @@ $(document).ready(function (){
         };
 
         //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
-        $.post('backend/verificaDado.php', parametros, function (data){
-            if(data == "true"){
-                console.log("retornou true");
+        $.post('backend/verificaDado.php', parametros, function (data) {
+            if (data == "true") {
+                setError("email", 3);
             };
         })
     })
 
     //Executar quando o campo "Telefone" perde o foco
-    $("#telefone").blur(function(){
+    $("#telefone").blur(function () {
         var metodo = "verifTelefone";
         var email = $("#telefone").val();
 
@@ -48,13 +48,27 @@ $(document).ready(function (){
         };
 
         //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
-        $.post('backend/verificaDado.php', parametros, function (data){
+        $.post('backend/verificaDado.php', parametros, function (data) {
             console.log(data);
         })
     })
 
 })
 
+
+//--Add erro nas imputs
+const spans = document.querySelectorAll('.span-required');
+
+//--Add erro nas imputs
+function setError(column, index) {
+    //Pegar input do form
+    const campo = document.getElementById(column);
+    console.log(spans);
+
+    //Add borda vermelha
+    campo.style.border = '1px solid #e63636';
+    spans[index].style.display = 'block';
+}
 
 //--BUSCAR CEP NA API--
 function limpa_formulário_cep() {
@@ -175,27 +189,27 @@ function validarSenha(senha) {
     return /^(?=.*[A-Z]).{8,}$/.test(senha);
 }
 
-function retornaSenha(senhaInput){
-    if(!validarSenha(senhaInput)){
-            
+function retornaSenha(senhaInput) {
+    if (!validarSenha(senhaInput)) {
+
     }
 }
 
 (() => {
     'use strict'
-  
+
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     const forms = document.querySelectorAll('.needs-validation')
-  
+
     // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-  
-        form.classList.add('was-validated')
-      }, false)
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+        }, false)
     })
-  })()
+})()

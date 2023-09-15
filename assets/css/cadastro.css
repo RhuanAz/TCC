@@ -12,6 +12,6 @@ btn btn-primary btn-lg {
 .span-required{
     font-size: 12px;
     margin: 3px 0 0 1px;
-    color: var(--color-red);
+    color: red;
     display: none;
 }

@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-md-5">
                     <!--FORMULÁRIO-->
-                    <form action="./backend/functionCadastro.php" method="POST" class="row g-3 p-3 needs-validation">
+                    <form id="form" action="./backend/functionCadastro.php" method="POST" class="row g-3 p-3 needs-validation">
                         <h1>Cadastre-se</h1>
 
                         <!--NOME SOBRENOME-->
@@ -87,15 +87,15 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <label for="bairro" class="form-label">Bairro:</label>
-                                    <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Seu bairro">
+                                    <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Seu bairro" required>
                                 </div>
                                 <div class="col-md-7">
                                     <label for="cidade" class="form-label">Cidade:</label>
-                                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" disabled>
+                                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" required disabled>
                                 </div>
                                 <div class="col-md-2">
                                     <label for="uf" class="form-label">UF:</label>
-                                    <input type="text" class="form-control" id="uf" name="uf" placeholder="UF" disabled>
+                                    <input type="text" class="form-control" id="uf" name="uf" placeholder="UF" required disabled>
                                 </div>
                             </div>
                         </div>
@@ -105,14 +105,11 @@
                             <div class="mx-auto">
                                 <label for="email" class="form-label">E-mail:</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="nome@email.com" required>
-                                <span class="span-required">E-mail em uso</span>
+                                <span class="span-required">E-mail em uso!</span>
                             </div>
                             <div class="mx-auto">
                                 <label for="senha" class="form-label">Senha:</label>
-                                <input type="password" class="form-control" id="senha" name="senha" placeholder="*********">
-                                <div id="passwordHelpBlock" class="form-text mb-3">
-                                    Sua senha deve ter no mínimo 8 caracteres, com no mínimo 1 letra maiúscula.
-                                </div>
+                                <input type="password" class="form-control" id="senha" name="senha" placeholder="*********" required>                               
                             </div>
                             <button type="submit" id="btn-cadastrar" class="btn btn-primary btn-lg meu-botao">Cadastrar</button>
                     </form>
