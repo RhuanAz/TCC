@@ -1,0 +1,39 @@
+.nav-container{
+    font-weight: 20px;
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+    height: 50px !important;
+}
+
+img{
+    padding-right: 3% !important;
+}
+
+.content{
+    padding-top: 2% !important;
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+}
+
+.images{
+    padding-bottom: 6% !important;
+}
+
+.barber{
+    padding-top: 3%;
+}
+
+.filtros{
+    padding-bottom: 2%;
+}
+
+.navsub{
+    font-weight: bold;
+    height: 50px;
+    background-color: #13396B;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
