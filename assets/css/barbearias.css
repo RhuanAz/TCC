@@ -1,33 +1,11 @@
-.nav-container{
+.nav-container {
     font-weight: 20px;
     padding-left: 10% !important;
     padding-right: 10% !important;
     height: 50px !important;
 }
 
-img{
-    padding-right: 3% !important;
-}
-
-.content{
-    padding-top: 2% !important;
-    padding-left: 10% !important;
-    padding-right: 10% !important;
-}
-
-.images{
-    padding-bottom: 6% !important;
-}
-
-.barber{
-    padding-top: 3%;
-}
-
-.filtros{
-    padding-bottom: 2%;
-}
-
-.navsub{
+.navsub {
     font-weight: bold;
     height: 50px;
     background-color: #13396B;
@@ -36,4 +14,83 @@ img{
     align-items: center;
     justify-content: center;
 
+}
+
+.content {
+    padding-top: 2% !important;
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+}
+
+.images {
+    padding-bottom: 6% !important;
+}
+
+.barber {
+    padding-top: 3%;
+}
+
+.btn {
+    align-items: center !important;
+    justify-content: center;
+    border-radius: 25px !important;
+    padding: 5px 17px;
+    background-color: transparent;
+    border-color: #8c8c8c !important;
+    color: #8c8c8c;
+    font-size: 20px !important;
+    font-size: 13px;
+    margin-right: 20px;
+    font-weight: 450;
+}
+
+.btn:hover {
+    background-color: transparent !important;
+    /* Remove a mudança de cor de fundo */
+    border-color: #6a6a6a !important;
+    /* Remove a mudança de cor da borda */
+    color: #6a6a6a !important;
+    /* Remove a mudança de cor do texto */
+}
+
+.filtros {
+    padding-bottom: 3%;
+
+}
+
+.barberItem {
+    width: 30%;
+    height: 80px;
+    align-self: flex-start !important;
+}
+
+.barberName {
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-bottom: 50% !important;
+    padding-left: 20%;
+}
+
+.btnFiltro {
+    border-radius: 10px;
+    /* Isso define o raio da borda arredondada */
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 7px 20px;
+    /* Isso define o espaçamento interno do botão */
+    background-color: white;
+    border-color: #8c8c8c solid;
+    color: #8c8c8c;
+    /* Isso define a cor do texto do botão */
+    text-align: center;
+    /* Isso centraliza o texto no botão */
+    font-size: 16px;
+    /* Isso define o tamanho da fonte do texto */
+    cursor: pointer;
+    /* Isso muda o cursor para uma mão quando o botão é passado sobre */
+
+}
+
+img {
+    padding-right: 3% !important;
 }
