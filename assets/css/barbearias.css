@@ -27,7 +27,7 @@
 }
 
 .barber {
-    padding-top: 3%;
+    padding-top: 2%;
 }
 
 .btn {
@@ -58,11 +58,28 @@
 
 }
 
+.barberText {
+    margin-left: 15%;
+    font-weight: bold;
+    font-size: 24px;
+    align-items: center;
+    position: relative;
+    top: -70px;
+}
+
+
 .barberItem {
     width: 30%;
     height: 80px;
-    align-self: flex-start !important;
+
 }
+
+.barberItem p {
+    padding-left: 15%;
+    font-size: 20px !important;
+    padding-bottom: 20% !important;
+}
+
 
 .barberName {
     margin-left: 20%;
@@ -71,26 +88,7 @@
     padding-left: 20%;
 }
 
-.btnFiltro {
-    border-radius: 10px;
-    /* Isso define o raio da borda arredondada */
-    box-shadow: none !important;
-    outline: none !important;
-    padding: 7px 20px;
-    /* Isso define o espaçamento interno do botão */
-    background-color: white;
-    border-color: #8c8c8c solid;
-    color: #8c8c8c;
-    /* Isso define a cor do texto do botão */
-    text-align: center;
-    /* Isso centraliza o texto no botão */
-    font-size: 16px;
-    /* Isso define o tamanho da fonte do texto */
-    cursor: pointer;
-    /* Isso muda o cursor para uma mão quando o botão é passado sobre */
 
-}
-
-img {
+.images img {
     padding-right: 3% !important;
 }
