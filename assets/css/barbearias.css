@@ -59,19 +59,41 @@
 }
 
 .barberText {
+    padding-left: 3%;
     margin-left: 15%;
-    font-weight: bold;
     font-size: 24px;
     align-items: center;
     position: relative;
     top: -70px;
 }
 
+.barberName{
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+
+.bi-star-fill{
+    font-size: 16px;
+    
+}
+
+.barberInfo{
+    padding-top: 3px;
+    font-size: 16px;
+}
+
+.avaliacao{
+    color: rgb(255, 213, 0);
+}
+
+.distancia{
+    color: rgba(0, 0, 0, 0.45);
+}
 
 .barberItem {
     width: 30%;
     height: 80px;
-
 }
 
 .barberItem p {
@@ -81,12 +103,6 @@
 }
 
 
-.barberName {
-    margin-left: 20%;
-    margin-right: 20%;
-    padding-bottom: 50% !important;
-    padding-left: 20%;
-}
 
 
 .images img {
