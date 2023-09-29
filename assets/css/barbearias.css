@@ -26,9 +26,6 @@
     padding-bottom: 6% !important;
 }
 
-.barber {
-    padding-top: 2%;
-}
 
 .btn {
     align-items: center !important;
@@ -58,6 +55,22 @@
 
 }
 
+.barber {
+    padding-top: 2%;
+    border: 1px solid;
+    
+}
+
+.barberItem {
+    width: 30%;
+    height: 80px;
+    display: inline-block;
+}
+.barberItem:hover{
+    border: 1px solid;
+    cursor: pointer;
+}
+
 .barberText {
     padding-left: 3%;
     margin-left: 15%;
@@ -69,7 +82,7 @@
 
 .barberName{
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 400;
     position: relative;
 }
 
@@ -91,15 +104,13 @@
     color: rgba(0, 0, 0, 0.45);
 }
 
-.barberItem {
-    width: 30%;
-    height: 80px;
-}
+
 
 .barberItem p {
     padding-left: 15%;
     font-size: 20px !important;
     padding-bottom: 20% !important;
+    display: inline-block !important;
 }
 
 
