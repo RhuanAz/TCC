@@ -10,13 +10,16 @@
          <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="../assets/css/style4.css">
+        <link rel="stylesheet" href="../TCC/assets/css/style4.css">
         
     </head>
     <body>
         <div class="wrapper">
             <!-- Sidebar Holder -->
-            <nav id="sidebar">
+            <?php
+        //INCLUSÃO DO MENU
+        include_once('menu.php');
+        ?>
                 <div class="sidebar-header">
                     <h3>Parceiros</h3>
                     <strong>BC</strong>
@@ -24,7 +27,7 @@
 
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" >
+                        <a href="index4.html">
                             <i class="glyphicon glyphicon-home"></i>
                             Minha tela
                         </a>
@@ -76,7 +79,7 @@
             <!-- Page Content Holder -->
             <div id="content">
 
-                <nav class="navbar navbar-default">
+                
                     <div class="container-fluid">
 
                         <div class="navbar-header">
@@ -86,45 +89,30 @@
                             </button>
                         </div>
 
-                        
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                            </ul>
+                        </div>
                     </div>
                 </nav>
-
-                <h2>Minha loja</h2>
-                <p>Aqui você pode ver uma preview da sua loja no site.</p>
-
-                <div class="line"></div>
-
-                <button class="categoria">+ Adicionar categoria</button>
-                <button class="item">+ Adicionar item</button>
-                <h2>Zappelin BarberShop</h2>
-                <img src="../assets/img/zappelin.jpg" alt="" class="img">
-                <p>Bem-vindo à "Zappelin BarberShop" a sua barbearia de referência para cuidados com a aparência masculina na cidade! Aqui, não estamos apenas no 
-                    negócio de cortar cabelos; estamos comprometidos em proporcionar uma experiência completa de transformação e rejuvenescimento para nossos clientes.
-                    Com uma equipe apaixonada de barbeiros talentosos e um ambiente acolhedor, estamos aqui para tornar cada visita inesquecível.</p>
-
-                <div class="line"></div>
-
-                <h2>Cortes de cabelo</h2>
+                    
+                <br>
+                <br>
+                <label for="De:" class="de">De:</label>
+                <input type="date">
+                <br>
+                <br>
+                <label for="Para:">Para:</label>
+                <input type="date" name="" id="" class="para">
+                <br>
+                <br>
+                <input type="checkbox">
+                <label for="">Apenas agendamentos de hoje.</label>
+                <br><br>
+                <button>Consultar</button>
                 
-                <p>Item</p>
-                <img src="../assets/img/corte.webp" alt="" class="img">
-                
-                  <p>Preço: R$25,00</p>
 
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Disponibilidade</label>
-                  </div>
-                <div class="line"></div>
-            </div>
-        </div>
-
-
-
-
-
-        <!-- jQuery CDN -->
+                   <!-- jQuery CDN -->
          <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
          <!-- Bootstrap Js CDN -->
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -136,5 +124,8 @@
                  });
              });
          </script>
-    </body>
-</html>
+            </div>
+        </div>
+        <body>
+          
+        

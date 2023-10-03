@@ -10,7 +10,7 @@
          <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="../assets/css/style4.css">
+        <link rel="stylesheet" href="../TCC/assets/css/style4.css">
         
     </head>
     <body>
@@ -24,7 +24,7 @@
 
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="index4.html" data-toggle="collapse" >
+                        <a href="index4.html">
                             <i class="glyphicon glyphicon-home"></i>
                             Minha tela
                         </a>
@@ -76,7 +76,7 @@
             <!-- Page Content Holder -->
             <div id="content">
 
-                <nav class="navbar navbar-default">
+                
                     <div class="container-fluid">
 
                         <div class="navbar-header">
@@ -88,34 +88,28 @@
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
+                    
+                <br>
+                <br>
+                <label for="De:" class="de">De:</label>
+                <input type="date">
+                <br>
+                <br>
+                <label for="Para:">Para:</label>
+                <input type="date" name="" id="" class="para">
+                <br>
+                <br>
+                <input type="checkbox">
+                <label for="">Apenas agendamentos de hoje.</label>
+                <br><br>
+                <button>Consultar</button>
                 
-                <h1>Corte clássico</h1>
-                <p>Imagem:</p>
-                <img src="../assets/img/classiccorte.webp" alt="" class="img">
-                <style>
-                    .img{
-                        width: 300px;
-                        height: auto;
-                    }
-                </style>
-                <h3>Preço: R$30,00</h3>
-                
-            </div>
-        </div>
 
-
-
-
-
-        <!-- jQuery CDN -->
+                   <!-- jQuery CDN -->
          <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
          <!-- Bootstrap Js CDN -->
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -127,5 +121,8 @@
                  });
              });
          </script>
-    </body>
-</html>
+            </div>
+        </div>
+        <body>
+          
+        
