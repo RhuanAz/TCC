@@ -1,574 +1,128 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Barra de tarefas</title>
 
-  <title>Barra de tarefas</title>
+         <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="../TCC/assets/css/style4.css">
+        
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Parceiros</h3>
+                    <strong>BC</strong>
+                </div>
 
-  <!-- Bootstrap CSS CDN -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-  <!-- Our Custom CSS -->
-  <link rel="stylesheet" href="../assets/css/style4.css" />
-</head>
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="index4.html">
+                            <i class="glyphicon glyphicon-home"></i>
+                            Minha tela
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="agenda.html">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            Agenda
+                        </a>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-duplicate"></i>
+                            Cortes/
+                            Serviços
+                        </a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="corteclassico.html">Corte clássico</a></li>
+                            <li><a href="#">Corte casual</a></li>
+                            <li><a href="#">Barba</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-link"></i>
+                            Avaliações
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-paperclip"></i>
+                            Horário de Funcionamento
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-send"></i>
+                            Editar Informações
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                        <i class="glyphicon glyphicon-logout"></i>
+                        Zappelin BarberShop
+                    </li>
+                </ul>
+                
+            </nav>
 
-<body>
-  <div class="wrapper">
-    <!-- Sidebar Holder -->
-    <nav id="sidebar">
-      <div class="sidebar-header">
-        <h3>Parceiros</h3>
-        <strong>BC</strong>
-      </div>
+            <!-- Page Content Holder -->
+            <div id="content">
 
-      <ul class="list-unstyled components">
-        <li class="active">
-          <a href="#homeSubmenu" data-toggle="collapse">
-            <i class="glyphicon glyphicon-home"></i>
-            Minha tela
-          </a>
-        </li>
-        <li>
-          <a href="agenda.html">
-            <i class="glyphicon glyphicon-briefcase"></i>
-            Agenda
-          </a>
-          <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-            <i class="glyphicon glyphicon-duplicate"></i>
-            Cortes/ Serviços
-          </a>
-          <ul class="collapse list-unstyled" id="pageSubmenu">
-            <li><a href="corteclassico.html">Corte clássico</a></li>
-            <li><a href="#">Corte casual</a></li>
-            <li><a href="#">Barba</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">
-            <i class="glyphicon glyphicon-link"></i>
-            Avaliações
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="glyphicon glyphicon-paperclip"></i>
-            Horário de Funcionamento
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="glyphicon glyphicon-send"></i>
-            Editar Informações
-          </a>
-        </li>
-        <li>
-          <a href="#"></a>
-          <i class="glyphicon glyphicon-logout"></i>
-          Zappelin BarberShop
-        </li>
-      </ul>
-    </nav>
+                
+                    <div class="container-fluid">
 
-    <!-- Page Content Holder -->
-    <div id="content">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-              <i class="glyphicon glyphicon-align-left"></i>
-            </button>
-          </div>
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                                
+                            </button>
+                        </div>
 
-        </div>
-      </nav>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                    
+                <br>
+                <br>
+                <label for="De:" class="de">De:</label>
+                <input type="date">
+                <br>
+                <br>
+                <label for="Para:">Para:</label>
+                <input type="date" name="" id="" class="para">
+                <br>
+                <br>
+                <input type="checkbox">
+                <label for="">Apenas agendamentos de hoje.</label>
+                <br><br>
+                <button>Consultar</button>
+                
 
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-      <style type="text/css">
-        body {
-          margin-top: 20px;
-        }
+                   <!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        .schedule-table table thead tr {
-          background: #86d4f5;
-        }
-
-        .schedule-table table thead th {
-          padding: 25px 50px;
-          color: #fff;
-          text-align: center;
-          font-size: 20px;
-          font-weight: 800;
-          position: relative;
-          border: 0;
-        }
-
-        .schedule-table table thead th:before {
-          content: "";
-          width: 3px;
-          height: 35px;
-          background: rgba(255, 255, 255, 0.2);
-          position: absolute;
-          right: -1px;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-
-        .schedule-table table thead th.last:before {
-          content: none;
-        }
-
-        .schedule-table table tbody td {
-          vertical-align: middle;
-          border: 1px solid #e2edf8;
-          font-weight: 500;
-          padding: 30px;
-          text-align: center;
-        }
-
-        .schedule-table table tbody td.day {
-          font-size: 22px;
-          font-weight: 600;
-          background: #f0f1f3;
-          border: 1px solid #e4e4e4;
-          position: relative;
-          transition: all 0.3s linear 0s;
-          min-width: 165px;
-        }
-
-        .schedule-table table tbody td.active {
-          position: relative;
-          z-index: 10;
-          transition: all 0.3s linear 0s;
-          min-width: 165px;
-        }
-
-        .schedule-table table tbody td.active h4 {
-          font-weight: 700;
-          color: #000;
-          font-size: 20px;
-          margin-bottom: 5px;
-        }
-
-        .schedule-table table tbody td.active p {
-          font-size: 16px;
-          line-height: normal;
-          margin-bottom: 0;
-        }
-
-        .schedule-table table tbody td .hover h4 {
-          font-weight: 700;
-          font-size: 20px;
-          color: #ffffff;
-          margin-bottom: 5px;
-        }
-
-        .schedule-table table tbody td .hover p {
-          font-size: 16px;
-          margin-bottom: 5px;
-          color: #ffffff;
-          line-height: normal;
-        }
-
-        .schedule-table table tbody td .hover span {
-          color: #ffffff;
-          font-weight: 600;
-          font-size: 18px;
-        }
-
-        .schedule-table table tbody td.active::before {
-          position: absolute;
-          content: "";
-          min-width: 100%;
-          min-height: 100%;
-          transform: scale(0);
-          top: 0;
-          left: 0;
-          z-index: -1;
-          border-radius: 0.25rem;
-          transition: all 0.3s linear 0s;
-        }
-
-        .schedule-table table tbody td .hover {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 120%;
-          height: 120%;
-          transform: translate(-50%, -50%) scale(0.8);
-          z-index: 99;
-          background: #86d4f5;
-          border-radius: 0.25rem;
-          padding: 25px 0;
-          visibility: hidden;
-          opacity: 0;
-          transition: all 0.3s linear 0s;
-        }
-
-        .schedule-table table tbody td.active:hover .hover {
-          transform: translate(-50%, -50%) scale(1);
-          visibility: visible;
-          opacity: 1;
-        }
-
-        .schedule-table table tbody td.day:hover {
-          background: #86d4f5;
-          color: #fff;
-          border: 1px solid #86d4f5;
-        }
-
-        @media screen and (max-width: 1199px) {
-          .schedule-table {
-            display: block;
-            width: 100%;
-            overflow-x: auto;
-          }
-
-          .schedule-table table thead th {
-            padding: 25px 40px;
-          }
-
-          .schedule-table table tbody td {
-            padding: 20px;
-          }
-
-          .schedule-table table tbody td.active h4 {
-            font-size: 18px;
-          }
-
-          .schedule-table table tbody td.active p {
-            font-size: 15px;
-          }
-
-          .schedule-table table tbody td.day {
-            font-size: 20px;
-          }
-
-          .schedule-table table tbody td .hover {
-            padding: 15px 0;
-          }
-
-          .schedule-table table tbody td .hover span {
-            font-size: 17px;
-          }
-        }
-
-        @media screen and (max-width: 991px) {
-          .schedule-table table thead th {
-            font-size: 18px;
-            padding: 20px;
-          }
-
-          .schedule-table table tbody td.day {
-            font-size: 18px;
-          }
-
-          .schedule-table table tbody td.active h4 {
-            font-size: 17px;
-          }
-        }
-
-        @media screen and (max-width: 767px) {
-          .schedule-table table thead th {
-            padding: 15px;
-          }
-
-          .schedule-table table tbody td {
-            padding: 15px;
-          }
-
-          .schedule-table table tbody td.active h4 {
-            font-size: 16px;
-          }
-
-          .schedule-table table tbody td.active p {
-            font-size: 14px;
-          }
-
-          .schedule-table table tbody td .hover {
-            padding: 10px 0;
-          }
-
-          .schedule-table table tbody td.day {
-            font-size: 18px;
-          }
-
-          .schedule-table table tbody td .hover span {
-            font-size: 15px;
-          }
-        }
-
-        @media screen and (max-width: 575px) {
-          .schedule-table table tbody td.day {
-            min-width: 135px;
-          }
-        }
-      </style>
-
-      </head>
-
-      <body>
-
-        <div class="container">
-          <div class="w-95 w-md-75 w-lg-60 w-xl-55 mx-auto mb-6 text-center">
-            <div class="subtitle alt-font">
-              <span class="text-primary"></span>
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+         </script>
             </div>
-            <h2 class="display-18 display-md-16 display-lg-14 mb-0">
-              Clientes agendados
-            </h2>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="schedule-table">
-                <table class="table bg-white">
-                  <thead>
-                    <tr>
-                      <th>Rotina</th>
-                      <th>10:00</th>
-                      <th>11:00</th>
-                      <th>14:00</th>
-                      <th>16:00</th>
-                      <th class="last">18:00</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="day">Domingo</td>
-                      <td class="active">
-                        <h4>...</h4>
-
-                        <div class="hover">
-                          <h4>...</h4>
-
-                          <span>...</span>
-                        </div>
-                      </td>
-                      <td></td>
-                      <td class="active">
-                        <h4>...</h4>
-
-                        <div class="hover">
-                          <h4>...</h4>
-
-
-                        </div>
-                      </td>
-                      <td class="active">
-                        <h4>...</h4>
-
-                        <div class="hover">
-                          <h4>...</h4>
-
-
-                        </div>
-                      </td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td class="day">Segunda</td>
-                      <td></td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                      <td class="active">
-                        <h4>Barba</h4>
-                        <p>14:00 - 15:00</p>
-                        <div class="hover">
-                          <h4>Barba</h4>
-                          <p>14:00 - 15:00</p>
-                          <span>Felipe Costa</span>
-                        </div>
-                      </td>
-                      <td></td>
-                      <td class="active">
-                        <h4>Corte e barba</h4>
-                        <p>18:00 - 19:00</p>
-                        <div class="hover">
-                          <h4>Corte estudante e barba</h4>
-                          <p>18:00 - 19:00</p>
-                          <span>Rhuan Victor</span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="day">Terça</td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                      <td></td>
-                      <td></td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="day">Quarta</td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                      <td></td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                      <td></td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="day">Quinta</td>
-                      <td></td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                      <td></td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td class="day">Sexta</td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                      <td></td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                      <td></td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="day">Sábado</td>
-                      <td></td>
-                      <td></td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                      <td class="active">
-                        <h4>Corte</h4>
-                        <p>11 am - 12 pm</p>
-                        <div class="hover">
-                          <h4>Corte freestyle</h4>
-                          <p>11 am - 12 pm</p>
-                          <span>Pedro Pereira</span>
-                        </div>
-                      </td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
         </div>
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript"></script>
-      </body>
-
-</html>
-</div>
-</div>
-
-<!-- jQuery CDN -->
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<!-- Bootstrap Js CDN -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-  $(document).ready(function () {
-    $("#sidebarCollapse").on("click", function () {
-      $("#sidebar").toggleClass("active");
-    });
-  });
-</script>
-</body>
-
-</html>
+        <body>
+          
+        
