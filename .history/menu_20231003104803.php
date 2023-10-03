@@ -8,7 +8,7 @@
         <li>
             <a href="index4.php">
                 <i class="glyphicon glyphicon-home"></i>
-                Minha loja
+                Minha tela
             </a>
 
         </li>

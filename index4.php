@@ -11,7 +11,8 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../TCC/assets/css/style4.css">
+   
+    <link rel="stylesheet" href=".//assets/css/style4.css" />
 
 </head>
 

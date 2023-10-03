@@ -5,20 +5,20 @@
     </div>
 
     <ul class="list-unstyled components">
-        <li>
-            <a href="index4.php">
+        <li class="active">
+            <a href="index4.php" data-toggle="collapse">
                 <i class="glyphicon glyphicon-home"></i>
-                Minha loja
+                Minha tela
             </a>
 
         </li>
         <li>
-            <a href="agenda.php">
+            <a href="agenda.html">
                 <i class="glyphicon glyphicon-briefcase"></i>
                 Agenda
             </a>
 
-            <a href="corteclassico.php" aria-expanded="false">
+            <a href="corte" aria-expanded="false">
                 <i class="glyphicon glyphicon-duplicate"></i>
                 Cortes/Serviços
             </a>

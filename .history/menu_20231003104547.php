@@ -5,10 +5,10 @@
     </div>
 
     <ul class="list-unstyled components">
-        <li>
+        <li class="active">
             <a href="index4.php">
                 <i class="glyphicon glyphicon-home"></i>
-                Minha loja
+                Minha tela
             </a>
 
         </li>

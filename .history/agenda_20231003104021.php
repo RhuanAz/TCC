@@ -15,10 +15,13 @@
     </head>
     <body>
         <div class="wrapper">
-        <?php
+            <!-- Sidebar Holder -->
+            <?php
         //INCLUSÃO DO MENU
         include_once('menu.php');
         ?>
+                
+
             <!-- Page Content Holder -->
             <div id="content">
 
@@ -33,30 +36,29 @@
                         </div>
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            
+                            <ul class="nav navbar-nav navbar-right">
+                            </ul>
                         </div>
                     </div>
                 </nav>
+                    
+                <br>
+                <br>
+                <label for="De:" class="de">De:</label>
+                <input type="date">
+                <br>
+                <br>
+                <label for="Para:">Para:</label>
+                <input type="date" name="" id="" class="para">
+                <br>
+                <br>
+                <input type="checkbox">
+                <label for="">Apenas agendamentos de hoje.</label>
+                <br><br>
+                <button>Consultar</button>
                 
-                <h1>Corte clássico</h1>
-                <p>Imagem:</p>
-                <img src="../TCC/assets/img/classiccorte.webp" alt="" class="img">
-                <style>
-                    .img{
-                        width: 300px;
-                        height: auto;
-                    }
-                </style>
-                <h3>Preço: R$30,00</h3>
-                
-            </div>
-        </div>
 
-
-
-
-
-        <!-- jQuery CDN -->
+                   <!-- jQuery CDN -->
          <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
          <!-- Bootstrap Js CDN -->
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -68,5 +70,8 @@
                  });
              });
          </script>
-    </body>
-</html>
+            </div>
+        </div>
+        <body>
+          
+        
