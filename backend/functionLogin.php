@@ -28,32 +28,3 @@ if(password_verify($senha, $usuario['senha'])){
     exit();
 }
 
-/*
-$result = mysqli_query($conection, $query);
-
-$row = mysqli_num_rows($result);
-
-if ($row == 1) {
-    $_SESSION['email'] = $email;
-    header('Location: ../list.php');
-    exit();
-} else {
-    $_SESSION['nao_autenticado'] = true;
-    header('Location: ../login.php');
-    exit();
-}
-
-
-
-$row = mysqli_num_rows($result);
-
-
-if ($row == 1) {
-    $_SESSION['email'] = $email;
-    header('Location: ../list.php');
-    exit();
-} else {
-    $_SESSION['nao_autenticado'] = true;
-    header('Location: ../login.php');
-    exit();
-}*/

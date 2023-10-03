@@ -3,6 +3,7 @@
     padding-left: 10% !important;
     padding-right: 10% !important;
     height: 50px !important;
+    border: #13396B;
 }
 
 .navsub {
@@ -17,9 +18,19 @@
 }
 
 .content {
-    padding-top: 2% !important;
-    padding-left: 10% !important;
-    padding-right: 10% !important;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: solid 1px;
+}
+
+.coverImg{
+    display: flex;
+    justify-content: center;
+}
+
+.cover{
+    border-radius: 8px;
 }
 
 .images {
@@ -92,7 +103,7 @@
 }
 
 .barberInfo{
-    padding-top: 3px;
+    padding-top: 4%;
     font-size: 16px;
 }
 
@@ -104,7 +115,10 @@
     color: rgba(0, 0, 0, 0.45);
 }
 
-
+.barberText{
+    padding-top: 3px;
+    font-size: 16px;
+}
 
 .barberItem p {
     padding-left: 15%;
@@ -112,9 +126,6 @@
     padding-bottom: 20% !important;
     display: inline-block !important;
 }
-
-
-
 
 .images img {
     padding-right: 3% !important;
