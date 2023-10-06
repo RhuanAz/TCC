@@ -24,12 +24,16 @@
     border: solid 1px;
 }
 
-.coverImg{
+h3{
+    padding-bottom: 20px;
+}
+
+.coverImg {
     display: flex;
     justify-content: center;
 }
 
-.cover{
+.cover {
     border-radius: 8px;
 }
 
@@ -37,6 +41,28 @@
     padding-bottom: 6% !important;
 }
 
+
+.filtros button {
+    align-items: center !important;
+    justify-content: center;
+    border-radius: 25px !important;
+    padding: 5px 17px;
+    background-color: transparent;
+    border-color: #8c8c8c !important;
+    color: #8c8c8c;
+    font-size: 16px !important;
+    margin-right: 20px;
+    font-weight: 450;
+}
+
+.filtros button:hover {
+    background-color: transparent !important;
+    /* Remove a mudança de cor de fundo */
+    border-color: #6a6a6a !important;
+    /* Remove a mudança de cor da borda */
+    color: #6a6a6a !important;
+    /* Remove a mudança de cor do texto */
+}
 
 .btn {
     align-items: center !important;
@@ -64,20 +90,32 @@
 
 }
 
-.barber {
-    padding-top: 2%;
+.minBarber {
     border: 1px solid;
-    
 }
+
 
 .barberItem {
     width: 30%;
-    height: 80px;
+    height: 200px;
     display: inline-block;
-}
-.barberItem:hover{
     border: 1px solid;
+    border-radius: 6px;
+    border-color: #8c8c8c;
+    transition: border-color 0.3s ease;
+    padding: 10px 20px;
+}
+
+.barberItem:hover {
+    border-color: #6a6a6a !important;
     cursor: pointer;
+}
+
+.barberItem p {
+    padding-left: 15%;
+    font-size: 20px !important;
+    padding-bottom: 20% !important;
+    display: inline-block !important;
 }
 
 .barberText {
@@ -88,50 +126,73 @@
     top: -78px;
 }
 
-.infos{
+.description{
+    padding-top: 4%;
+}
+
+.itemDescription{
+    color: #8c8c8c;
+    display: block;
+    padding-bottom: 5%;
+}
+
+.price{
+    padding-top: 5%;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.infos {
     position: relative;
     top: -1px;
 }
 
-.rightInfo{
+.rightInfo {
     float: right;
 }
 
-.barberName{
-    font-size: 24px;
-    font-weight: 700;
+.itemName {
+    font-size: 20px;
+    font-weight: 600;
     position: relative;
-    padding-right: 1%;
 }
 
-.bi-star-fill{
+.bi-star-fill {
     font-size: 16px;
-    
+
 }
 
-.barberInfo{
+.barberInfo {
     padding-top: 3%;
     font-size: 16px;
 }
 
-.avaliacao{
+.avaliacao {
     color: rgb(255, 213, 0);
+    text-decoration: underline;
+    transition: color 0.2s ease;
 }
 
-.distancia{
+.avaliacao:hover{
+    cursor: pointer;
+    color: rgb(251, 209, 0);
+}
+
+
+.distancia {
     color: rgba(0, 0, 0, 0.45);
 }
 
-.barberText{
+.barberText {
     padding-top: 3px;
     font-size: 16px;
 }
 
-.barberItem p {
-    padding-left: 15%;
-    font-size: 20px !important;
-    padding-bottom: 20% !important;
-    display: inline-block !important;
+.barberName {
+    font-size: 24px;
+    font-weight: 700;
+    position: relative;
+
 }
 
 .images img {

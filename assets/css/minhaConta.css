@@ -1,0 +1,19 @@
+.nav-container {
+    font-weight: 20px;
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+    height: 50px !important;
+    border: #13396B;
+}
+
+.navsub {
+    font-weight: bold;
+    height: 50px;
+    background-color: #13396B;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
