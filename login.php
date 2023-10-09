@@ -10,7 +10,10 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    
     <link rel="stylesheet" href="assets/css/login.css">
+
+
 </head>
 
 <body>
@@ -41,11 +44,12 @@ session_start();
             </div>
             <!-- Botaão para realizar o login -->
             <button type="submit">Entrar</button>
-            <div class="links">
+            <div class="links" >
+                <!-- Botaão para recuperar a senha -->
+                <a href="forgetPassword.php">Esqueceu a senha?</a>
+                <span>|</span>
                 <!-- Botaão para ir para a página de cadastro -->
-                <span>Não tem login?</span>
-                <!-- Botaão para ir para a página de cadastro -->
-                <a href="cadastro.php">Cadastre-se!</a>
+                <a href="register.php">Cadastre-se</a>
             </div>
         </form>
     </div>
