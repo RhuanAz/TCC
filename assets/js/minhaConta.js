@@ -59,9 +59,9 @@ $(document).ready(function () {
         $.post('backend/verificaDado.php', parametros, function (data) {
             console.log(data);
             if (data == "true") {
-                setError(3, 1);
+                setError(2, 0);
             } else {
-                removeError(3, 1);
+                removeError(2, 0);
             }
         })
     })

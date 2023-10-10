@@ -43,11 +43,11 @@
                     <a class="nav-link dropdown-toggle" id="user" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false" style=" font-weight: bold !important;">
                         <i class="bi-person-circle" style="padding-right: 5% !important;"></i>
-                        Olá, Rhuan
+                        Olá, <?php echo $_SESSION['nome']?>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="minhaConta.html">
                                 <i class="bi-pencil" style="padding-right: 7% !important"></i>
                                 Minha Conta
                             </a>
@@ -62,7 +62,7 @@
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="backend/logout.php">
                                 <i class="bi-box-arrow-right" style="padding-right: 7% !important"></i>
                                 Sair
                             </a>

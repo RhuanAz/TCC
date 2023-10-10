@@ -22,6 +22,10 @@
     padding-right: 10% !important;
 }
 
+.dropdown-item:active{
+    background-color: grey !important;
+}
+
 .images {
     padding-bottom: 6% !important;
 }
