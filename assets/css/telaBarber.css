@@ -24,12 +24,16 @@
     border: solid 1px;
 }
 
-.coverImg{
+h3{
+    padding-bottom: 20px;
+}
+
+.coverImg {
     display: flex;
     justify-content: center;
 }
 
-.cover{
+.cover {
     border-radius: 8px;
 }
 
@@ -38,7 +42,7 @@
 }
 
 
-.btn {
+.filtros button {
     align-items: center !important;
     justify-content: center;
     border-radius: 25px !important;
@@ -46,7 +50,27 @@
     background-color: transparent;
     border-color: #8c8c8c !important;
     color: #8c8c8c;
-    font-size: 20px !important;
+    font-size: 16px !important;
+    margin-right: 20px;
+    font-weight: 450;
+}
+
+.filtros button:hover {
+    background-color: transparent !important;
+    /* Remove a mudança de cor de fundo */
+    border-color: #6a6a6a !important;
+    /* Remove a mudança de cor da borda */
+    color: #6a6a6a !important;
+    /* Remove a mudança de cor do texto */
+}
+
+.btn {
+    align-items: center !important;
+    justify-content: center;
+    border-radius: 5px !important;
+    background-color: transparent;
+    border-color: #8c8c8c !important;
+    color: #8c8c8c;
     font-size: 13px;
     margin-right: 20px;
     font-weight: 450;
@@ -66,58 +90,25 @@
 
 }
 
-.barber {
-    padding-top: 2%;
+.minBarber {
     border: 1px solid;
-    
 }
+
 
 .barberItem {
     width: 30%;
-    height: 80px;
+    height: 200px;
     display: inline-block;
-}
-.barberItem:hover{
     border: 1px solid;
+    border-radius: 6px;
+    border-color: #8c8c8c;
+    transition: border-color 0.3s ease;
+    padding: 10px 20px;
+}
+
+.barberItem:hover {
+    border-color: #6a6a6a !important;
     cursor: pointer;
-}
-
-.barberText {
-    padding-left: 3%;
-    margin-left: 15%;
-    font-size: 24px;
-    align-items: center;
-    position: relative;
-    top: -70px;
-}
-
-.barberName{
-    font-size: 24px;
-    font-weight: 400;
-    position: relative;
-}
-
-.bi-star-fill{
-    font-size: 16px;
-    
-}
-
-.barberInfo{
-    padding-top: 4%;
-    font-size: 16px;
-}
-
-.avaliacao{
-    color: rgb(255, 213, 0);
-}
-
-.distancia{
-    color: rgba(0, 0, 0, 0.45);
-}
-
-.barberText{
-    padding-top: 3px;
-    font-size: 16px;
 }
 
 .barberItem p {
@@ -125,6 +116,83 @@
     font-size: 20px !important;
     padding-bottom: 20% !important;
     display: inline-block !important;
+}
+
+.barberText {
+    margin-left: 85px;
+    font-size: 24px;
+    align-items: center;
+    position: relative;
+    top: -78px;
+}
+
+.description{
+    padding-top: 4%;
+}
+
+.itemDescription{
+    color: #8c8c8c;
+    display: block;
+    padding-bottom: 5%;
+}
+
+.price{
+    padding-top: 5%;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.infos {
+    position: relative;
+    top: -1px;
+}
+
+.rightInfo {
+    float: right;
+}
+
+.itemName {
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+}
+
+.bi-star-fill {
+    font-size: 16px;
+
+}
+
+.barberInfo {
+    padding-top: 3%;
+    font-size: 16px;
+}
+
+.avaliacao {
+    color: rgb(255, 213, 0);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.avaliacao:hover{
+    cursor: pointer;
+    color: rgb(251, 209, 0);
+}
+
+
+.distancia {
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.barberText {
+    padding-top: 3px;
+    font-size: 16px;
+}
+
+.barberName {
+    font-size: 24px;
+    font-weight: 700;
+    position: relative;
+
 }
 
 .images img {

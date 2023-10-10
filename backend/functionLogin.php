@@ -11,14 +11,14 @@ if (empty($_POST['email']) || empty($_POST['senha'])) {
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $senha = mysqli_real_escape_string($conn, $_POST['senha']);
 
-$sql = "SELECT * FROM cliente WHERE (email = '".$email ."') LIMIT 1";
+$sql = "SELECT * FROM cliente WHERE email = '$email' LIMIT 1";
 $sql_exec = $conn->query($sql);
 
 $usuario = $sql_exec->fetch_assoc();
 
 if(password_verify($senha, $usuario['senha'])){
-    echo "Usuário Logado";
     $_SESSION['email'] = $email;
+    $_SESSION['nome'] = $usuario['nome'];
     header('Location: ../barbearias.php');
     exit();
 }else{

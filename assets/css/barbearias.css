@@ -22,6 +22,10 @@
     padding-right: 10% !important;
 }
 
+.dropdown-item:active{
+    background-color: grey !important;
+}
+
 .images {
     padding-bottom: 6% !important;
 }
@@ -35,7 +39,7 @@
     background-color: transparent;
     border-color: #8c8c8c !important;
     color: #8c8c8c;
-    font-size: 20px !important;
+    font-size: 16px !important;
     font-size: 13px;
     margin-right: 20px;
     font-weight: 450;

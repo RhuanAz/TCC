@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Barbearias | Ouro Branco</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -43,11 +43,11 @@
                     <a class="nav-link dropdown-toggle" id="user" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false" style=" font-weight: bold !important;">
                         <i class="bi-person-circle" style="padding-right: 5% !important;"></i>
-                        Olá, Rhuan
+                        Olá, <?php echo $_SESSION['nome']?>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="minhaConta.html">
                                 <i class="bi-pencil" style="padding-right: 7% !important"></i>
                                 Minha Conta
                             </a>
@@ -62,7 +62,7 @@
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="backend/logout.php">
                                 <i class="bi-box-arrow-right" style="padding-right: 7% !important"></i>
                                 Sair
                             </a>

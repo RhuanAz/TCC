@@ -17,7 +17,6 @@
         <div class="container">
             <div class="row align-items-center justify-content-end ">
                 <div class="col-md-11">
-
                 </div>
                 <div class="col-md-6">
                     <!--FORMULÁRIO-->
