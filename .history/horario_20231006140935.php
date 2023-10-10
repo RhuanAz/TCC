@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+            //INCLUSÃO DO MENU
+            include_once('menu.php');
+            ?>
+
+            <h1>Horário de Funcionamento</h1>
+            <p>Escolha os horários que o seu estabelecimento estará aberto.</p>
+
+    <button id="botao1" onclick="selecionarBotao(1)">Aberto</button>
+    <button id="botao2" onclick="selecionarBotao(2)">Fechado</button>
+
+    <script>
+        function selecionarBotao(botaoSelecionado) {
+            // Desativa o botão que foi clicado
+            document.getElementById('botao' + botaoSelecionado).disabled = true;
+
+            // Ativa o outro botão
+            var outroBotao = botaoSelecionado === 1 ? 2 : 1;
+            document.getElementById('botao' + outroBotao).disabled = false;
+        }
+    </script>
+</body>
+
+</html>
+
+</body>
+</html>
