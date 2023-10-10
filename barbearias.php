@@ -47,7 +47,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="minhaConta.html">
+                            <a class="dropdown-item" href="minhaConta.php">
                                 <i class="bi-pencil" style="padding-right: 7% !important"></i>
                                 Minha Conta
                             </a>
@@ -103,7 +103,7 @@
                 <div class="barberItem" onclick="redirecionarPagina()">
                     <img src="assets/img/Barbers/barberLogo.jpg" alt="">
                     <div class="barberText">
-                        <span class="barberName"> Zeppelin Barber Shop </span>
+                        <span class="barberName">Zeppelin Barber Shop </span>
                         <div class="barberInfo">
                             <span class="avaliacao"><i class="bi bi-star-fill"></i> 5,0</span>
                             <span class="distancia">• 2,0 km </span>
@@ -113,7 +113,7 @@
                 <div class="barberItem" onclick="">
                     <img src="assets/img/Barbers/barberLogo.jpg" alt="">
                     <div class="barberText">
-                        <span class="barberName"> Zeppelin Barber Shop </span>
+                        <span class="barberName">Zeppelin Barber Shop </span>
                         <div class="barberInfo">
                             <span class="avaliacao"><i class="bi bi-star-fill"></i> 5,0</span>
                             <span class="distancia">• 2,0 km </span>

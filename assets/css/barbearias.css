@@ -17,9 +17,9 @@
 }
 
 .content {
-    padding-top: 2% !important;
-    padding-left: 10% !important;
-    padding-right: 10% !important;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .dropdown-item:active{
