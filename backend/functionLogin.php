@@ -3,6 +3,7 @@ session_start();
 require('conexao.php');
 
 
+
 if (empty($_POST['email']) || empty($_POST['senha'])) {
     header('Location: ../login.php');
     exit;
@@ -19,6 +20,7 @@ $usuario = $sql_exec->fetch_assoc();
 if(password_verify($senha, $usuario['senha'])){
     $_SESSION['email'] = $email;
     $_SESSION['nome'] = $usuario['nome'];
+    $_SESSION['id'] = $usuario['id_cliente'];
     header('Location: ../barbearias.php');
     exit();
 }else{

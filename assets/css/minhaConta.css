@@ -1,7 +1,26 @@
+/*TAGS*/
 body {
     background-color: #ffffff
 }
 
+form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h3 {
+    padding-bottom: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #930828 !important;
+    transition: 0.3s;
+}
+
+/*CLASSES*/
 .nav-container {
     font-weight: 20px;
     padding-left: 10% !important;
@@ -9,15 +28,8 @@ body {
     height: 50px !important;
 }
 
-.navsub {
-    font-weight: bold;
-    height: 50px;
-    background-color: #13396B;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+.dropdown-item:active {
+    background-color: grey !important;
 }
 
 .content {
@@ -37,22 +49,11 @@ body {
     box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     background-color: white;
-}
-
-form {
-    padding-top: 2%;
-    padding-bottom: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
+    position: relative;
 }
 
 .form-group {
     padding-bottom: 7px;
-}
-
-
-h3 {
-    padding-bottom: 20px;
 }
 
 .btn.btn-primary.btn-lg {
@@ -68,15 +69,25 @@ h3 {
     height: 52px;
 }
 
-button:hover {
-    cursor: pointer;
-    background-color: #930828 !important;
-    transition: 0.3s;
-}
-
 .span-required {
     font-size: 12px;
     margin: 3px 0 0 1px;
     color: red;
     display: none;
+}
+
+/*IDs*/
+#account {
+    background: grey !important;
+    color: white;
+    cursor: default;
+}
+
+#btnEditar {
+    width: 41px;
+    height: 40px;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    margin-right: 5%;
 }

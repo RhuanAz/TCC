@@ -19,7 +19,7 @@
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid nav-container">
-            <a class="navbar-brand mb-0 h1" href="#">Barber Connect</a>
+            <a class="navbar-brand mb-0 h1" href="barbearias.php">Barber Connect</a>
 
             <!--Botão da navbar para telas pequenas-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

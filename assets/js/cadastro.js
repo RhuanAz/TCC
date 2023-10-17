@@ -47,12 +47,12 @@ $(document).ready(function () {
     //Executar quando o campo "Telefone" perde o foco
     $("#telefone").blur(function () {
         var metodo = "verifTelefone";
-        var email = $("#telefone").val();
+        var telefone = $("#telefone").val();
 
         //Criando objeto para enviar para o "verificaDado.php"
         var parametros = {
             'metodo': metodo,
-            'column': email
+            'column': telefone
         };
 
         //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
