@@ -1,5 +1,6 @@
 <?php
 require('./backend/verificaLogin.php');
+require('./backend/functionList.php');
 ?>
 
 <!DOCTYPE html>
@@ -78,16 +79,17 @@ require('./backend/verificaLogin.php');
                 <div class="form-group">
                     <div class="row">
                         <h6 class="heading-small text-muted mb-4">Informações do usuário</h6>
-                        <button title="Editar" type="button" class="btn btn-danger" id="btnEditar"><i class="bi bi-pencil-square"></i></button>
+                        <button title="Editar" type="button" class="btn btn-danger" id="btnEditar" onclick="statusInput();"><i class="bi bi-pencil-square"></i></button>
                         <div class="col-lg-6">
+                            <?php while($dado = $result->fetch_array()) { ?>
                             <label for="nome" class="form-label">Nome:</label>
-                            <input type="text" class="form-control" id="nome" pattern="[^0-9]*" name="nome" placeholder="João" required>
+                            <input type="text" class="form-control" id="nome" pattern="[^0-9]*" name="nome" placeholder="João" value="<?php echo $dado['nome'];?>" required>
                         </div>
                         <div class="col-lg-6">
                             <label for="sobrenome" class="form-label">Sobrenome:</label>
-                            <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Silva" required>
+                            <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Silva" value="<?php echo $dado['sobrenome'];?>"required>
                         </div>
-                      
+                       
                     </div>
                 </div>
 
@@ -129,7 +131,7 @@ require('./backend/verificaLogin.php');
                             <input type="hidden" id="rua_oculto" name="rua_oculto" value="">
                         </div>
                         <div class="col-md-2">
-                            <label for="num" class="form-label">Nº/Apto:</label>
+                            <label for="num" class="form-label">Nº ou Apto:</label>
                             <input type="text" class="form-control" id="num" name="num" placeholder="202-A" required>
                         </div>
                     </div>
@@ -162,18 +164,18 @@ require('./backend/verificaLogin.php');
                     <h6 class="heading-small text-muted mb-4">Informações de Login</h6>
                     <div class="form-group mx-auto">
                         <label for="email" class="form-label">E-mail:</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="nome@email.com" disabled>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="nome@email.com">
                     </div>
                     <div class="form-group mx-auto">
                         <label for="senha" class="form-label">Senha:</label>
                         <input type="password" class="form-control" id="senha" name="senha" placeholder="*********" required>
                     </div>
                     <div class="align-items-center d-flex flex-column" style="padding-top: 2%;">
-                        <button type="submit" id="btn-cadastrar" class="btn btn-primary btn-lg">Atualizar
+                        <button type="button" id="btnAtualizar" class="btn btn-primary btn-lg" onclick="atualizarInfo();" disabled>Atualizar
                             informações</button>
                     </div>
                 </div>
-
+                <?php } ?>
             </form>
         </div>
     </div>

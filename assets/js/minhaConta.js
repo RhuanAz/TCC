@@ -73,7 +73,28 @@ $(document).ready(function () {
 const spans = document.querySelectorAll('.span-required');
 const campos = document.querySelectorAll('input[required]')
 const form = document.getElementById('form');
+const btnEditar = document.getElementById('btnEditar');
+const btnAtualizar = document.getElementById('btnAtualizar');
 
+console.log(campos);
+console.log(spans);
+
+function statusInput() {
+    btnAtualizar.disabled = !btnAtualizar.disabled;
+    btnEditar.disabled = !btnEditar.disabled;
+    const elementos = [
+        'nome', 'sobrenome', 'sexo', 'telefone', 'cep', 'rua', 'num', 'bairro', 'email', 'senha'
+    ];
+
+    elementos.forEach(elementoId => {
+        const elemento = document.getElementById(elementoId);
+        elemento.disabled = !elemento.disabled
+    });
+}
+
+function atualizarInfo() {
+    statusInput();
+}
 
 form.addEventListener('submit', (event) => {
 
@@ -133,7 +154,7 @@ function limpa_formulário_cep() {
 function meu_callback(conteudo) {
     if (!("erro" in conteudo)) {
         //Atualiza os campos com os valores.     
-        removeError(4, 2);
+        removeError(3, 1);
         document.getElementById('rua').value = (conteudo.logradouro);
         document.getElementById('bairro').value = (conteudo.bairro);
         document.getElementById('cidade').value = (conteudo.localidade);
@@ -202,21 +223,6 @@ function pesquisacep(valor) {
 };
 //------
 
-//Formatar CPF
-document.getElementById('cpf').addEventListener('input', function (e) {
-    // Remove caracteres não numéricos do valor atual do campo CPF
-    var cpf = e.target.value.replace(/\D/g, '');
-
-    // Verifica se o CPF possui pelo menos 11 dígitos
-    if (cpf.length >= 11) {
-        // Formata o CPF no formato XXX.XXX.XXX-XX
-        cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-
-        // Define o valor formatado de volta no campo de entrada
-        e.target.value = cpf;
-
-    }
-});
 
 
 //Formatar CEP
