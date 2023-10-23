@@ -66,7 +66,12 @@ button:hover {
     background-color: #D21742;
     outline: none;
     width: 318px;
-    height: 52px;
+    height: 52px;   
+}
+
+.btn.btn-primary.btn-lg.enabled {
+    background-color: #D21742; /* Cor quando habilitado */
+    transition: background-color 1s; /* 1 segundo de duração da transição */
 }
 
 .span-required {
@@ -74,6 +79,12 @@ button:hover {
     margin: 3px 0 0 1px;
     color: red;
     display: none;
+}
+
+.span-aviso {
+    font-size: 13px;
+    margin: 3px 0 0 1px;
+    color: rgb(151, 151, 151);
 }
 
 /*IDs*/

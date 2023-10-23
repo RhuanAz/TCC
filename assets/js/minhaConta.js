@@ -2,10 +2,10 @@
 $(document).ready(function () {
     //Executar quando o campo "CPF" perde o foco
     $("#cpf").blur(function () {
+        //Criando objeto para enviar para o "verificaDado.php"
         var metodo = "verifCPF";
         var cpf = $("#cpf").val();
 
-        //Criando objeto para enviar para o "verificaDado.php"
         var parametros = {
             'metodo': metodo,
             'column': cpf
@@ -15,19 +15,19 @@ $(document).ready(function () {
         $.post('backend/verificaDado.php', parametros, function (data) {
             console.log(data);
             if (data == "true") {
-                setError(2, 0);
+                setError(3, 1);
             } else {
-                removeError(2, 0);
+                removeError(3, 1);
             }
         })
     })
 
     //Executar quando o campo "Email" perde o foco
     $("#email").blur(function () {
+        //Criando objeto para enviar para o "verificaDado.php"
         var metodo = "verifEmail";
         var email = $("#email").val();
 
-        //Criando objeto para enviar para o "verificaDado.php"
         var parametros = {
             'metodo': metodo,
             'column': email
@@ -46,10 +46,10 @@ $(document).ready(function () {
 
     //Executar quando o campo "Telefone" perde o foco
     $("#telefone").blur(function () {
+        //Criando objeto para enviar para o "verificaDado.php"
         var metodo = "verifTelefone";
         var email = $("#telefone").val();
 
-        //Criando objeto para enviar para o "verificaDado.php"
         var parametros = {
             'metodo': metodo,
             'column': email
@@ -83,7 +83,7 @@ function statusInput() {
     btnAtualizar.disabled = !btnAtualizar.disabled;
     btnEditar.disabled = !btnEditar.disabled;
     const elementos = [
-        'nome', 'sobrenome', 'sexo', 'telefone', 'cep', 'rua', 'num', 'bairro', 'email', 'senha'
+        'nome', 'sobrenome', 'sexo', 'telefone', 'cep', 'rua', 'num', 'bairro', 'cpf', 'senha'
     ];
 
     elementos.forEach(elementoId => {

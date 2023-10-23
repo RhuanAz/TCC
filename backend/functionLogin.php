@@ -17,16 +17,15 @@ $sql_exec = $conn->query($sql);
 
 $usuario = $sql_exec->fetch_assoc();
 
-if(password_verify($senha, $usuario['senha'])){
+if (password_verify($senha, $usuario['senha'])) {
     $_SESSION['email'] = $email;
     $_SESSION['nome'] = $usuario['nome'];
     $_SESSION['id'] = $usuario['id_cliente'];
     header('Location: ../barbearias.php');
     exit();
-}else{
+} else {
     echo "Falha ao logar";
     $_SESSION['nao_autenticado'] = true;
     header('Location: ../login.php');
     exit();
 }
-

@@ -45,8 +45,8 @@
                                     <select class="form-select" id="sexo" name="sexo">
                                         <option value="masculino">Masculino</option>
                                         <option value="feminino">Feminino</option>
-                                        <option value="feminino">Não binário</option>
-                                        <option value="Ninformado">Prefiro não informar</option>
+                                        <option value="nbinario">Não binário</option>
+                                        <option value="ninformado">Prefiro não informar</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
