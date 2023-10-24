@@ -79,7 +79,7 @@ require('./backend/functionList.php');
                 <div class="form-group">
                     <div class="row">
                         <h6 class="heading-small text-muted mb-4">Informações do usuário</h6>
-                        <button title="Editar" type="button" class="btn btn-danger" id="btnEditar" onclick="statusInput();"><i class="bi bi-pencil-square"></i></button>
+                        <button title="Editar" type="button" class="btn btn-danger" id="btnEditar" onclick="atualizarInfo('btnEditar');"><i class="bi bi-pencil-square"></i></button>
                         <div class="col-lg-6">
                             <?php while ($dado = $result->fetch_array()) { ?>
                                 <label for="nome" class="form-label">Nome:</label>
@@ -171,18 +171,30 @@ require('./backend/functionList.php');
                         <input type="email" class="form-control" id="email" name="email" placeholder="nome@email.com" value="<?php echo $dado['email']; ?>" disabled>
                         <span class="span-aviso">O e-mail não pode ser editado.</span>
                     </div>
-                    <div class="form-group mx-auto">
-                        <label for="senha" class="form-label">Senha:</label>
-                        <input type="password" class="form-control" id="senha" name="senha" placeholder="*********" required disabled>
-                    </div>
-                    <div class="align-items-center d-flex flex-column" style="padding-top: 2%;">
-                        <button type="button" id="btnAtualizar" class="btn btn-primary btn-lg" onclick="atualizarInfo();" disabled>Atualizar
-                            informações</button>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="senha" class="form-label">Senha Atual:</label>
+                            <input type="password" class="form-control" id="senhaAntiga" name="senha" placeholder="*********" required disabled>
+                        </div>
+                        <div class="align-items-center d-flex flex-column col-md-2">
+                            <button type="button" id="btnSenha" class="btnSenha" onclick="atualizarInfo('btnSenha');">Atualizar senha</button>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="senha" class="form-label">Nova senha:</label>
+                            <input type="password" class="form-control" id="senhaNova" name="senha" placeholder="*********" required disabled>
+                        </div>
+                        <div class="align-items-center d-flex flex-column" style="padding-top: 3%;">
+                            <button type="button" id="btnAtualizar" class="btn btn-primary btn-lg" onclick="atualizarInfo('btnAtualizar');" disabled>Atualizar
+                                informações</button>
+                        </div>
                     </div>
                 </div>
-            <?php } ?>
-            </form>
         </div>
+    <?php } ?>
+    </form>
+    </div>
     </div>
 
 

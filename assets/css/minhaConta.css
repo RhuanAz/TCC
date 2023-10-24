@@ -53,7 +53,7 @@ button:hover {
 }
 
 .form-group {
-    padding-bottom: 7px;
+    padding-bottom: 2px;
 }
 
 .btn.btn-primary.btn-lg {
@@ -66,13 +66,9 @@ button:hover {
     background-color: #D21742;
     outline: none;
     width: 318px;
-    height: 52px;   
+    height: 52px;
 }
 
-.btn.btn-primary.btn-lg.enabled {
-    background-color: #D21742; /* Cor quando habilitado */
-    transition: background-color 1s; /* 1 segundo de duração da transição */
-}
 
 .span-required {
     font-size: 12px;
@@ -85,6 +81,20 @@ button:hover {
     font-size: 13px;
     margin: 3px 0 0 1px;
     color: rgb(151, 151, 151);
+}
+
+.btnSenha {
+    text-align: center;
+    position: absolute;
+    margin-top: 32px;
+    margin-right: 5%;
+    height: 38px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: none;
+    background-color: #D21742;
+    text-decoration: none;
+    color: white;
 }
 
 /*IDs*/
@@ -101,4 +111,12 @@ button:hover {
     position: absolute;
     right: 0;
     margin-right: 5%;
+}
+
+#senhaAntiga {    
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
 }

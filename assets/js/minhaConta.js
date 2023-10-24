@@ -5,10 +5,12 @@ $(document).ready(function () {
         //Criando objeto para enviar para o "verificaDado.php"
         var metodo = "verifCPF";
         var cpf = $("#cpf").val();
+        var tela = "minhaConta";
 
         var parametros = {
             'metodo': metodo,
-            'column': cpf
+            'column': cpf,
+            'tela': tela
         };
 
         //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
@@ -27,10 +29,12 @@ $(document).ready(function () {
         //Criando objeto para enviar para o "verificaDado.php"
         var metodo = "verifEmail";
         var email = $("#email").val();
+        var tela = "minhaConta";
 
         var parametros = {
             'metodo': metodo,
-            'column': email
+            'column': email,
+            'tela': tela
         };
 
         //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
@@ -49,10 +53,12 @@ $(document).ready(function () {
         //Criando objeto para enviar para o "verificaDado.php"
         var metodo = "verifTelefone";
         var email = $("#telefone").val();
+        var tela = "minhaConta";
 
         var parametros = {
             'metodo': metodo,
-            'column': email
+            'column': email,
+            'tela': tela
         };
 
         //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
@@ -75,16 +81,22 @@ const campos = document.querySelectorAll('input[required]')
 const form = document.getElementById('form');
 const btnEditar = document.getElementById('btnEditar');
 const btnAtualizar = document.getElementById('btnAtualizar');
+const btnSenha = document.getElementById('btnSenha');
 
 console.log(campos);
 console.log(spans);
 
-function statusInput() {
+function statusInput(botao) {
+    const elementos = [];
     btnAtualizar.disabled = !btnAtualizar.disabled;
-    btnEditar.disabled = !btnEditar.disabled;
-    const elementos = [
-        'nome', 'sobrenome', 'sexo', 'telefone', 'cep', 'rua', 'num', 'bairro', 'cpf', 'senha'
-    ];
+
+    if (botao == "btnSenha") {
+        elementos.push('senhaAntiga', 'senhaNova');
+        btnSenha.disabled = !btnSenha.disabled;
+    } else {
+        elementos.push('nome', 'sobrenome', 'sexo', 'telefone', 'cep', 'rua', 'num', 'bairro', 'cpf');
+        btnEditar.disabled = !btnEditar.disabled;
+    }
 
     elementos.forEach(elementoId => {
         const elemento = document.getElementById(elementoId);
@@ -92,8 +104,8 @@ function statusInput() {
     });
 }
 
-function atualizarInfo() {
-    statusInput();
+function atualizarInfo(botao) {
+    statusInput(botao);
 }
 
 form.addEventListener('submit', (event) => {

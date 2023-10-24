@@ -4,11 +4,13 @@ $(document).ready(function () {
     $("#cpf").blur(function () {
         var metodo = "verifCPF";
         var cpf = $("#cpf").val();
+        var tela = "cadastro";
 
         //Criando objeto para enviar para o "verificaDado.php"
         var parametros = {
             'metodo': metodo,
-            'column': cpf
+            'column': cpf,
+            'tela': tela
         };
 
         //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
@@ -26,11 +28,13 @@ $(document).ready(function () {
     $("#email").blur(function () {
         var metodo = "verifEmail";
         var email = $("#email").val();
+        var tela = "cadastro";
 
         //Criando objeto para enviar para o "verificaDado.php"
         var parametros = {
             'metodo': metodo,
-            'column': email
+            'column': email,
+            'tela': tela
         };
 
         //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
@@ -48,11 +52,13 @@ $(document).ready(function () {
     $("#telefone").blur(function () {
         var metodo = "verifTelefone";
         var telefone = $("#telefone").val();
+        var tela = "cadastro";
 
         //Criando objeto para enviar para o "verificaDado.php"
         var parametros = {
             'metodo': metodo,
-            'column': telefone
+            'column': telefone,
+            'tela': tela
         };
 
         //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
