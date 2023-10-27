@@ -75,7 +75,7 @@ require('./backend/functionList.php');
     <div class="content">
         <h3>Minha Conta</h3>
         <div class="divForm">
-            <form id="form" action="./backend/functionCadastro.php" method="POST" class="">
+            <form id="form" action="./backend/functionAtualizar.php" method="POST" class="">
                 <div class="form-group">
                     <div class="row">
                         <h6 class="heading-small text-muted mb-4">Informações do usuário</h6>
@@ -99,6 +99,7 @@ require('./backend/functionList.php');
                         <div class="col-md-4">
                             <label for="sexo" class="form-label">Sexo:</label>
                             <select class="form-select" id="sexo" name="sexo" disabled>
+                                <!--Verificar qual o sexo do usuário no BD e deixar ele selecionado-->
                                 <option value="masculino" <?php if ($dado['sexo'] == 'masculino') echo 'selected'; ?>>Masculino</option>
                                 <option value="feminino" <?php if ($dado['sexo'] == 'feminino') echo 'selected'; ?>>Feminino</option>
                                 <option value="nbinario" <?php if ($dado['sexo'] == 'nbinario') echo 'selected'; ?>>Não binário</option>
@@ -114,6 +115,7 @@ require('./backend/functionList.php');
                             <label for="cpf" class="form-label">CPF:</label>
                             <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Apenas números" value="<?php echo $dado['cpf']; ?>" required disabled>
                             <span class="span-required">CPF em uso!</span>
+                            <input type="hidden" id="cpf_oculto" name="cep_oculto" value="">
                         </div>
                     </div>
                 </div>
@@ -128,6 +130,7 @@ require('./backend/functionList.php');
                             <label for="cep" class="form-label">CEP:</label>
                             <input type="text" class="form-control" id="cep" name="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" onkeyup="formatarCEP(this);" value="<?php echo $dado['cep']; ?>" placeholder="Apenas n.º" required disabled>
                             <span class="span-required">CEP Inválido!</span>
+                            <input type="hidden" id="cep_oculto" name="cep_oculto" value="">
                         </div>
                         <div class="col-md-7">
                             <label for="rua" class="form-label">Rua:</label>
@@ -137,6 +140,7 @@ require('./backend/functionList.php');
                         <div class="col-md-2">
                             <label for="num" class="form-label">Nº ou Apto:</label>
                             <input type="text" class="form-control" id="num" name="num" placeholder="202-A" value="<?php echo $dado['numero']; ?>" required disabled>
+                            <input type="hidden" id="num_oculto" name="num_oculto" value="">
                         </div>
                     </div>
                 </div>
@@ -184,6 +188,7 @@ require('./backend/functionList.php');
                         <div class="col-md-6">
                             <label for="senha" class="form-label">Nova senha:</label>
                             <input type="password" class="form-control" id="senhaNova" name="senha" placeholder="*********" required disabled>
+                            <input type="hidden" id="senha_oculto" name="senha_oculto" value="">
                         </div>
                         <div class="align-items-center d-flex flex-column" style="padding-top: 3%;">
                             <button type="button" id="btnAtualizar" class="btn btn-primary btn-lg" onclick="atualizarInfo('btnAtualizar');" disabled>Atualizar
