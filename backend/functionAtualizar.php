@@ -1,6 +1,8 @@
 <?php
 require('conexao.php');
+session_start();
 
+$id = $_SESSION['id'];
 
 $nome = $_POST['nome'];
 $sobrenome = $_POST['sobrenome'];
@@ -9,7 +11,7 @@ $cpf = $_POST['cpf'];
 $telefone = $_POST['telefone'];
 $cep = $_POST['cep'];
 $rua = $_POST['rua_oculto'];
-$num = $_POST['num'];
+$num = $_POST['num_oculto'];
 $bairro = $_POST['bairro_oculto'];
 $cidade = $_POST['cidade_oculto'];
 $uf = $_POST['uf_oculto'];
@@ -23,7 +25,7 @@ $sql = "UPDATE cliente SET
     telefone = '$telefone',
     cep = '$cep',
     rua = '$rua',
-    num = '$num',
+    numero = '$num',
     bairro = '$bairro',
     cidade = '$cidade',
     uf = '$uf'";
@@ -34,12 +36,10 @@ if (!empty($senha)) {
     $sql .= ", senha = '$senha'";
 }
 
-$sql .= " WHERE id_cliente = $id_cliente";
+$sql .= " WHERE id_cliente = $id";
 
-
-$result = $conn->query("INSERT INTO cliente (nome, sobrenome, sexo, cpf, telefone, cep, rua, bairro, numero, cidade, uf, email, senha) 
-VALUES ('$nome', '$sobrenome', '$sexo', '$cpf', '$telefone', '$cep', '$rua', '$bairro', '$num', '$cidade', '$uf', '$email', '$senha')");
+$result = $conn->query($sql);
 
 if ($result) {
-    header('Location: ../login.php');
+    header('Location: ../minhaConta.php');
 }

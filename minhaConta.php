@@ -75,7 +75,7 @@ require('./backend/functionList.php');
     <div class="content">
         <h3>Minha Conta</h3>
         <div class="divForm">
-            <form id="form" action="./backend/functionAtualizar.php" method="POST" class="">
+            <form id="form" action="./backend/functionAtualizar.php" method="POST">
                 <div class="form-group">
                     <div class="row">
                         <h6 class="heading-small text-muted mb-4">Informações do usuário</h6>
@@ -191,7 +191,7 @@ require('./backend/functionList.php');
                             <input type="hidden" id="senha_oculto" name="senha_oculto" value="">
                         </div>
                         <div class="align-items-center d-flex flex-column" style="padding-top: 3%;">
-                            <button type="button" id="btnAtualizar" class="btn btn-primary btn-lg" onclick="atualizarInfo('btnAtualizar');" disabled>Atualizar
+                            <button type="submit" id="btnAtualizar" class="btn btn-primary btn-lg" onclick="" disabled>Atualizar
                                 informações</button>
                         </div>
                     </div>
