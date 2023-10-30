@@ -36,7 +36,7 @@
             </a>
         </li>
         <li>
-            <a href="editar.php">
+            <a href="editar.">
                 <i class="glyphicon glyphicon-send"></i>
                 Editar Informações
             </a>
