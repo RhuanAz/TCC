@@ -1,6 +1,6 @@
 <?php
 require('./backend/verificaLogin.php');
-require('./backend/functionList.php');
+require('./backend/functionUser.php');
 ?>
 
 <!DOCTYPE html>
