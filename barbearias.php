@@ -1,5 +1,6 @@
 <?php
-    require ('./backend/verificaLogin.php');
+require('./backend/verificaLogin.php');
+require('./backend/functionListarBarber.php');
 ?>
 
 <!DOCTYPE html>
@@ -9,8 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbearias | Ouro Branco</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/barbearias.css">
 </head>
@@ -19,12 +19,10 @@
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid nav-container">
-            <a class="navbar-brand mb-0 h1" href="barbearias.php">Barber Connect</a>
+            <a class="navbar-brand mb-0 h1" href="/barbearias.php">Barber Connect</a>
 
             <!--Botão da navbar para telas pequenas-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -40,10 +38,9 @@
 
 
                 <li class="nav-item dropdown d-flex">
-                    <a class="nav-link dropdown-toggle" id="user" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false" style=" font-weight: bold !important;">
+                    <a class="nav-link dropdown-toggle" id="user" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style=" font-weight: bold !important;">
                         <i class="bi-person-circle" style="padding-right: 5% !important;"></i>
-                        Olá, <?php echo $_SESSION['nome']?>
+                        Olá, <?php echo $_SESSION['nome'] ?>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
@@ -87,12 +84,9 @@
         <!--Botões dos filtros-->
         <div class="filtros">
             <div class="btnFiltros">
-                <button class="btn btn-primary">Ordenar <i class="bi-chevron-down"
-                        style="padding-top: 10px !important;"></i></button>
-                <button class="btn btn-primary">Distância <i class="bi-chevron-down"
-                        style="padding-top: 10px !important;"></i></button>
-                <button class="btn btn-primary">Filtrar<i class="bi bi-filter"
-                        style="padding-left: 4px !important;"></i></button>
+                <button class="btn btn-primary">Ordenar <i class="bi-chevron-down" style="padding-top: 10px !important;"></i></button>
+                <button class="btn btn-primary">Distância <i class="bi-chevron-down" style="padding-top: 10px !important;"></i></button>
+                <button class="btn btn-primary">Filtrar<i class="bi bi-filter" style="padding-left: 4px !important;"></i></button>
                 <button class="btn btn-primary">Limpar</button>
             </div>
         </div>
@@ -100,16 +94,19 @@
         <div class="barbearias">
             <h3>Barbearias</h3>
             <div class="barber">
-                <div class="barberItem" onclick="redirecionarPagina()">
-                    <img src="assets/img/Barbers/barberLogo.jpg" alt="">
-                    <div class="barberText">
-                        <span class="barberName">Zeppelin Barber Shop </span>
-                        <div class="barberInfo">
-                            <span class="avaliacao"><i class="bi bi-star-fill"></i> 5,0</span>
-                            <span class="distancia">• 2,0 km </span>
+                <?php while ($dado = $result->fetch_array()) { ?>
+                    <div class="barberItem" onclick="redirecionarPagina()">
+                        <img src="assets/img/Barbers/barberLogo.jpg" alt="">
+                        <div class="barberText">
+                            <span class="barberName"><?php echo $dado['nome_fantasia'];?></span>
+                            <div class="barberInfo">
+                                <span class="avaliacao"><i class="bi bi-star-fill"></i> 5,0</span>
+                                <span class="distancia">• 2,0 km </span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
+                <!--
                 <div class="barberItem" onclick="">
                     <img src="assets/img/Barbers/barberLogo.jpg" alt="">
                     <div class="barberText">
@@ -120,17 +117,16 @@
                         </div>
                     </div>
                 </div>
+                -->
             </div>
         </div>
 
     </div>
-  
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="assets/js/barbearias.js"></script>
 </body>
