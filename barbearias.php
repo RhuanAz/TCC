@@ -95,7 +95,7 @@ require('./backend/functionListarBarber.php');
             <h3>Barbearias</h3>
             <div class="barber">
                 <?php while ($dado = $result->fetch_array()) { ?>
-                    <div class="barberItem" onclick="redirecionarPagina()">
+                    <div class="barberItem" onclick="redirecionarPagina('telaBarber')">
                         <img src="assets/img/Barbers/barberLogo.jpg" alt="">
                         <div class="barberText">
                             <span class="barberName"><?php echo $dado['nome_fantasia'];?></span>

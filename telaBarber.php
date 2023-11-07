@@ -1,5 +1,5 @@
 <?php
-    require ('./backend/verificaLogin.php');
+require('./backend/verificaLogin.php');
 ?>
 
 <!DOCTYPE html>
@@ -82,11 +82,11 @@
             <div class="barberText">
                 <span class="infos">
                     <span class="barberName">Zeppelin Barber Shop</span>
-                    <span class="sideInfo" >
+                    <span class="sideInfo">
                         <span class="avaliacao"><i class="bi bi-star-fill"></i> 5,0</span>
                         <span class="distancia">• 2,0 km </span>
                     </span>
-                    <span class="rightInfo" >
+                    <span class="rightInfo">
                         <span><a href="">Informações</a></span>
                         <span><button class="btn btn-primary">Aberto<i class="bi-chevron-down"></i></button></span>
                     </span>
@@ -102,21 +102,17 @@
 
         <div class="minBarber">
             <h3>Cortes de cabelo</h3>
-            <div class="barberItem" onclick="redirecionarPagina()">
+            <div class="barberItem" onclick="redirecionarPagina('')">
                 <span class="itemName">Corte Estudante</span>
                 <div class="description">
                     <span class="itemDescription">Corte simples com degradê.</span>
                     <span class="price">R$ 20,00</span>
                     <img src="" alt="">
                 </div>
-
             </div>
 
         </div>
     </div>
-
-
-
 
 
 
