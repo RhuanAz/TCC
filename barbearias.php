@@ -1,6 +1,10 @@
 <?php
 require('./backend/verificaLogin.php');
-require('./backend/functionListarBarber.php');
+require('./backend/conexao.php');
+
+//Buscar as barbearias para exibi-las no "barbearias.php"
+$sql = "SELECT * FROM barbearia";
+$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +99,7 @@ require('./backend/functionListarBarber.php');
             <h3>Barbearias</h3>
             <div class="barber">
                 <?php while ($dado = $result->fetch_array()) { ?>
-                    <div class="barberItem" onclick="redirecionarPagina('telaBarber')">
+                    <div class="barberItem" onclick="redirecionarPagina(<?php echo $dado['id_barbearia'];?>, 'telaBarber.php')">
                         <img src="assets/img/Barbers/barberLogo.jpg" alt="">
                         <div class="barberText">
                             <span class="barberName"><?php echo $dado['nome_fantasia'];?></span>
@@ -127,7 +131,6 @@ require('./backend/functionListarBarber.php');
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="assets/js/barbearias.js"></script>
 </body>
 

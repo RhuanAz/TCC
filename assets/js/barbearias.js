@@ -1,3 +1,3 @@
-function redirecionarPagina(destino) {
-    window.location.href = destino;
+function redirecionarPagina(id, destino) {
+    window.location.href = destino + "?id=" + id;
 }

@@ -1,5 +1,7 @@
 <?php
 require('./backend/verificaLogin.php');
+require('./backend/functionBuscarBarber.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +83,9 @@ require('./backend/verificaLogin.php');
             <img src="assets/img/Barbers/barberLogo.jpg" alt="">
             <div class="barberText">
                 <span class="infos">
-                    <span class="barberName">Zeppelin Barber Shop</span>
+                    <span class="barberName">
+                        <?php echo $dados['nome_fantasia']; ?>
+                    </span>
                     <span class="sideInfo">
                         <span class="avaliacao"><i class="bi bi-star-fill"></i> 5,0</span>
                         <span class="distancia">• 2,0 km </span>
@@ -100,17 +104,31 @@ require('./backend/verificaLogin.php');
             </div>
         </div>
 
-        <div class="minBarber">
-            <h3>Cortes de cabelo</h3>
-            <div class="barberItem" onclick="redirecionarPagina('')">
-                <span class="itemName">Corte Estudante</span>
-                <div class="description">
-                    <span class="itemDescription">Corte simples com degradê.</span>
-                    <span class="price">R$ 20,00</span>
-                    <img src="" alt="">
-                </div>
-            </div>
+        <!--Buscar os cortes da barbearia-->
+        <?php
+        //Consulta dos cortes da barbearia    
+        $sql = "SELECT * FROM item WHERE id_barbearia = '" . $id_barbearia . "'";
+        $resultItem = $conn->query($sql);
 
+        //Consulta das categorias dos itens de uma barbearia
+        $sql = "SELECT * FROM categoria WHERE id_barbearia = '" . $id_barbearia . "' ORDER BY nome_categoria";
+        $resultCategoria = $conn->query($sql);
+        ?>
+
+        <div class="minBarber">
+            <?php while ($categoria = $resultCategoria->fetch_array()){ ?>
+                <h3><?php echo $categoria['nome_categoria'];?></h3>
+                <?php while ($item = $resultItem->fetch_array()){ ?>
+                <div class="barberItem" onclick="redirecionarPagina('')">
+                    <span class="itemName">Corte Estudante</span>
+                    <div class="description">
+                        <span class="itemDescription">Corte simples com degradê.</span>
+                        <span class="price">R$ 20,00</span>
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <?php } ?>
+            <?php } ?>
         </div>
     </div>
 
