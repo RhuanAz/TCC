@@ -1,3 +1,24 @@
+body{
+    padding-top: 3% !important;
+}
+
+h3{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.navbar-fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Adiciona sombra quando a barra de navegação está fixa */
+.navbar-fixed.navbar-scrolled {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .nav-container {
     font-weight: 20px;
     padding-left: 10% !important;
@@ -24,10 +45,6 @@
     border: solid 1px;
 }
 
-h3{
-    padding-bottom: 20px;
-}
-
 .coverImg {
     display: flex;
     justify-content: center;
@@ -40,7 +57,6 @@ h3{
 .images {
     padding-bottom: 6% !important;
 }
-
 
 .filtros button {
     align-items: center !important;

@@ -15,11 +15,12 @@ require('./backend/functionBuscarBarber.php');
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/telaBarber.css">
+
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light navbar-fixed">
         <div class="container-fluid nav-container">
             <a class="navbar-brand mb-0 h1" href="#">Barber Connect</a>
 
@@ -106,8 +107,8 @@ require('./backend/functionBuscarBarber.php');
 
         <!--Buscar os cortes da barbearia-->
         <?php
-        //Consulta dos cortes da barbearia    
-        $sql = "SELECT * FROM item WHERE id_barbearia = '" . $id_barbearia . "'";
+        //Consulta dos cortes/itens da barbearia    
+        $sql = "SELECT * FROM item WHERE id_barbearia = '" . $id_barbearia . "' ORDER BY valor";
         $resultItem = $conn->query($sql);
 
         //Consulta das categorias dos itens de uma barbearia
@@ -116,17 +117,27 @@ require('./backend/functionBuscarBarber.php');
         ?>
 
         <div class="minBarber">
-            <?php while ($categoria = $resultCategoria->fetch_array()){ ?>
-                <h3><?php echo $categoria['nome_categoria'];?></h3>
-                <?php while ($item = $resultItem->fetch_array()){ ?>
-                <div class="barberItem" onclick="redirecionarPagina('')">
-                    <span class="itemName">Corte Estudante</span>
-                    <div class="description">
-                        <span class="itemDescription">Corte simples com degradê.</span>
-                        <span class="price">R$ 20,00</span>
-                        <img src="" alt="">
+            <?php while ($categoria = $resultCategoria->fetch_array())
+            { ?>
+                <h3>
+                    <?php echo $categoria['nome_categoria']; ?>
+                </h3>
+                <?php while ($item = $resultItem->fetch_array())
+                { ?>
+                    <div class="barberItem" onclick="redirecionarPagina('')">
+                        <span class="itemName">
+                            <?php echo $item['nome_item']; ?>
+                        </span>
+                        <div class="description">
+                            <span class="itemDescription">
+                                <?php echo $item['descricao']; ?>
+                            </span>
+                            <span class="price">R$
+                                <?php echo $item['valor']; ?>
+                            </span>
+                            <img src="" alt="">
+                        </div>
                     </div>
-                </div>
                 <?php } ?>
             <?php } ?>
         </div>
