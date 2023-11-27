@@ -16,10 +16,31 @@
 </head>
 
 <body>
+
     <div class="content">
         <span class="text">Finalizar agendamento em:</span>
+        <h1>Selecione uma data (domingos bloqueados):</h1>
+
+        <form>
+            <label for="dataSelecionada">Data:</label>
+            <input type="date" id="dataSelecionada" name="dataSelecionada" min="2023-01-01" max="2023-12-31">
+        </form>
     </div>
 
+    <script>
+        // Aguarde até que o DOM esteja completamente carregado
+        document.addEventListener('DOMContentLoaded', function () {
+            // Bloqueando todos os domingos
+            document.getElementById('dataSelecionada').addEventListener('input', function () {
+                var dataSelecionada = new Date(this.value);
+                console.log(dataSelecionada.getDay());
+                if (dataSelecionada.getDay() === 6) { // 0 representa domingo
+                   
+                    this.value = ''; // Limpar o campo de data
+                }
+            });
+        });
+    </script>
 
 </body>
 
