@@ -1,17 +1,48 @@
-.text{
-    font-size: 24px;
-    font-weight: 700;
-    position: relative;
-    margin-right: 70%;
-}
-
-.barberName{
-    
-}
-
 .content {
     margin-top: 2%;
     margin-left: 10%;
     margin-right: 10%;
     border: solid 1px;
 }
+
+.title {
+    max-width: 350px;
+    word-wrap: break-word;
+}
+
+.barberText{
+    position: relative;
+    
+}
+
+.barberName {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    top: -19px;
+    padding-left: 1%;
+}
+
+.text {
+    font-size: 24px;
+    font-weight: 700;
+    position: relative;
+    margin-right: 70%;
+}
+
+.pedido {
+    padding-top: 1%;
+    font-weight: 400 !important;
+}
+
+h3 {
+    font-size: 210 !important;
+    font-weight: 700 !important;
+    padding-bottom: 15px;
+    line-height: 1.4 !important;
+}
+
+hr{
+    width: 30%
+}
+

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zeppelin Barber Shop</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -15,10 +15,27 @@
 <body>
 
     <div class="content">
-        <span class="text">Finalizar agendamento em:</span>
-        <form>
-            <input id="datetimepicker" class="form-control" type="text" placeholder="Select DateTime">
-        </form>
+        <div class="title">
+            <h3>Finalizar agendamento em:</h3>
+        </div>
+        <div class="barberText">
+            <img src="assets/img/Barbers/barberLogo.jpg" alt="logo">
+            <span class="infos">
+                <span class="barberName">Zeppelin Barbershop</span>
+            </span>
+        </div>
+        <div class="pedido">
+            <span>Pedido escolhido:</span>
+            <span style="color: blue;">Corte Estudante</span>
+        </div>
+        <hr>
+
+        <div class="horarios">
+            <div class="calendario">
+                <span class="data">Datas disponíveis</span>
+                <input id="datetime" class="form-control" type="text" placeholder="Selecione uma data">
+            </div>
+        </div>
     </div>
 
 
@@ -32,12 +49,15 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
 
     <script>
-        flatpickr("#datetimepicker", {
+        flatpickr("#datetime", {
             dateFormat: "d-m-Y",
             minDate: "today",
-            locale: "pt", // Definir o idioma como pt-BR
+            maxDate: "15.12.2023",
+            locale: "pt",
         });
     </script>
+
+    <script src="assets/js/telaFinalizar.js"></script>
 </body>
 
 </html>
