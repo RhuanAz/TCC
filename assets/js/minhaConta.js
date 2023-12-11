@@ -1,78 +1,38 @@
 //VERIFICAR SE O DADO JÁ ESTÁ NO BD
 $(document).ready(function () {
-    //Executar quando o campo "CPF" perde o foco
+    // Função genérica para verificar dados
+    function verificarDado(metodo, campoId, indexInput, indexSpan) {
+	var valor = $(campoId).val();
+        var tela = "minhaConta";
+
+        // Criando objeto para enviar para o "verificaDado.php"
+        var parametros = {
+            'metodo': metodo,
+            'column': valor,
+            'tela': tela
+        };
+
+        // Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
+        $.post('backend/verificaDado.php', parametros, function (data) {
+            console.log(data);
+            if (data == "true") {
+                setError(indexInput, indexSpan);
+            } else {
+                removeError(indexInput, indexSpan);
+            }
+        });
+    }
+
+    // Executar quando o campo "CPF" perde o foco
     $("#cpf").blur(function () {
-        //Criando objeto para enviar para o "verificaDado.php"
-        var metodo = "verifCPF";
-        var cpf = $("#cpf").val();
-        var tela = "minhaConta";
+        verificarDado("cpf", "#cpf", 3, 1);
+    });
 
-        var parametros = {
-            'metodo': metodo,
-            'column': cpf,
-            'tela': tela
-        };
-
-        //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
-        $.post('backend/verificaDado.php', parametros, function (data) {
-            console.log(data);
-            if (data == "true") {
-                setError(3, 1);
-            } else {
-                removeError(3, 1);
-            }
-        })
-    })
-
-    //Executar quando o campo "Email" perde o foco
-    $("#email").blur(function () {
-        //Criando objeto para enviar para o "verificaDado.php"
-        var metodo = "verifEmail";
-        var email = $("#email").val();
-        var tela = "minhaConta";
-
-        var parametros = {
-            'metodo': metodo,
-            'column': email,
-            'tela': tela
-        };
-
-        //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
-        $.post('backend/verificaDado.php', parametros, function (data) {
-            console.log(data);
-            if (data == "true") {
-                setError(10, 3);
-            } else {
-                removeError(10, 3);
-            }
-        })
-    })
-
-    //Executar quando o campo "Telefone" perde o foco
+    // Executar quando o campo "Telefone" perde o foco
     $("#telefone").blur(function () {
-        //Criando objeto para enviar para o "verificaDado.php"
-        var metodo = "verifTelefone";
-        var email = $("#telefone").val();
-        var tela = "minhaConta";
-
-        var parametros = {
-            'metodo': metodo,
-            'column': email,
-            'tela': tela
-        };
-
-        //Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
-        $.post('backend/verificaDado.php', parametros, function (data) {
-            console.log(data);
-            if (data == "true") {
-                setError(2, 0);
-            } else {
-                removeError(2, 0);
-            }
-        })
-    })
-
-})
+        verificarDado("telefone", "#telefone", 2, 0);
+    });
+});
 
 
 //--Add erro nas imputs
@@ -94,7 +54,7 @@ function statusInput(botao) {
         elementos.push('senhaAntiga', 'senhaNova');
         btnSenha.disabled = !btnSenha.disabled;
     } else {
-        elementos.push('nome', 'sobrenome', 'sexo', 'telefone', 'cep', 'rua', 'num', 'bairro', 'cpf');
+        elementos.push('nome', 'sobrenome', 'sexo', 'telefone', 'cep', 'num', 'cpf');
         btnEditar.disabled = !btnEditar.disabled;
     }
 
