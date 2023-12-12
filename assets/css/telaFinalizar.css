@@ -35,6 +35,10 @@
     font-weight: 400 !important;
 }
 
+.horarios{
+    max-width: 800px;
+}
+
 h3 {
     font-size: 210 !important;
     font-weight: 700 !important;
