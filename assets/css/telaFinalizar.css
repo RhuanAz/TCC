@@ -204,7 +204,7 @@ input:focus {
 
 button:hover {
     cursor: pointer;
-    background-color: #0a2850;
+    background-color: #0a2850 !important;
     transition: 0.6s;
 }
 
@@ -224,7 +224,9 @@ button:active {
 }
 
 .delivery .card {
-    padding: 10px 5px
+    margin-left: 8px;
+    padding: 10px 5px;
+    border: solid 1px;
 }
 
 .option {
