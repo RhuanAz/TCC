@@ -39,7 +39,7 @@
                                 
                                 <div class="col-md-6">
                                     <label for="cnpj" class="form-label">CNPJ:</label>
-                                    <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="Apenas números" required>
+                                    <input type="text" class="form-control" id="cnpj" maxlength="18" name="cnpj" placeholder="Apenas números" required>
                                     <span class="span-required">CNPJ em uso!</span>
                                 </div>
                                 <div class="col-md-6">

@@ -174,22 +174,26 @@ function pesquisacep(valor) {
 };
 //------
 
-//Formatar CPF
-document.getElementById('cpf').addEventListener('input', function (e) {
-    // Remove caracteres não numéricos do valor atual do campo CPF
-    var cpf = e.target.value.replace(/\D/g, '');
+document.getElementById('cnpj').addEventListener('input', function () {
+    // Remove caracteres não numéricos
+    let cnpj = this.value.replace(/\D/g, '');
 
-    // Verifica se o CPF possui pelo menos 11 dígitos
-    if (cpf.length >= 11) {
-        // Formata o CPF no formato XXX.XXX.XXX-XX
-        cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-
-        // Define o valor formatado de volta no campo de entrada
-        e.target.value = cpf;
-
+    // Formatação do CNPJ (XX.XXX.XXX/YYYY-ZZ)
+    if (cnpj.length <= 2) {
+        cnpj = cnpj.replace(/(\d{2})/, '$1');
+    } else if (cnpj.length <= 5) {
+        cnpj = cnpj.replace(/(\d{2})(\d{3})/, '$1.$2');
+    } else if (cnpj.length <= 8) {
+        cnpj = cnpj.replace(/(\d{2})(\d{3})(\d{3})/, '$1.$2.$3');
+    } else if (cnpj.length <= 12) {
+        cnpj = cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})/, '$1.$2.$3/$4');
+    } else {
+        cnpj = cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
     }
-});
 
+    // Atualiza o valor do input com o CNPJ formatado
+    this.value = cnpj;
+});
 
 //Formatar CEP
 function formatarCEP(cepInput) {
