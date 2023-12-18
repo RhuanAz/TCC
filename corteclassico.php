@@ -8,13 +8,15 @@
 
     <title>Barra de tarefas</title>
 
+  
+</html>
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="../TCC/assets/css/style4.css">
+
     <style>
-        #popUp,
-        #salvar {
+        #botao {
             background-color: #D21742;
             border: none;
             color: white;
@@ -26,25 +28,6 @@
             margin: 10px;
             cursor: pointer;
             border-radius: 5px;
-        }
-
-        .popup button {
-            background-color: #D21742;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .img {
-            width: 300px;
-            height: auto;
         }
     </style>
 
@@ -52,10 +35,12 @@
 
 <body>
     <div class="wrapper">
+        <!-- Sidebar Holder -->
         <?php
         //INCLUSÃO DO MENU
         include_once('menu.php');
         ?>
+
         <!-- Page Content Holder -->
         <div id="content">
 
@@ -70,79 +55,109 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
+                    <ul class="nav navbar-nav navbar-right">
+                    </ul>
                 </div>
             </div>
             </nav>
-            <br><br>
+            <h1>Cortes / Serviços oferecidos pelo estabelecimento</h1>
+            <button onclick="adicionarCategoria()">+ Adicionar categoria</button>
+            <div id="caixaCategoria" class="hidden">
 
-
-            <button id="popUp" onclick="abrirPopup()">+ Adicionar categoria</button>
-
-
-            <h1>Corte clássico</h1>
-            <p>Imagem:</p>
-            <img src="../TCC/assets/img/classiccorte.webp" alt="" class="img">
-            <style>
-            </style>
-            <h3>Preço: R$30,00</h3>
-
-        </div>
-    </div>
-    <script>
-        function abrirPopup() {
-            // Calcula a largura e a altura da janela pop-up
-            var largura = 300;
-            var altura = 200;
-
-            // Calcula a posição central com base nas dimensões da tela do usuário
-            var esquerda = (window.innerWidth - largura) / 2;
-            var topo = (window.innerHeight - altura) / 2;
-
-            // Cria uma nova janela pop-up centralizada
-            var popup = window.open('', '_blank', 'width=' + largura + ',height=' + altura + ',left=' + esquerda + ',top=' + topo);
-
-            // Conteúdo HTML para a pop-up (um campo de texto e um botão)
-            var popupContent = `
-            <style>
-            #salvar {
-            background-color: #D21742;
-            border: none;
-            color: white;
-            padding: 5px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-            </style>
-            <div style="text-align: center;">
-                <input type="text" id="textoInput" placeholder="Digite seu texto aqui" style="margin-bottom: 10px;">
-                <br>
-                <button id="salvar" onclick="salvarTexto()">Salvar</button>
+                <input type="text" placeholder="Nome da categoria">
+                <button>Adicionar categoria</button>
             </div>
-            <div id="textoSalvo" style="margin-top: 10px;"></div>
-        `;
+            <br><br>
+            <button id="btnAdicionar" onclick="abrirCaixa()">+ Adicionar item</button>
 
-            // Define o conteúdo da pop-up
-            popup.document.body.innerHTML = popupContent;
+            <div id="caixaInputs" class="hidden">
+                <select class="form-select" placeholder="Categoria">
+                    <option value="corte">Corte</option>
+                    <option value="barba">Barba</option>
+                </select>
+                <input type="text" placeholder="Nome do item">
+            </div>
+            <br>
 
-            // Adiciona a função salvarTexto à janela pop-up
-            popup.salvarTexto = function() {
-                // Obtém o valor do campo de texto na pop-up
-                var texto = popup.document.getElementById('textoInput').value;
+            <br>
+            <input type="file" id="botao">
 
-                // Exibe o texto na pop-up
-                var textoSalvoDiv = popup.document.getElementById('textoSalvo');
-                textoSalvoDiv.textContent = 'Texto Salvo: ' + texto;
-            };
-        }
-    </script>
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <br>
+                    <th>Preço</th>
+                    <br>
+                    <th>Disponibilidade</th>
+                </tr>
+                <tr>
+                    <td>Corte Freestyle</td>
+                    <td>R$25,00</td>
+                    <td><input type="radio" id="disponivel" name="disponibilidade" value="disponivel">
+                        <label for="disponivel">Disponível</label><br>
+                        <input type="radio" id="indisponivel" name="disponibilidade" value="indisponivel">
+                        <label for="indisponivel">Indisponível</label><br>
+                    </td>
+                </tr>
+                <!-- Adicione mais linhas conforme necessário -->
+            </table>
 
-    <!-- jQuery CDN -->
+            <script>
+                function abrirCaixa() {
+                    var caixaInputs = document.getElementById('caixaInputs');
+                    caixaInputs.classList.toggle('hidden');
+                }
+
+                function AdicionarItem(item, categoria) {
+                    // Cria um novo item
+                    var novoItem = {
+                        item: item,
+                        categoria: categoria
+                    };
+
+                    // Verifica se a categoria já existe
+                    if (this.hasOwnProperty(categoria)) {
+                        // Se a categoria existir, adiciona o item à categoria
+                        this[categoria].push(novoItem);
+                    } else {
+                        // Se a categoria não existir, cria uma nova categoria com o item
+                        this[categoria] = [novoItem];
+                    }
+                }
+
+
+                // Função para adicionar categoria
+                function adicionarCategoria() {
+                    var caixaInputs = document.getElementById('caixaCategoria');
+                    caixaInputs.classList.toggle('hidden');
+
+                    let btn = document.createElement("button");
+                    btn.textContent = "Adicionar Categoria";
+                    btn.id = "btnAdicionar";
+
+                    // Adicionar o campo de texto e o botão ao body
+                    document.body.appendChild(input);
+                    document.body.appendChild(btn);
+
+                    // Evento para o botão de adicionar categoria
+                    document.getElementById("btnAdicionar").addEventListener("click", function() {
+                        // Pegar o valor do campo de texto
+                        nomeCategoria = document.getElementById("categoriaInput").value;
+
+                        // Criar um novo elemento h2 para adicionar a categoria à página web
+                        let h2 = document.createElement("h2");
+                        h2.textContent = nomeCategoria;
+
+                        // Adicionar o novo elemento h2 ao body
+                        document.body.appendChild(h2);
+
+                        // Remover o campo de texto e o botão da página web
+                        document.getElementById("categoriaInput").remove();
+                        document.getElementById("btnAdicionar").remove();
+                    });
+                }
+            </script>
+             <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -154,6 +169,10 @@
             });
         });
     </script>
+</body>
+
+</html>
+
 </body>
 
 </html>

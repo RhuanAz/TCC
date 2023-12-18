@@ -37,7 +37,66 @@
             </div>
             </nav>
 
-            
+            <style>
+                body {
+                    background-color: white;
+                }
+
+                h1 {
+                    color: black;
+                }
+
+                table,
+                th,
+                td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+
+                th,
+                td {
+                    padding: 15px;
+                }
+
+                #button {
+                    background-color: red;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                }
+            </style>
+            <h1>Avaliações</h1>
+
+            <div id="filter">
+                <label for="rating">Nota:</label>
+                <input type="number" id="rating" name="rating" min="1" max="5">
+                <label for="start">De:</label>
+                <input type="date" id="start" name="start">
+                <label for="end">Até:</label>
+                <input type="date" id="end" name="end">
+                <button id="button">Filtrar</button>
+            </div>
+
+            <select name="sort" id="sort">
+                <option value="">Ordenar</option>
+                <option value="date">Data</option>
+                <option value="rating">Nota</option>
+            </select>
+
+            <div id="reviews">
+                <!-- Reviews will be dynamically inserted here -->
+            </div>
+
+            <script>
+                // This is where you would add your JavaScript to make the page functional
+                // For example, you could add an event listener to the "Filtrar" button that fetches data from a server and updates the "reviews" div
+            </script>
+
             </head>
 
             <body>
@@ -51,7 +110,7 @@
 
                     </div>
                 </div>
-               
+
                 <div class="line"></div>
         </div>
     </div>

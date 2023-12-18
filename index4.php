@@ -60,10 +60,7 @@
 
             <p>Preço: R$25,00</p>
 
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Disponibilidade</label>
-            </div>
+            
             <div class="line"></div>
         </div>
     </div>
@@ -72,18 +69,7 @@
 
 
 
-    <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <!-- Bootstrap Js CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#sidebarCollapse').on('click', function() {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-    </script>
+  
 </body>
 
 </html>

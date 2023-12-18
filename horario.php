@@ -1,5 +1,14 @@
+<?php
+require('./backend/conexao.php');
+
+//Buscar as barbearias para exibi-las no horario tabela 
+$sql = "SELECT * FROM horario";
+$result = $conn->query($sql);
+?>
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -15,6 +24,7 @@
 </head>
 
 <body>
+
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <?php
@@ -24,10 +34,7 @@
 
         <!-- Page Content Holder -->
         <div id="content">
-
-
             <div class="container-fluid">
-
                 <div class="navbar-header">
                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
                         <i class="glyphicon glyphicon-align-left"></i>
@@ -36,7 +43,6 @@
                 </div>
             </div>
             </nav>
-
             <style>
                 #botao1,
                 #botao2 {
@@ -61,6 +67,7 @@
                     /* Cursor de não permitido quando desativado */
                 }
             </style>
+
             </head>
 
             <body>
@@ -78,13 +85,98 @@
                         <button id="botao1" onclick="selecionarBotao(1)">Aberto</button>
 
                         <button id="botao2" onclick="selecionarBotao(2)">Fechado</button>
+                        <br>
+<br><br><br>
 
 
 
+
+                        <!--Div teste horário-->
+                        <div>
+                            <form action="testehorario.php" method="post">
+
+                                <h4>Terça-feira</h4>
+                                <label for="appt">Manhã:</label>
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt"
+                                    name="segmanhafim">
+                                <input type="submit" value="Enviar horário">
+
+                                <h4>Quarta-feira</h4>
+                                <label for="appt">Manhã:</label>
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt"
+                                    name="segmanhafim">
+                                <input type="submit" value="Enviar horário">
+
+                                <h4>Quinta-feira</h4>
+                                <label for="appt">Manhã:</label>
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt"
+                                    name="segmanhafim">
+                                <input type="submit" value="Enviar horário">
+
+                                <h4>Sexta-feira</h4>
+                                <label for="appt">Manhã:</label>
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt"
+                                    name="segmanhafim">
+                                <input type="submit" value="Enviar horário">
+
+                                <h4>Sábado-feira</h4>
+                                <label for="appt">Manhã:</label>
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt"
+                                    name="segmanhafim">
+                                <input type="submit" value="Enviar horário">
+                                
+                            </form>
+
+                        </div>
+
+
+
+
+
+
+<br><br><br><br><br><br>
+                        <?php
+                        // Supondo que a conexão já foi estabelecida e armazenada na variável $conn
+                        
+                        $sql = "SELECT id, dia_da_semana, manha, tarde, noite FROM horario"; // Substitua por sua consulta SQL
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            echo "<table><tr><th>ID</th><th>Dia da Semana</th></tr><th>Manhã</th><th>Tarde</th><th>Noite</th>";
+
+                            // Saída de cada linha
+                        
+                            while ($row = $result->fetch_assoc()) {
+                                ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $row["id"] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row["dia_da_semana"] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row["manha"] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row["tarde"] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row["noite"] ?>
+                                    </td>
+                                    <td><a href="editarHorario.php?id=<?php echo $row['id'] ?>">Editar</a></td>
+                                </tr>
+
+                                <?php
+                            }
+                            echo "</table>";
+                        } else {
+                            echo "0 resultados";
+                        }
+                        ?>
 
                     </div>
                 </div>
-
                 <script>
                     function selecionarBotao(botaoSelecionado) {
                         if (botaoSelecionado === 1) {
@@ -100,18 +192,14 @@
         </div>
     </div>
 
-
-
-
-
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#sidebarCollapse').on('click', function() {
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });
         });
