@@ -7,8 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $metodo = $_POST['metodo'];
     $column = $_POST['column'];
     $tela = $_POST['tela'];
+    $table = $_POST['table'];
 
-    $sql = "SELECT * FROM cliente WHERE (" . $metodo . " = '" . $column . "')";
+    $sql = "SELECT * FROM $table WHERE (" . $metodo . " = '" . $column . "')";
 
     if ($tela === "minhaConta") {
         $id_user = $_SESSION['id'];

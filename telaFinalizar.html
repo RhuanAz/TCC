@@ -21,7 +21,7 @@
             </div>
         </nav>
         <div class="row px-md-4 px-2 pt-4">
-            <div class="col-lg-8">
+            <div class="col-lg-8" style="border:solid 1px;">
                 <p class="pb-2 fw-bold">Pedido</p>
                 <div class="card">
                     <div>
@@ -37,26 +37,14 @@
                                                         alt="">
                                                 </div>
                                                 <div class="ps-3 d-flex flex-column justify-content">
-                                                    <p class="fw-bold">Air<span class="ps-1">Red</span><span
-                                                            class="ps-1">Pants</span></p> <small class=" d-flex"> <span
-                                                            class=" text-muted">Color:</span> <span
-                                                            class=" fw-bold">Red/White</span> </small> <small class="">
-                                                        <span class=" text-muted">Size:</span> <span
-                                                            class=" fw-bold">L</span> </small>
+                                                    <p class="fw-bold">Corte Masculino</p>
+                                                    <span class="pt-1 text-muted">Cortes & Barba</span>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="d-flex">
-                                                <p class="pe-3"><span class="red">$45.00</span></p>
-                                                <p class="text-muted text-decoration-line-through">$55.00</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center"> <span
-                                                    class="pe-3 text-muted">Quantity</span> <span class="pe-3"> <input
-                                                        class="ps-2" type="number" value="2"></span>
-                                                <div class="round"> <span class=""> L </span> </div>
+                                                <p class="pe-3"><span class="red">R$ 25,00</span></p>
                                             </div>
                                         </td>
                                     </tr>
@@ -65,84 +53,52 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 payment-summary">
-                <p class="fw-bold pt-lg-0 pt-4 pb-2">Resumo do pagamento</p>
-                <div class="card px-md-3 px-2 pt-4">
-                    <div class="unregistered mb-4"> <span class="py-1">cupom de desconto</span> </div>
-
-                    <div class="d-flex justify-content-between b-bottom"> <input type="text" class="ps-2"
-                            placeholder="Digite o código do cupom">
-                        <div class="btn btn-primary">APLICAR</div>
+                <div class="col-lg-8 delivery px-md-3 px-1">
+                    <p class="pt-4 fw-bold ps-2">Data</p>
+                    <div class="d-md-flex justify-content-between align-items-center mt-4 pb-4">
+                        <input id="datetime" class="card" type="text" placeholder="Selecione uma data">
                     </div>
-                    <div class="d-flex flex-column b-bottom">
-                        <div class="d-flex justify-content-between py-3">
-                            <small class="text-muted">
-                                Valor do Pedido
-                            </small>
-                            <p>R$ 25,00</p>
-                        </div>
-                        <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Taxa de
-                                Serviço</small>
-                            <p>R$ 0,00</p>
-                        </div>
-                        <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Desconto</small>
-                            <p style="color: green;">R$ 2,00</p>
-                        </div>
-                        <div class="d-flex justify-content-between"> <small class="text-muted"
-                                style="font-weight: bold;">Valor Total</small>
-                            <p>R$ 23,00</p>
-                        </div>
+                    <div class="size d-flex pt-md-0 pt-3 ps-md-0 ps-4">
+                        
                     </div>
-                    <button class="btn sale my-3">Agendar</button>
-                    
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="payment-summary">
+                    <p class="fw-bold pt-lg-0 pt-4 pb-2">Resumo do pagamento</p>
+                    <div class="card px-md-3 px-2 pt-4">
+                        <div class="unregistered mb-4"> <span class="py-1">cupom de desconto</span> </div>
 
+                        <div class="d-flex justify-content-between b-bottom"> <input type="text" class="ps-2"
+                                placeholder="Digite o código do cupom">
+                            <div class="btn btn-primary">APLICAR</div>
+                        </div>
+                        <div class="d-flex flex-column b-bottom">
+                            <div class="d-flex justify-content-between py-3">
+                                <small class="text-muted">
+                                    Valor do Pedido
+                                </small>
+                                <p>R$ 25,00</p>
+                            </div>
+                            <div class="d-flex justify-content-between pb-3">
+                                <small class="text-muted">Taxa de Serviço</small>
+                                <p>R$ 0,00</p>
+                            </div>
+                            <div class="d-flex justify-content-between pb-3">
+                                <small class="text-muted">Desconto</small>
+                                <p style="color: green;">R$ 2,00</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted" style="font-weight: bold;">Valor Total</small>
+                                <p>R$ 23,00</p>
+                            </div>
+                        </div>
+                        <button class="btn sale my-3">Agendar</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-8 delivery px-md-3 px-1">
-                <p class="pt-4 fw-bold pb-3 ps-2">Delivery</p>
-                <div class="d-md-flex justify-content-between align-items-center pb-4">
-                    <input id="datetime" class="card" type="text" placeholder="Selecione uma data">
-                </div>
-                <div class="d-md-flex justify-content-between align-items-center pb-4">
-                    <div class="size d-flex ps-4"> <label class="option d-flex align-items-center"> <input type="radio"
-                                name="radio">
-                            <div class="card">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex align-items-center justify-content-center"> <img class="del"
-                                            src="https://www.freepnglogos.com/uploads/ups-logo-transparent/ups-airlines-aviation-22.png"
-                                            alt="">
-                                        <p class="ps-2">DPD</p>
-                                    </div>
-                                    <div class=" d-flex flex-column px-3">
-                                        <p class="fw-bold pb-1">DPD<span>Deliveries</span></p> <small
-                                            class="text-muted pb-1">Expected<span class="ps-1">delivery:</span></small>
-                                        <small class="text-muted pb-1">Friday:28</small>
-                                    </div>
-                                    <p class="fw-bold">$5.25</p>
-                                </div>
-                            </div> <span class="checkmark"></span>
-                        </label> </div>
-                    <div class="size d-flex pt-md-0 pt-3 ps-md-0 ps-4"> <label class="option d-flex align-items-center">
-                            <input type="radio" name="radio">
-                            <div class="card">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex align-items-center justify-content-center"> <img class="del"
-                                            src="https://www.freepnglogos.com/uploads/ups-logo-transparent/ups-airlines-aviation-22.png"
-                                            alt="">
-                                        <p class="ps-2">DPD</p>
-                                    </div>
-                                    <div class=" d-flex flex-column px-3">
-                                        <p class="fw-bold pb-1">DPD<span>Deliveries</span></p> <small
-                                            class="text-muted pb-1">Expected<span class="ps-1">delivery:</span></small>
-                                        <small class="text-muted pb-1">Friday:28</small>
-                                    </div>
-                                    <p class="fw-bold">$5.25</p>
-                                </div>
-                            </div> <span class="checkmark"></span>
-                        </label> </div>
-                </div>
-            </div>
+
+
 
         </div>
     </div>

@@ -4,12 +4,13 @@ $(document).ready(function () {
     function verificarDado(metodo, campoId, indexInput, indexSpan) {
         var valor = $(campoId).val();
         var tela = "cadastro";
-
+        var table = "cliente";
         // Criando objeto para enviar para o "verificaDado.php"
         var parametros = {
             'metodo': metodo,
             'column': valor,
-            'tela': tela
+            'tela': tela,
+            'table': table
         };
 
         // Solicitação POST AJAX para o arquivo 'verificaDado.php' passando o objeto "parametros"
@@ -173,26 +174,23 @@ function pesquisacep(valor) {
     }
 };
 //------
-
-document.getElementById('cnpj').addEventListener('input', function () {
+document.getElementById('cpf').addEventListener('input', function () {
     // Remove caracteres não numéricos
-    let cnpj = this.value.replace(/\D/g, '');
+    let cpf = this.value.replace(/\D/g, '');
 
-    // Formatação do CNPJ (XX.XXX.XXX/YYYY-ZZ)
-    if (cnpj.length <= 2) {
-        cnpj = cnpj.replace(/(\d{2})/, '$1');
-    } else if (cnpj.length <= 5) {
-        cnpj = cnpj.replace(/(\d{2})(\d{3})/, '$1.$2');
-    } else if (cnpj.length <= 8) {
-        cnpj = cnpj.replace(/(\d{2})(\d{3})(\d{3})/, '$1.$2.$3');
-    } else if (cnpj.length <= 12) {
-        cnpj = cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})/, '$1.$2.$3/$4');
+    // Formatação do CPF (XXX.XXX.XXX-YY)
+    if (cpf.length <= 3) {
+        cpf = cpf.replace(/(\d{3})/, '$1');
+    } else if (cpf.length <= 6) {
+        cpf = cpf.replace(/(\d{3})(\d{3})/, '$1.$2');
+    } else if (cpf.length <= 9) {
+        cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})/, '$1.$2.$3');
     } else {
-        cnpj = cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+        cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
     }
 
-    // Atualiza o valor do input com o CNPJ formatado
-    this.value = cnpj;
+    // Atualiza o valor do input com o CPF formatado
+    this.value = cpf;
 });
 
 //Formatar CEP

@@ -20,15 +20,15 @@
                 </div>
                 <div class="col-md-6">
                     <!--FORMULÁRIO-->
-                    <form id="form" action="./backend/functionCadastro.php" method="POST" class="row g-3 p-3 needs-validation">
-                        <h1>Cadastre-se</h1>
+                    <form id="form" action="./backend/functionCadastroParceiro.php" method="POST" class="row g-3 p-3 needs-validation">
+                        <h1>Cadastre-se dfads no Portal do Parceiro</h1>
 
                         <!--NOME Fantasia-->
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="nome" class="form-label">Nome Fantasia:</label>
-                                    <input type="text" class="form-control" id="nome" pattern="[^0-9]*" name="nome" placeholder="Barbearia" required>
+                                    <input type="text" class="form-control" id="nome" pattern="[^0-9]*" name="nome_fantasia" placeholder="Barbearia" required>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                                     <input type="hidden" id="rua_oculto" name="rua_oculto" value="">
                                 </div>
                                 <div class="col-md-2">
-                                    <label for="num" class="form-label">Nº/Apto:</label>
+                                    <label for="num" class="form-label">Nº:</label>
                                     <input type="text" class="form-control" id="num" name="num" placeholder="202-A" required>
                                 </div>
                             </div>
@@ -110,6 +110,6 @@
     </section>
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="assets/js/cadastro.js"></script>
+    <script src="assets/js/cadastroParceiro.js"></script>
 </body>
 </html>
