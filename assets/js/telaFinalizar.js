@@ -7,7 +7,7 @@ $(document).ready(function () {
     if (idItem) {
         // Faz uma requisição AJAX para o PHP
         $.ajax({
-            url: 'backend/functionGetDataHora.php', // Substitua pelo caminho correto do seu arquivo PHP
+            url: 'backend/functionGetData.php', // Substitua pelo caminho correto do seu arquivo PHP
             type: 'GET',
             data: { id: idItem }, // Passa o id como parâmetro
             dataType: 'json',
@@ -42,16 +42,22 @@ $(document).ready(function () {
 
                 console.log(diasVazios);
 
+                var dataAtual = new Date();
+                var dataLimite = new Date();
+                // Adiciona 2 meses à data atual
+                dataLimite.setMonth(dataAtual.getMonth() + 2);
+
                 flatpickr("#datetime", {
+                    locale: "pt", // Configuração de localização para português
+                    dateFormat: "d/m/Y", // Formato da data
                     disable: [
                         function(date) {
                             // retorna verdadeiro se o dia da semana estiver em diasVazios
                             return diasVazios.includes(date.getDay());
                         }
-                    ],
-                    dateFormat: "d/m/Y", // Formato da data
+                    ],                   
                     minDate: "today", // Data mínima é hoje
-                    locale: "pt", // Configuração de localização para português
+                    maxDate: dataLimite,                   
                 });
             },
             error: function (error) {
