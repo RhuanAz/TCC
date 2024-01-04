@@ -1,3 +1,10 @@
+<?php
+require('./backend/verificaLogin.php');
+require('./backend/conexao.php');
+require('./backend/functionFinalizar.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,16 +20,23 @@
     <link rel="stylesheet" href="assets/css/telaFinalizar.css">
 </head>
 
-<body className='snippet-body'>
-    <div class="container mt-4 p-0">
+<body>
+    <div class="content">
         <nav class="navbar navbar-expand-lg navbar-light bg-white pt-3 px-md-4 px-2">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Finalizar agendamento em:</a>
+            <div class="">
+                <h2>Finalizar Agendamento</h2>
             </div>
         </nav>
         <div class="row px-md-4 px-2 pt-4">
             <div class="col-lg-8">
-                <p class="pb-2 fw-bold">Pedido</p>
+                <p class="pb-2 fw-bold">Endereço</p>
+                <div class="adress b-bottom">
+                    <div class="adress_street">
+                        <span><?php echo $item['rua'] . ', ' . $item['numero']; ?></span>
+                    </div>
+                    <span class="adress_others"><?php echo $item['bairro'] . ' - ' . $item['cidade'] . '/', $item['uf']; ?></span>
+                </div>
+                <p class="pb-2 pt-2 fw-bold">Pedido</p>
                 <div class="card">
                     <div>
                         <div class="table-responsive px-md-4 px-2 pt-3">
@@ -32,13 +46,11 @@
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div>
-                                                    <img class="pic"
-                                                        src="https://images.pexels.com/photos/7322083/pexels-photo-7322083.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                                                        alt="">
+                                                    <img class="pic" src="https://images.pexels.com/photos/7322083/pexels-photo-7322083.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="">
                                                 </div>
                                                 <div class="ps-3 d-flex flex-column justify-content">
-                                                    <p class="fw-bold">Corte Masculino</p>
-                                                    <span class="pt-1 text-muted">Cortes & Barba</span>
+                                                    <p class="fw-bold"><?php echo $item['nome_item']; ?></p>
+                                                    <span class="pt-2 text-muted"><?php echo $item['nome_categoria']; ?></span>
                                                 </div>
                                             </div>
                                         </td>
@@ -53,27 +65,54 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 delivery px-md-3 px-1" style="border: solid 1px;">
-                    <p class="pt-4 fw-bold ps-2">Data</p>
-                    <div class="d-md-flex justify-content-between align-items-center mt-4 pb-4">
-                        <input id="datetime" class="card" type="text" placeholder="Selecione uma data">
+                <div class="row" style="border: solid 1px;">
+                    <div class="col-lg-6 delivery">
+                        <p class="pt-4 fw-bold">Data</p>
+                        <div class="d-md-flex justify-content-between align-items-center mt-4 pb-4">
+
+                            <input id="datetime" class="card" type="text" placeholder="Selecione uma data">
+                        </div>
+
                     </div>
-                    <div class="size d-flex pt-md-0 pt-3 ps-md-0 ps-4">
-                        
+                    <div class="col-lg-6 delivery" style="border: solid 1px;">
+                        <p class="pt-4 fw-bold">Horário</p>
+                        <div class="d-md-flex justify-content-between align-items-center mt-4 pb-4">
+                            <select class="card" name="horario">
+                                <option value="" disabled selected>Selecione o horário</option>
+                                <option value="maca">07:00</option>
+                                <option value="banana">07:30</option>
+                                <option value="laranja">08:00</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="col-lg-4">
                 <div class="payment-summary">
                     <p class="fw-bold pt-lg-0 pt-4 pb-2">Resumo do pagamento</p>
                     <div class="card px-md-3 px-2 pt-4">
-                        <div class="unregistered mb-4"> <span class="py-1">cupom de desconto</span> </div>
 
-                        <div class="d-flex justify-content-between b-bottom"> <input type="text" class="ps-2"
-                                placeholder="Digite o código do cupom">
-                            <div class="btn btn-primary">APLICAR</div>
+                        <div class="d-flex flex-column b-bottom">
+                            <span style="color: gray;">Seu agendamento em</span>
+                            <a href="telaBarber.php?id=<?php echo $item['id_barbearia']; ?>"><?php echo $item['nome_fantasia']; ?></a>
                         </div>
+
+                        <div class="pt-3">
+                            <div class="unregistered mb-4">
+                                <span class="py-1">cupom de desconto</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column b-bottom">
+                            <div class="d-flex justify-content-between">
+                                <input type="text" class="form-control ps-2" id="codigoCupom" placeholder="Digite o código do cupom">
+                                <div class="btn btn-primary" onclick="aplicarCupom()">
+                                    APLICAR
+                                </div>
+                            </div>
+                            <span id="mensagemErro" class="text-danger">Teste</span>
+                        </div>
+
                         <div class="d-flex flex-column b-bottom">
                             <div class="d-flex justify-content-between py-3">
                                 <small class="text-muted">
@@ -98,20 +137,15 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
-    <script src="/assets/js/telaFinalizar.js"></script>
-
+    <script src="assets/js/telaFinalizar.js"></script>
+    
 </body>
 
 </html>

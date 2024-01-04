@@ -99,10 +99,10 @@ $result = $conn->query($sql);
             <h3>Barbearias</h3>
             <div class="barber">
                 <?php while ($dado = $result->fetch_array()) { ?>
-                    <div class="barberItem" onclick="redirecionarPagina(<?php echo $dado['id_barbearia'];?>, 'telaBarber.php')">
+                    <div class="barberItem" onclick="redirecionarPagina(<?php echo $dado['id_barbearia']; ?>, 'telaBarber.php')">
                         <img src="assets/img/Barbers/barberLogo.jpg" alt="">
                         <div class="barberText">
-                            <span class="barberName"><?php echo $dado['nome_fantasia'];?></span>
+                            <span class="barberName"><?php echo $dado['nome_fantasia']; ?></span>
                             <div class="barberInfo">
                                 <span class="avaliacao"><i class="bi bi-star-fill"></i> 5,0</span>
                                 <span class="distancia">• 2,0 km </span>
@@ -110,23 +110,14 @@ $result = $conn->query($sql);
                         </div>
                     </div>
                 <?php } ?>
-                <!--
-                <div class="barberItem" onclick="">
-                    <img src="assets/img/Barbers/barberLogo.jpg" alt="">
-                    <div class="barberText">
-                        <span class="barberName">Zeppelin Barber Shop </span>
-                        <div class="barberInfo">
-                            <span class="avaliacao"><i class="bi bi-star-fill"></i> 5,0</span>
-                            <span class="distancia">• 2,0 km </span>
-                        </div>
-                    </div>
-                </div>
-                -->
+
             </div>
         </div>
 
     </div>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="assets/js/barbearias.js"></script>
 </body>

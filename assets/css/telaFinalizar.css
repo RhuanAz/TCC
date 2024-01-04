@@ -24,10 +24,18 @@
     list-style: none;
 }
 
-body {
-    line-height: 1rem;
-    font-size: 14px;
-    padding: 10px
+a {
+    padding-top: 4px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.content {
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .container {
@@ -131,9 +139,9 @@ small {
 }
 
 .pic {
-    width: 70px;
+    width: 90px;
     height: 90px;
-    border-radius: 5px
+    border-radius: 2px
 }
 
 td {
@@ -159,8 +167,12 @@ table input {
     border: 1px solid #eee
 }
 
+#codigoCupom{
+    border: 1px solid rgb(170, 170, 170) !important;
+}
+
 input:focus {
-    border: 1px solid #eee;
+    border: 1px solid #000000;
     outline: none
 }
 

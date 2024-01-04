@@ -92,8 +92,6 @@ function verifError() {
     return hasError;
 }
 
-
-
 //--BUSCAR CEP NA API--
 function limpa_formulário_cep() {
     //Limpa valores do formulário de endereco.
