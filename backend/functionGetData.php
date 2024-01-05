@@ -2,8 +2,9 @@
 
 require('conexao.php');
 
-// Obtenha o valor do parâmetro da solicitação AJAX
 $id_item = intval($_GET['id']);
+
+$id_item = 3;
 
 $sql = "SELECT id_barbearia FROM item WHERE id_item = $id_item";
 $result = mysqli_query($conn, $sql);
@@ -32,7 +33,7 @@ if (isset($_GET['action'])) {
 
             // Prepare e execute a consulta com o parâmetro
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("i", $id_item);
+            $stmt->bind_param("i", $id_barbearia);
             $stmt->execute();
 
             $result = $stmt->get_result();
@@ -72,7 +73,7 @@ if (isset($_GET['action'])) {
 
 
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("i", $id_item);
+            $stmt->bind_param("i", $id_barbearia);
             $stmt->execute();
 
             // Obter o resultado
