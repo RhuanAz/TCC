@@ -3,6 +3,7 @@ require('./backend/verificaLogin.php');
 require('./backend/conexao.php');
 require('./backend/functionFinalizar.php');
 
+
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +57,7 @@ require('./backend/functionFinalizar.php');
                                         </td>
                                         <td>
                                             <div class="d-flex">
-                                                <p class="pe-3"><span class="red">R$ 25,00</span></p>
+                                                <p class="pe-3"><span class="red preco" id="preco">R$ <?php echo $item['valor']; ?></span></p>
                                             </div>
                                         </td>
                                     </tr>
@@ -77,11 +78,8 @@ require('./backend/functionFinalizar.php');
                     <div class="col-lg-6 delivery" style="border: solid 1px;">
                         <p class="pt-4 fw-bold">Horário</p>
                         <div class="d-md-flex justify-content-between align-items-center mt-4 pb-4">
-                            <select class="card" name="horario">
+                            <select class="card" id="selectHorario" name="horario">
                                 <option value="" disabled selected>Selecione o horário</option>
-                                <option value="maca">07:00</option>
-                                <option value="banana">07:30</option>
-                                <option value="laranja">08:00</option>
                             </select>
                         </div>
                     </div>
@@ -110,7 +108,7 @@ require('./backend/functionFinalizar.php');
                                     APLICAR
                                 </div>
                             </div>
-                            <span id="mensagemErro" class="text-danger">Teste</span>
+                            <span id="mensagemErro" class="text-danger">Cupom Inválido</span>
                         </div>
 
                         <div class="d-flex flex-column b-bottom">
@@ -118,7 +116,7 @@ require('./backend/functionFinalizar.php');
                                 <small class="text-muted">
                                     Valor do Pedido
                                 </small>
-                                <p>R$ 25,00</p>
+                                <p class=preco>R$ <?php echo $item['valor']; ?></p>
                             </div>
                             <div class="d-flex justify-content-between pb-3">
                                 <small class="text-muted">Taxa de Serviço</small>
@@ -126,11 +124,11 @@ require('./backend/functionFinalizar.php');
                             </div>
                             <div class="d-flex justify-content-between pb-3">
                                 <small class="text-muted">Desconto</small>
-                                <p style="color: green;">R$ 2,00</p>
+                                <p style="color: green;" id="desconto">R$ 0.00</p>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <small class="text-muted" style="font-weight: bold;">Valor Total</small>
-                                <p>R$ 23,00</p>
+                                <p>R$ </p>
                             </div>
                         </div>
                         <button class="btn sale my-3">Agendar</button>
