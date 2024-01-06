@@ -16,6 +16,9 @@ if (isset($_GET['action'])) {
 
     switch ($action) {
         case 'getData':
+            // Verifica se o parâmetro diaSemana está presente
+            $diaSemana = isset($_GET['diaSemana']) ? $_GET['diaSemana'] : null;
+            $dataInput = isset($_GET['dataInput']) ? $_GET['dataInput'] : null;
             // Consulta SQL para obter os dias da semana em que as colunas estão vazias
             $sql = "SELECT 
                         h.id_barbearia,
@@ -52,23 +55,12 @@ if (isset($_GET['action'])) {
             break;
 
         case 'getHora':
-            // Mapeia os nomes dos dias da semana do inglês para o português
-            $mapa_dias = array(
-                'Sunday' => 'domingo',
-                'Monday' => 'segunda',
-                'Tuesday' => 'terca',
-                'Wednesday' => 'quarta',
-                'Thursday' => 'quinta',
-                'Friday' => 'sexta',
-                'Saturday' => 'sabado'
-            );
-
-            // Obtém o dia da semana atual em português
-            $dia_da_semana = $mapa_dias[date('l')];
+            // Obtém o dia da semana enviado via parâmetro GET
+            $dia_da_semana = $_GET['diaSemana'];
+            $dataInput = $_GET['dataInput'];
 
             // Consulta SQL para obter o horário e intervalo do dia atual
             $sql = "SELECT $dia_da_semana, intervalo FROM horario WHERE id_barbearia = ? LIMIT 1";
-
 
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("i", $id_barbearia);
@@ -108,10 +100,21 @@ if (isset($_GET['action'])) {
                         for ($i = $inicio; $i <= $fim; $i->add($intervalo)) {
                             $horario = $i->format('H:i');
 
+                            // Pega a hora atual
+                            $hora_atual = new DateTime();
+
+                            // Converte o horário e a hora atual para o formato DateTime
+                            $horarioDateTime = DateTime::createFromFormat('H:i', $horario);
+                            $hora_atualDateTime = DateTime::createFromFormat('H:i', $hora_atual->format('H:i'));
+                    
+                            // Se a data selecionada for a data atual e o horário for menor que a hora atual, pule para a próxima iteração
+                            if ($dataInput == $hora_atual->format('Y-m-d') && $horarioDateTime < $hora_atualDateTime) {
+                                continue;
+                            }
                             // Consulta SQL para verificar se o horário já está agendado
-                            $sql_agendamento = "SELECT 1 FROM agendamento WHERE data = CURDATE() AND horario = ? AND id_barbearia = ?  AND pendente = 1 LIMIT 1";
+                            $sql_agendamento = "SELECT 1 FROM agendamento WHERE data = ? AND horario = ? AND id_barbearia = ? AND pendente = 1 LIMIT 1";
                             $stmt_agendamento = $conn->prepare($sql_agendamento);
-                            $stmt_agendamento->bind_param("si", $horario, $id_barbearia);
+                            $stmt_agendamento->bind_param("ssi", $dataInput, $horario, $id_barbearia);
                             $stmt_agendamento->execute();
 
                             // Obter o resultado
@@ -134,7 +137,7 @@ if (isset($_GET['action'])) {
 
             // Fechar a declaração
             $stmt->close();
-
+            //$sql_agendamento = "SELECT 1 FROM agendamento WHERE data = ? AND horario = ? AND id_barbearia = ? AND pendente = 1 LIMIT 1";
             break;
     }
 }

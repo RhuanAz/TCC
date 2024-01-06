@@ -1,17 +1,19 @@
 // Pega o id da URL
 const urlParams = new URLSearchParams(window.location.search);
 const idItem = urlParams.get('id');
+var selectHorario = document.getElementById("selectHorario");
+var datetimeInput = document.getElementById("datetime");
 
 $(document).ready(function () {
     // Pega o id da URL
-    function buscaHorario(metodo) {
+    function buscaHorario(metodo, diaSemana = null, dataInput = null) {
         // Verifica se o id está presente
         if (idItem) {
             // Faz uma requisição AJAX para o PHP
             $.ajax({
                 url: 'backend/functionGetData.php?action=' + metodo, // Substitua pelo caminho correto do seu arquivo PHP
                 type: 'GET',
-                data: { id: idItem }, // Passa o id como parâmetro
+                data: { id: idItem, diaSemana: diaSemana, dataInput: dataInput }, // Passa o id como parâmetro
                 dataType: 'json',
                 success: function (data) {
                     console.log("Dados recebidos:", data);
@@ -59,6 +61,10 @@ $(document).ready(function () {
                             maxDate: dataLimite,
                         });
                     } else if (metodo === 'getHora') {
+                        // Remove as opções a partir do segundo filho
+                        while (selectHorario.children.length > 1) {
+                            selectHorario.removeChild(selectHorario.children[1]);
+                        }
                         for (var i = 0; i < data.length; i++) {
                             var option = document.createElement('option');
                             option.value = data[i];
@@ -78,22 +84,26 @@ $(document).ready(function () {
         }
     }
     buscaHorario('getData');
+    //buscaHorario('getHora');
 
     $("#datetime").on("input", function () {
         var dataInput = $(this).val(); // Obtenha o valor do campo de entrada
         var diaSemana = obterDiaSemana(dataInput);
-        console.log(diaSemana);
-        
+        //console.log(diaSemana);
+        // Formata a data para o padrão 'YYYY-MM-DD'
+        var partes = dataInput.split('/');
+        dataInput = partes[2] + '-' + partes[1] + '-' + partes[0];
+
+        buscaHorario('getHora', diaSemana, dataInput);
     });
-   
+
 });
 
 // Adicione um ouvinte de evento ao botão "btnAgendar"
 document.getElementById("btnAgendar").addEventListener("click", function () {
     // Obtenha os dados necessários do HTML
-
-    var data = document.getElementById("datetime").value;
-    var horario = document.getElementById("selectHorario").value;
+    var data = datetimeInput.value;
+    var horario = selectHorario.value;
 
     // Faça uma requisição AJAX para chamar a funçãoAgendar.php
     $.ajax({
@@ -107,6 +117,7 @@ document.getElementById("btnAgendar").addEventListener("click", function () {
             // Manipule a resposta (se necessário)
             console.log(response);
             alert("Agendamento concluído com sucesso!");
+            window.location.href = "barbearias.php";
         },
         error: function (error) {
             // Manipule erros (se necessário)
@@ -161,11 +172,7 @@ function aplicarCupom() {
     }
 }
 
-// Selecione os elementos necessários
-var selectHorario = document.getElementById("selectHorario");
-var datetimeInput = document.getElementById("datetime");
 var btnAgendar = document.getElementById("btnAgendar");
-
 // Desabilite o botão inicialmente
 btnAgendar.disabled = true;
 
