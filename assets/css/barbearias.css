@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    border-radius: 0% !important;
 }
 
 .content {
@@ -22,8 +22,8 @@
     margin-right: 10%;
 }
 
-.dropdown-item:active{
-    background-color: grey !important;
+.dropdown-item:active {
+    background-color: #13396B !important;
 }
 
 .images {
@@ -62,7 +62,7 @@
 .barber {
     padding-top: 2%;
     border: 1px solid;
-    
+
 }
 
 .barberItem {
@@ -70,7 +70,8 @@
     height: 80px;
     display: inline-block;
 }
-.barberItem:hover{
+
+.barberItem:hover {
     border: 1px solid;
     cursor: pointer;
 }
@@ -84,30 +85,29 @@
     top: -70px;
 }
 
-.barberName{
+.barberName {
     font-size: 24px;
     font-weight: 400;
     position: relative;
 }
 
-.bi-star-fill{
+.bi-star-fill {
     font-size: 16px;
-    
+
 }
 
-.barberInfo{
+.barberInfo {
     padding-top: 3px;
     font-size: 16px;
 }
 
-.avaliacao{
+.avaliacao {
     color: rgb(255, 213, 0);
 }
 
-.distancia{
+.distancia {
     color: rgba(0, 0, 0, 0.45);
 }
-
 
 
 .barberItem p {
@@ -116,9 +116,6 @@
     padding-bottom: 20% !important;
     display: inline-block !important;
 }
-
-
-
 
 .images img {
     padding-right: 3% !important;

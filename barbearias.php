@@ -75,9 +75,11 @@ $result = $conn->query($sql);
             </div>
         </div>
     </nav>
-    <div class="navsub">
+
+    <div class="navsub alert alert-dismissible fade show" role="alert">
         <i class="bi bi-ticket-perforated" style="font-size: 30px; padding-right: 1%;"></i>
         Cupom de 5% para novos usuários!
+        <button type="button" class="btn-close btn-close-white" style="padding-bottom: 11px;" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
     <div class="content">
@@ -115,9 +117,8 @@ $result = $conn->query($sql);
         </div>
 
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="assets/js/barbearias.js"></script>
 </body>
