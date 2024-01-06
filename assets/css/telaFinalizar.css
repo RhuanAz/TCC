@@ -175,6 +175,11 @@ table input {
     display: none;
 }
 
+#cupomAplicado{
+    display: none;
+    color: green;
+}
+
 input:focus {
     border: 1px solid #000000;
     outline: none

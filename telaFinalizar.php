@@ -2,8 +2,6 @@
 require('./backend/verificaLogin.php');
 require('./backend/conexao.php');
 require('./backend/functionFinalizar.php');
-
-
 ?>
 
 <!DOCTYPE html>
@@ -70,15 +68,14 @@ require('./backend/functionFinalizar.php');
                     <div class="col-lg-6 delivery">
                         <p class="pt-4 fw-bold">Data</p>
                         <div class="d-md-flex justify-content-between align-items-center mt-4 pb-4">
-
-                            <input id="datetime" class="card" type="text" placeholder="Selecione uma data">
+                            <input id="datetime" name="data" class="card" type="text" placeholder="Selecione uma data">
                         </div>
 
                     </div>
                     <div class="col-lg-6 delivery" style="border: solid 1px;">
                         <p class="pt-4 fw-bold">Horário</p>
                         <div class="d-md-flex justify-content-between align-items-center mt-4 pb-4">
-                            <select class="card" id="selectHorario" name="horario">
+                            <select class="card" id="selectHorario" name="selectHorario">
                                 <option value="" disabled selected>Selecione o horário</option>
                             </select>
                         </div>
@@ -104,11 +101,12 @@ require('./backend/functionFinalizar.php');
                         <div class="d-flex flex-column b-bottom">
                             <div class="d-flex justify-content-between">
                                 <input type="text" class="form-control ps-2" id="codigoCupom" placeholder="Digite o código do cupom">
-                                <div class="btn btn-primary" onclick="aplicarCupom()">
+                                <div class="btn btn-primary" id="btnAplicar" onclick="aplicarCupom()">
                                     APLICAR
                                 </div>
                             </div>
                             <span id="mensagemErro" class="text-danger">Cupom Inválido</span>
+                            <span id="cupomAplicado" class="text">Cupom Aplicado!</span>
                         </div>
 
                         <div class="d-flex flex-column b-bottom">
@@ -128,10 +126,10 @@ require('./backend/functionFinalizar.php');
                             </div>
                             <div class="d-flex justify-content-between">
                                 <small class="text-muted" style="font-weight: bold;">Valor Total</small>
-                                <p>R$ </p>
+                                <p id="precoFinal">R$ <?php echo $item['valor']; ?></p>
                             </div>
                         </div>
-                        <button class="btn sale my-3">Agendar</button>
+                        <button class="btn sale my-3" id="btnAgendar" name="btnAgendar">Agendar</button>
                     </div>
                 </div>
             </div>

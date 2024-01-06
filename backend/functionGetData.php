@@ -4,8 +4,6 @@ require('conexao.php');
 
 $id_item = intval($_GET['id']);
 
-$id_item = 3;
-
 $sql = "SELECT id_barbearia FROM item WHERE id_item = $id_item";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
