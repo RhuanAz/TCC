@@ -1,10 +1,7 @@
 <?php
 require('./backend/verificaLogin.php');
-require('./backend/conexao.php');
+require('./backend/functionListAgenda.php')
 
-//Buscar as barbearias para exibi-las no "barbearias.php"
-$sql = "SELECT * FROM barbearia";
-$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -13,17 +10,18 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbearias | Ouro Branco</title>
+    <title>Meus Agendamentos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/barbearias.css">
+    <link rel="stylesheet" href="assets/css/agendaUser.css">
+
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid nav-container">
-            <a class="navbar-brand mb-0 h1" href="/barbearias.php">Barber Connect</a>
+            <a class="navbar-brand mb-0 h1" href="barbearias.php">Barber Connect</a>
 
             <!--Botão da navbar para telas pequenas-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,13 +46,13 @@ $result = $conn->query($sql);
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="minhaConta.php">
+                            <a class="dropdown-item" id="account" href="#" disabled>
                                 <i class="bi-pencil" style="padding-right: 7% !important"></i>
                                 Minha Conta
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="agendaUser.php">
+                            <a class="dropdown-item" id="agenda" href="#">
                                 <i class="bi-calendar3" style="padding-right: 7% !important"></i>
                                 Agendamentos
                             </a>
@@ -63,7 +61,7 @@ $result = $conn->query($sql);
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" href="backend/logout.php">
+                            <a class="dropdown-item" id="logout" href="backend/logout.php">
                                 <i class="bi-box-arrow-right" style="padding-right: 7% !important"></i>
                                 Sair
                             </a>
@@ -76,51 +74,55 @@ $result = $conn->query($sql);
         </div>
     </nav>
 
-    <div class="navsub alert alert-dismissible fade show" role="alert">
-        <i class="bi bi-ticket-perforated" style="font-size: 30px; padding-right: 1%;"></i>
-        Cupom de 5% para novos usuários!
-        <button type="button" class="btn-close btn-close-white" style="padding-bottom: 11px;" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
     <div class="content">
-        <div class="images">
-            <img src="assets/img/Barbers/carousel1.jpg" alt="">
-            <img src="assets/img/Barbers/carousel2.jpg" alt="">
-        </div>
-        <!--Botões dos filtros-->
-        <div class="filtros">
-            <div class="btnFiltros">
-                <button class="btn btn-primary">Ordenar <i class="bi-chevron-down" style="padding-top: 10px !important;"></i></button>
-                <button class="btn btn-primary">Distância <i class="bi-chevron-down" style="padding-top: 10px !important;"></i></button>
-                <button class="btn btn-primary">Filtrar<i class="bi bi-filter" style="padding-left: 4px !important;"></i></button>
-                <button class="btn btn-primary">Limpar</button>
+        <h3>Agendamentos</h3>
+        <div class="divForm">
+            <div class="divTable">
+                <table class="table table-hover caption-top" id="myTable">
+                    <caption>Próximos Agendamentos</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="sortable" data-column="data" id="thData">Data</th>
+                            <th scope="col" class="sortable" data-column="nome_fantasia"id="thBarber">Barbearia</th>
+                            <th scope="col" class="sortable" data-column="nome_item" id="thItem">Item</th>
+                            <th scope="col" class="sortable" data-column="valor" id="thValor">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<tr>';
+                            echo '<td>' . date('d/m/Y', strtotime($row['data'])) . '</td>';
+                            echo '<td>' . $row['nome_fantasia'] . '</td>'; // Nome da barbearia
+                            echo '<td>' . $row['nome_item'] . '</td>'; // Nome do item
+                            echo '<td>R$ ' . number_format($row['valor'], 2, ',', '.') . '</td>';
+
+                            // Você pode adicionar mais colunas conforme necessário
+
+                            echo '</tr>';
+                        }
+
+                        // Fechar a tabela HTML
+                        echo '</tbody>';
+                        echo '</table>';
+                        echo '</div>';
+
+                        // Verificar se há resultados
+                        if ($result->num_rows === 0) {
+                            echo 'Nenhum agendamento encontrado.';
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
-
-        <div class="barbearias">
-            <h3>Barbearias</h3>
-            <div class="barber">
-                <?php while ($dado = $result->fetch_array()) { ?>
-                    <div class="barberItem" onclick="redirecionarPagina(<?php echo $dado['id_barbearia']; ?>, 'telaBarber.php')">
-                        <img src="assets/img/Barbers/barberLogo.jpg" alt="">
-                        <div class="barberText">
-                            <span class="barberName"><?php echo $dado['nome_fantasia']; ?></span>
-                            <div class="barberInfo">
-                                <span class="avaliacao"><i class="bi bi-star-fill"></i> 5,0</span>
-                                <span class="distancia">• 2,0 km </span>
-                            </div>
-                        </div>
-                    </div>
-                <?php } ?>
-
-            </div>
-        </div>
-
+        </form>
+    </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="assets/js/barbearias.js"></script>
+    <script src="assets/js/agendaUser.js"></script>
 </body>
 
 </html>

@@ -3,7 +3,6 @@ require('./backend/verificaLogin.php');
 require('./backend/conexao.php');
 require('./backend/functionFinalizar.php');
 
-
 ?>
 
 <!DOCTYPE html>

@@ -50,7 +50,7 @@ require('./backend/functionUser.php');
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" id="agenda" href="#">
                                 <i class="bi-calendar3" style="padding-right: 7% !important"></i>
                                 Agendamentos
                             </a>
@@ -59,7 +59,7 @@ require('./backend/functionUser.php');
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" href="backend/logout.php">
+                            <a class="dropdown-item" id="logout" href="backend/logout.php">
                                 <i class="bi-box-arrow-right" style="padding-right: 7% !important"></i>
                                 Sair
                             </a>
