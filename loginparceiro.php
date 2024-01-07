@@ -12,6 +12,7 @@ session_start();
     <title>Login Parceiro</title>
     <link rel="stylesheet" href="assets/css/login.css">
 
+
 </head>
 
 <body>
