@@ -21,7 +21,7 @@
                 <div class="col-md-6">
                     <!--FORMULÁRIO-->
                     <form id="form" action="./backend/functionCadastroParceiro.php" method="POST" class="row g-3 p-3 needs-validation">
-                        <h1>Cadastre-se dfads no Portal do Parceiro</h1>
+                        <h1>Cadastre-se no Portal do Parceiro</h1>
 
                         <!--NOME Fantasia-->
                         <div class="form-group">

@@ -26,17 +26,17 @@ $(document).ready(function () {
 
     // Executar quando o campo "CPF" perde o foco
     $("#cnpj").blur(function () {
-        verificarDado("cnpj", "#cnpj", 2, 0);
+        verificarDado("cnpj", "#cnpj", 1, 0);
     });
 
     // Executar quando o campo "Email" perde o foco
     $("#email").blur(function () {
-        verificarDado("email", "#email", 10, 3);
+        verificarDado("email", "#email", 9, 3);
     });
 
     // Executar quando o campo "Telefone" perde o foco
     $("#telefone").blur(function () {
-        verificarDado("telefone", "#telefone", 3, 1);
+        verificarDado("telefone", "#telefone", 2, 1);
     });
 
 });
@@ -212,15 +212,3 @@ function formatarCEP(cepInput) {
     cepInput.value = cepFormatado;
 
 }
-
-function validarSenha(senha) {
-    // Verifica se a senha tem pelo menos 8 caracteres e contém pelo menos 1 letra maiúscula
-    return /^(?=.*[A-Z]).{8,}$/.test(senha);
-}
-
-function retornaSenha(senhaInput) {
-    if (!validarSenha(senhaInput)) {
-
-    }
-}
-
