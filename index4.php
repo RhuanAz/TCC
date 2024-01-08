@@ -1,3 +1,9 @@
+<?php
+session_start();
+require('./backend/verificaLogin.php');
+require('./backend/functionBuscarBarber.php');
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -6,10 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Barra de tarefas</title>
+    <title>Minha loja / Portal do Parceiro</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Our Custom CSS -->
 
     <link rel="stylesheet" href=".//assets/css/style4.css" />
@@ -25,13 +33,15 @@
         ?>
 
         <!-- Page Content Holder -->
-        <div id="content">
 
+        <div id="content" style="border: 1px solid;">
 
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                        <i class="glyphicon glyphicon-align-left"></i>
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>
                     </button>
                 </div>
             </div>
@@ -44,32 +54,112 @@
                 <div class="coverImg">
                     <img class="cover" src="assets/img/TelaBarbers/imgCover.jpg" alt="">
                 </div>
+                <div class="barberInfo">
+                    <img src="assets/img/Barbers/barberLogo.jpg" alt="">
+                    <div class="barberText">
+                        <span class="infos">
+                            <span class="barberName">
+                                <?php echo $dados['nome_fantasia']; ?>
+                            </span>
+                            <span class="rightInfo">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#horarioModal">
+                                    Informações
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="horarioModal" tabindex="-1" aria-labelledby="horarioModal" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 position-relative" id="horarioModalLabel">Horário de funcionamento</h1>
+                                                <button type="button" class="btn-close" style="color: red !important;" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                Domingo: Fechado <br>
+                                                Segunda-feira: 07h00<br>
+                                                Segunda-feira: 07h00<br>
+                                                Segunda-feira: 07h00<br>
+                                                Segunda-feira: 07h00<br>
+                                                Segunda-feira: 07h00<br>
+                                                Segunda-feira: 07h00<br>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal">
+                                    Horário de Funcionamento
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 position-relative" id="infoModal">Horário de funcionamento</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                TESTE <br>
+                                                Segunda-feira: 07h00<br>
+                                                Segunda-feira: 07h00<br>
+                                                Segunda-feira: 07h00<br>
+                                                Segunda-feira: 07h00<br>
+                                                Segunda-feira: 07h00<br>
+                                                Segunda-feira: 07h00<br>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="filtros">
+                    <div class="btnFiltros">
+                        <button class="btn btn-primary">Ordenar <i class="bi-chevron-down"></i></button>
+                        <button class="btn btn-primary">Filtrar<i class="bi bi-filter"></i></button>
+                    </div>
+                </div>
+
+                <p id="lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas labore dolorem architecto. Maiores, quo similique modi totam nostrum voluptatem, quasi doloribus aut expedita possimus ab officiis fuga odit. Repellat, quasi.</p>
+
+                <div class="minBarber">
+
+                    <h3>
+                        Teste
+                    </h3>
+                    <div class="barberItem" onclick="redirecionarPagina(<?php echo $item['id_item']; ?>, 'telaFinalizar.php')">
+                        <span class="itemName">
+                            Corte do jaca
+                        </span>
+                        <div class="description">
+                            <span class="itemDescription">
+                                Corte foda ?>
+                            </span>
+                            <span class="price">R$
+                                100
+                            </span>
+                            <img id="imgCorte" src="assets/img/corte.webp" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+
             </div>
-
-            <h2>Zappelin BarberShop</h2>
-            <img src="../assets/img/zappelin.jpg" alt="" class="img">
-            <p>Bem-vindo à "Zappelin BarberShop" a sua barbearia de referência para cuidados com a aparência masculina na cidade! Aqui, não estamos apenas no
-                negócio de cortar cabelos; estamos comprometidos em proporcionar uma experiência completa de transformação e rejuvenescimento para nossos clientes.
-                Com uma equipe apaixonada de barbeiros talentosos e um ambiente acolhedor, estamos aqui para tornar cada visita inesquecível.</p>
-
-            <div class="line"></div>
-
-            <h2>Cortes de cabelo</h2>
-
-            <p>Item</p>
-            <img src="../TCC/assets/img/corte.webp" alt="" class="img">
-
-            <p>Preço: R$25,00</p>
-
-
-            <div class="line"></div>
         </div>
-    </div>
 
-
-
-
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
 

@@ -72,7 +72,7 @@
             <li>
                 <br>
                 <i class="glyphicon glyphicon-logout"></i>
-                Zappelin BarberShop
+                Nome Barbearia
             </li>
         </ul>
     </nav>

@@ -30,9 +30,6 @@ session_start();
                 <p>ERRO: E-mail ou senha inválidos!</p>
             <?php
             endif;
-            echo '<pre>';
-            print_r($_SESSION);
-            echo '</pre>';
             unset($_SESSION['nao_autenticado']);
             ?>
 
