@@ -30,7 +30,7 @@ require('./backend/functionBuscarBarber.php');
         <!-- Sidebar Holder -->
         <?php
         //INCLUSÃO DO MENU
-        include_once('menu.php');
+        require('menu.php');
         ?>
 
         <!-- Page Content Holder -->
@@ -131,7 +131,7 @@ require('./backend/functionBuscarBarber.php');
                     </div>
                 </div>
 
-                <p id="lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas labore dolorem architecto. Maiores, quo similique modi totam nostrum voluptatem, quasi doloribus aut expedita possimus ab officiis fuga odit. Repellat, quasi.</p>
+                <p id="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eaque rerum excepturi alias, quia saepe perferendis consequatur rem? Labore corrupti maiores quas reiciendis deleniti. Similique architecto dolor assumenda odio dolores! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas labore dolorem architecto. Maiores, quo similique modi totam nostrum voluptatem, quasi doloribus aut expedita possimus ab officiis fuga odit. Repellat, quasi.</p>
 
                 <!--Buscar os cortes da barbearia-->
                 <?php

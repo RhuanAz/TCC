@@ -28,16 +28,11 @@ h3 {
 
 #lorem{
     color: #fafafa;
-    font-size: 25px;
+    font-size: 14px;
     user-select: none; /* Evita a seleção de texto */
     cursor: default;   /* Mantém o cursor padrão */
 }
 
-.content {
-    margin-top: 2%;
-    border: solid 1px;
-    flex: 1 0 auto;
-}
 
 .coverImg {
     display: flex;
@@ -79,7 +74,7 @@ h3 {
     justify-content: center;
     border-radius: 5px !important;
     background-color: transparent;
-    border-color: #8c8c8c !important;
+    border-color: #080808 !important;
     color: #8c8c8c;
     font-size: 13px;
     margin-right: 20px;
@@ -98,6 +93,50 @@ h3 {
 .filtros {
     padding-bottom: 1%;
 
+}
+
+.divForm {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 6px;
+    background-color: white;
+    position: relative;
+}
+
+.divTable {
+    border-radius: 6px;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.divTable table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.divTable th {
+    background-color: #13396B;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.divTable td {
+    padding: 18px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.divTable tr:hover {
+    background-color: #f5f5f5;
+}
+
+.divTable caption {
+    caption-side: top;
+    text-align: center;
+    font-weight: bold;
 }
 
 .minBarber {
@@ -267,6 +306,16 @@ span {
     display: flex;
     height: 100%;
     /*align-items: stretch;*/
+}
+
+#agenda {
+    background-color: #13396B !important;
+    color: white;
+    cursor: default;
+}
+
+#thData:hover {
+    cursor: pointer;
 }
 
 #sidebar {

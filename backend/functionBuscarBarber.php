@@ -1,6 +1,6 @@
 <?php
-require('conexao.php');
-
+include_once('conexao.php');
+ 
 if (isset($_SESSION['id_barber'])) {
     $id_barbearia = $_SESSION['id_barber'];
 } else if (isset($_GET['id'])) {

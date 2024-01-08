@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="npm i bootstrap-icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
                     Agenda
                 </a>
 
-                <a href="corteclassico.php" aria-expanded="false">
+                <a href="cortes.php" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-scissors" viewBox="0 0 16 16">
                         <path d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0m7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
                     </svg>
@@ -71,8 +71,10 @@
             </li>
             <li>
                 <br>
-                <i class="glyphicon glyphicon-logout"></i>
-                Nome Barbearia
+                <a href="editar.php">
+                    <i class="bi-box-arrow-right"></i>
+                    Sair
+                </a>
             </li>
         </ul>
     </nav>
@@ -95,14 +97,6 @@
         body {
             margin: 0;
             padding: 0;
-        }
-
-        #sidebar {
-            /* Adicione os estilos da barra lateral conforme necessário */
-        }
-
-        .menu-text {
-            /* Estilo padrão para o texto do menu */
         }
 
         .menu-text.hidden {

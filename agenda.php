@@ -1,3 +1,9 @@
+<?php
+require('./backend/verificaLogin.php');
+require('./backend/listAgendamento.php')
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -36,31 +42,63 @@
                     </button>
                 </div>
             </div>
+            <div class="content">
+                <h2>Agenda</h2>
+                <p>Aqui você pode ver os agendamentos feitos no seu estabelecimento.</p>
+                <div class="line"></div>
+                <p id="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eaque rerum excepturi alias, quia saepe perferendis consequatur rem? Labore corrupti maiores quas reiciendis deleniti. Similique architecto dolor assumenda odio dolores! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas labore dolorem architecto. Maiores, quo similique modi totam nostrum voluptatem, quasi doloribus aut expedita possimus ab officiis fuga odit. Repellat, quasi.</p>
 
-            <br>
-            <label for="De:" class="de">De:</label>
-            <input type="date">
-            <br>
-            <br>
-            <label for="Para:">Para:</label>
-            <input type="date" name="" id="" class="para">
-            <br>
-            <br>
-            <input type="checkbox">
-            <label for="">Apenas agendamentos de hoje.</label>
-            <br><br>
-            <button>Consultar</button>
 
+                <div class="divTable">
+                    <table class="table table-hover caption-top" id="myTable">
+                        <caption>Agendamentos</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="sortable" data-column="data" id="thData">Data</th>
+                                <th scope="col" class="sortable" data-column="data" id="thData">Horário</th>
+                                <th scope="col" class="sortable" data-column="nome_fantasia" id="thBarber">Cliente</th>
+                                <th scope="col" class="sortable" data-column="nome_item" id="thItem">Item</th>
+                                <th scope="col" class="sortable" data-column="valor" id="thValor">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<tr>';
+                                echo '<td>' . date('d/m/Y', strtotime($row['data'])) . '</td>';
+                                echo '<td>' . substr($row['horario'], 0, 5) . '</td>';
+                                echo '<td>' . $row['nome_fantasia'] . '</td>'; // Nome da barbearia
+                                echo '<td>' . $row['nome_item'] . '</td>'; // Nome do item
+                                echo '<td>R$ ' . number_format($row['valor_item'], 2, ',', '.') . '</td>';
+
+                                // Você pode adicionar mais colunas conforme necessário
+
+                                echo '</tr>';
+                            }
+
+                            // Fechar a tabela HTML
+                            echo '</tbody>';
+                            echo '</table>';
+                            echo '</div>';
+
+                            // Verificar se há resultados
+                            if ($result->num_rows === 0) {
+                                echo 'Nenhum agendamento encontrado.';
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                </form>
+            </div>
         </div>
-
-
-    </div>
     </div>
 
-    <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <!-- Bootstrap Js CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="assets/js/agenda.js"></script>
 
 
     <body>
