@@ -25,32 +25,18 @@
         include_once('menu.php');
         ?>
 
-
         <!-- Page Content Holder -->
         <div id="content">
-
-
             <div class="container-fluid">
-
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                            <span class="material-symbols-outlined">
-                                menu
-                            </span>
-                        </button>
-                    </div>
-                </div>
-
-
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                    </ul>
+                <div class="navbar-header">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>
+                    </button>
                 </div>
             </div>
-            </nav>
 
-            <br>
             <br>
             <label for="De:" class="de">De:</label>
             <input type="date">
@@ -66,6 +52,9 @@
             <button>Consultar</button>
 
         </div>
+
+
+    </div>
     </div>
 
     <!-- jQuery CDN -->
@@ -73,12 +62,5 @@
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#sidebarCollapse').on('click', function() {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-    </script>
 
     <body>

@@ -35,8 +35,7 @@ require('./backend/functionBuscarBarber.php');
 
         <!-- Page Content Holder -->
 
-        <div id="content" style="border: 1px solid;">
-
+        <div id="content">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
