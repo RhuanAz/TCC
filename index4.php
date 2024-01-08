@@ -4,8 +4,9 @@ require('./backend/verificaLogin.php');
 require('./backend/functionBuscarBarber.php');
 
 ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -133,26 +134,54 @@ require('./backend/functionBuscarBarber.php');
 
                 <p id="lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas labore dolorem architecto. Maiores, quo similique modi totam nostrum voluptatem, quasi doloribus aut expedita possimus ab officiis fuga odit. Repellat, quasi.</p>
 
+                <!--Buscar os cortes da barbearia-->
+                <?php
+                //Consulta dos cortes/itens da barbearia    
+                $sql = "SELECT * FROM item WHERE id_barbearia = '" . $id_barbearia . "' ORDER BY valor";
+                $resultItem = $conn->query($sql);
+
+                //Consulta das categorias dos itens de uma barbearia
+                $sql = "SELECT * FROM categoria WHERE id_barbearia = '" . $id_barbearia . "' ORDER BY nome_categoria";
+                $resultCategoria = $conn->query($sql);
+                ?>
+
                 <div class="minBarber">
+                    <?php while ($categoria = $resultCategoria->fetch_array()) { ?>
+                        <h3>
+                            <?php echo $categoria['nome_categoria']; ?>
+                        </h3>
 
-                    <h3>
-                        Teste
-                    </h3>
-                    <div class="barberItem" onclick="redirecionarPagina(<?php echo $item['id_item']; ?>, 'telaFinalizar.php')">
-                        <span class="itemName">
-                            Corte do jaca
-                        </span>
-                        <div class="description">
-                            <span class="itemDescription">
-                                Corte foda ?>
-                            </span>
-                            <span class="price">R$
-                                100
-                            </span>
-                            <img id="imgCorte" src="assets/img/corte.webp" alt="">
-                        </div>
-                    </div>
+                        <?php
+                        // Executar a consulta SQL para obter os itens desta categoria
+                        $sqlItem = "SELECT * FROM item WHERE id_categoria = " . $categoria['id_categoria'];
+                        $resultItem = $conn->query($sqlItem);
 
+                        // Verificar se há itens nesta categoria
+                        if ($resultItem->num_rows > 0) {
+                            while ($item = $resultItem->fetch_array()) {
+                        ?>
+                                <div class="barberItem" onclick="redirecionarPagina(<?php echo $item['id_item']; ?>, 'telaFinalizar.php')">
+                                    <span class="itemName">
+                                        <?php echo $item['nome_item']; ?>
+                                    </span>
+                                    <div class="description">
+                                        <span class="itemDescription">
+                                            <?php echo $item['descricao']; ?>
+                                        </span>
+                                        <span class="price">R$
+                                            <?php echo $item['valor']; ?>
+                                        </span>
+                                        <img src="/" alt="">
+                                    </div>
+                                </div>
+                        <?php
+                            }
+                        } else {
+                            // Se não houver itens nesta categoria, exibir mensagem
+                            echo "<p>Não há itens cadastrados para esta categoria.</p>";
+                        }
+                        ?>
+                    <?php } ?>
                 </div>
 
 

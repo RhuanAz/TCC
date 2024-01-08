@@ -28,7 +28,7 @@ h3 {
 
 #lorem{
     color: #fafafa;
-    font-size: 17px;
+    font-size: 25px;
     user-select: none; /* Evita a seleção de texto */
     cursor: default;   /* Mantém o cursor padrão */
 }
@@ -96,7 +96,7 @@ h3 {
 }
 
 .filtros {
-    padding-bottom: 3%;
+    padding-bottom: 1%;
 
 }
 
