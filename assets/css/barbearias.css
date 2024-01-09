@@ -127,3 +127,7 @@
 .images img {
     padding-right: 3% !important;
 }
+
+#logo{
+    border-radius: 7px;
+}

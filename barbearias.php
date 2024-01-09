@@ -105,7 +105,7 @@ $result = $conn->query($sql);
             <div class="barber">
                 <?php while ($dado = $result->fetch_array()) { ?>
                     <div class="barberItem col-md-4 col-sm-6" onclick="redirecionarPagina(<?php echo $dado['id_barbearia']; ?>, 'telaBarber.php')">
-                        <img src="assets/img/Barbers/barberLogo.jpg" alt="">
+                        <img id="logo" src="<?php echo $dado['urlLogo']?>" width="70px" alt="">
                         <div class="barberText">
                             <span class="barberName"><?php echo $dado['nome_fantasia']; ?></span>
                             <div class="barberInfo">

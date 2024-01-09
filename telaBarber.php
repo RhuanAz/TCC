@@ -78,7 +78,7 @@ require('./backend/functionGetInfo.php');
             <img class="cover" src="assets/img/TelaBarbers/imgCover.jpg" alt="">
         </div>
         <div class="barberInfo">
-            <img src="assets/img/Barbers/barberLogo.jpg" alt="">
+            <img src="<?php echo $infos_barbearia['urlLogo']; ?>" width="74px" style="border-radius: 6px;" alt="">
             <div class="barberText">
                 <span class="infos">
                     <span class="barberName">
@@ -176,29 +176,34 @@ require('./backend/functionGetInfo.php');
         ?>
 
         <div class="minBarber">
-            <?php while ($categoria = $resultCategoria->fetch_array()) { ?>
-                <h3>
-                    <?php echo $categoria['nome_categoria']; ?>
-                </h3>
-                <?php while ($item = $resultItem->fetch_array()) { ?>
-                    <div class="barberItem" onclick="redirecionarPagina(<?php echo $item['id_item']; ?>, 'telaFinalizar.php')">
-                        <span class="itemName">
-                            <?php echo $item['nome_item']; ?>
-                        </span>
-                        <div class="description">
-                            <span class="itemDescription">
-                                <?php echo $item['descricao']; ?>
-                            </span>
-                            <span class="price">R$
-                                <?php echo $item['valor']; ?>
-                            </span>
-                        </div>
-                        <div class="minImg">
-                            <img src="assets/img/classiccorte.webp" alt="" style="width: 150px;">
-                        </div>
-                    </div>
-                <?php } ?>
-            <?php } ?>
+            <?php
+            // Consulta das categorias dos itens de uma barbearia
+            $sql = "SELECT * FROM categoria WHERE id_barbearia = '" . $id_barbearia . "' ORDER BY nome_categoria";
+            $resultCategoria = $conn->query($sql);
+
+            // Iterar sobre as categorias
+            while ($categoria = $resultCategoria->fetch_array()) {
+                echo '<h3>' . $categoria['nome_categoria'] . '</h3>';
+
+                // Consulta dos cortes/itens da barbearia para a categoria atual
+                $sql_itens_categoria = "SELECT * FROM item WHERE id_barbearia = '" . $id_barbearia . "' AND id_categoria = '" . $categoria['id_categoria'] . "' ORDER BY valor";
+                $resultItem = $conn->query($sql_itens_categoria);
+
+                // Iterar sobre os itens da categoria atual
+                while ($item = $resultItem->fetch_array()) {
+                    echo '<div class="barberItem" onclick="redirecionarPagina(' . $item['id_item'] . ', \'telaFinalizar.php\')">';
+                    echo '<span class="itemName">' . $item['nome_item'] . '</span>';
+                    echo '<div class="description">';
+                    echo '<span class="itemDescription">' . $item['descricao'] . '</span>';
+                    echo '<span class="price">R$ ' . $item['valor'] . '</span>';
+                    echo '</div>';
+                    echo '<div class="minImg">';
+                    echo '<img src="' . $item['urlCorte'] . '" width="150px" height="163px" alt="" style="border-radius: 6px;">';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            }
+            ?>
         </div>
     </div>
 

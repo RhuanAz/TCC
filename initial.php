@@ -17,16 +17,13 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="assets/css/initial.css" rel="stylesheet" />
 </head>
-
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top navbar-shrink" id="mainNav">
         <div class="container">
             <!--Logo Navbar-->
-            <a class="navbar-brand" href="#page-top"><img src="../assets/img/Initial/logos/logo_branca.png"
-                    alt="..." /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#page-top"><img src="assets/img/Initial/logos/logo_branca.png" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
             </button>
@@ -46,9 +43,9 @@
         <div class="container">
             <div class="masthead-subheading">Bem-vindo</div>
             <div class="masthead-heading text-uppercase">É um prazer te conhecer!</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="/login.php">Login</a>
+            <a class="btn btn-primary btn-xl text-uppercase" href="login.php">Login</a>
             <br><br>
-            <a class="btn btn-secondary btn-xl text-uppercase" href="/cadastro.php">Cadastre-se</a>
+            <a class="btn btn-secondary btn-xl text-uppercase" href="cadastro.php">Cadastre-se</a>
         </div>
     </header>
     <!-- Services-->
@@ -90,108 +87,6 @@
             </div>
         </div>
     </section>
-    <!-- Portfolio Grid -->
-    <!-- <section class="page-section bg-light" id="portfolio"> -->
-    <!-- <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfólio</h2>
-                    <h3 class="section-subheading text-muted">Confira o portfólio de barbeiros bem avaliados próximos a você.</h3>
-                </div>
-                <div class="row"> -->
-    <!-- <div class="col-lg-4 col-sm-6 mb-4"> -->
-    <!-- Portfolio item 1 -->
-    <!-- <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../assets/img/Initial/portfolio/Como-atrair-clientes-para-barbearia.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Barbearia 1</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                            </div>
-                        </div>
-                    </div> -->
-    <!-- <div class="col-lg-4 col-sm-6 mb-4"> -->
-    <!-- Portfolio item 2-->
-    <!-- <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../assets/img/Initial/portfolio/cliente-fazendo-o-corte-de-cabelo-em-um-salao-de-barbearia_1303-20861.avif" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4"> -->
-    <!-- Portfolio item 3-->
-    <!-- <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../assets/img/Initial/portfolio/download.jfif" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0"> -->
-    <!-- Portfolio item 4-->
-    <!-- <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../assets/img/Initial/portfolio/Side-Part.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0"> -->
-    <!-- Portfolio item 5-->
-    <!-- <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../assets/img/Initial/portfolio/corte-masculino-2023-degrade-5-903x1024.webp" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6"> -->
-    <!-- Portfolio item 6-->
-    <!-- <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="../assets/img/Initial/portfolio/Corte-de-Cabelo-Masculino-Com-Franja-4.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-    <!-- About-->
     <section class="page-section" id="about">
         <div class="container">
             <div class="text-center">
@@ -200,8 +95,7 @@
             </div>
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
-                            src="../assets/img/Initial/about/1.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/Initial/about/1.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Fevereiro de 2023</h4>
@@ -216,8 +110,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
-                            src="../assets/img/Initial/about/2.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/Initial/about/2.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Março de 2023</h4>
@@ -234,8 +127,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
-                            src="../assets/img/Initial/about/3.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/Initial/about/3.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Agosto de 2023</h4>
@@ -248,8 +140,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
-                            src="../assets/img/Initial/about/4.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/Initial/about/4.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Janeiro de 2024</h4>
@@ -286,24 +177,20 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="../assets/img/Initial/team/rhuan.jpeg" alt="..." />
+                        <img class="mx-auto rounded-circle" src="assets/img/Initial/team/rhuan.jpeg" alt="..." />
                         <h4>Rhuan Victor</h4>
                         <p class="text-muted">Programador e Designer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/rhuan_az/"
-                            target="_blank" aria-label="Rhuan Instagram Profile"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/rhuan_az" target="_blank"
-                            aria-label="Rhuan Twitter Profile"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/rhuan_az/" target="_blank" aria-label="Rhuan Instagram Profile"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/rhuan_az" target="_blank" aria-label="Rhuan Twitter Profile"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="../assets/img/Initial/team/aquiles.jpeg" alt="..." />
+                        <img class="mx-auto rounded-circle" src="assets/img/Initial/team/aquiles.jpeg" alt="..." />
                         <h4>Aquiles Ascar</h4>
                         <p class="text-muted">Programador e Designer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/aquilesascar/"
-                            target="_blank" aria-label="Aquiles Instagram Profile"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/aquilesascar/"
-                            target="_blank" aria-label="Aquiles Twitter Profile"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/aquilesascar/" target="_blank" aria-label="Aquiles Instagram Profile"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/aquilesascar/" target="_blank" aria-label="Aquiles Twitter Profile"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
 
@@ -316,60 +203,31 @@
         </div>
         </div>
     </section>
-    <!-- Clients-->
-    <!-- <div class="py-5">
-           <div class="container">
-                <div class="row align-items-center">
-                      <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../assets/img/logos/ibm.svg" alt="..." aria-label="IBM Logo" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-    <!-- Contact-->
     <section class="page-section" id="contact">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Contato</h2>
                 <h3 class="section-subheading text-muted">Feedback, dúvida ou reclamações:</h3>
             </div>
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- * * SB Forms Contact Form * *-->
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- This form is pre-integrated with SB Forms.-->
-            <!-- To make this form functional, sign up at-->
-            <!-- https://startbootstrap.com/solution/contact-forms-->
-            <!-- to get an API token!-->
+           
             <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                 <div class="row align-items-stretch mb-5">
                     <div class="col-md-6">
                         <div class="form-group">
                             <!-- Name input-->
-                            <input class="form-control" id="name" type="text" placeholder="Nome *"
-                                data-sb-validations="required" />
+                            <input class="form-control" id="name" type="text" placeholder="Nome *" data-sb-validations="required" />
                             <div class="invalid-feedback" data-sb-feedback="name:required">Informe o seu nome.</div>
                         </div>
                         <div class="form-group">
                             <!-- Email address input-->
-                            <input class="form-control" id="email" type="email" placeholder="E-mail *"
-                                data-sb-validations="required,email" />
+                            <input class="form-control" id="email" type="email" placeholder="E-mail *" data-sb-validations="required,email" />
                             <div class="invalid-feedback" data-sb-feedback="email:required">Informe o seu e-mail.
                             </div>
                             <!--<div class="invalid-feedback" data-sb-feedback="email:email">EMAIL INVÁLIDO</div>-->
                         </div>
                         <div class="form-group mb-md-0">
                             <!-- Phone number input-->
-                            <input class="form-control" id="phone" type="tel" placeholder="Telefone *"
-                                data-sb-validations="required" />
+                            <input class="form-control" id="phone" type="tel" placeholder="Telefone *" data-sb-validations="required" />
                             <div class="invalid-feedback" data-sb-feedback="phone:required">Informe o seu telefone.
                             </div>
                         </div>
@@ -377,8 +235,7 @@
                     <div class="col-md-6">
                         <div class="form-group form-group-textarea mb-md-0">
                             <!-- Message input-->
-                            <textarea class="form-control" id="message" placeholder="Mensagem *"
-                                data-sb-validations="required"></textarea>
+                            <textarea class="form-control" id="message" placeholder="Mensagem *" data-sb-validations="required"></textarea>
                             <div class="invalid-feedback" data-sb-feedback="message:required">Digite uma mensagem.
                             </div>
                         </div>
@@ -393,8 +250,7 @@
                         <div class="fw-bolder">Form submission successful!</div>
                         To activate this form, sign up at
                         <br />
-                        <a
-                            href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                     </div>
                 </div>
                 <!-- Submit error message-->
@@ -405,8 +261,7 @@
                     <div class="text-center text-danger mb-3">Error sending message!</div>
                 </div>
                 <!-- Submit Button-->
-                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled"
-                        id="submitButton" type="submit">Enviar mensagem</button></div>
+                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar mensagem</button></div>
             </form>
         </div>
     </section>
@@ -417,8 +272,7 @@
                 <div class="col-lg-4 text-lg-start">Copyright &copy; Barber Connect - Todos os direitos reservados
                     Barber Connect Online S.A.</div>
                 <div class="col-lg-4 my-2 my-lg-0">
-                    <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/barberconnect_/"
-                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/barberconnect_/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
                 <div class="col-lg-4 text-lg-end">
                     <a class="link-dark text-decoration-none me-3" href="#!">Política de Privacidade</a>
@@ -433,8 +287,7 @@
         <!-- AS IMAGENS AQUI SÃO DO PORTFÓLIO, NÃO SÃO NECESSÁRIAS-->
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -442,8 +295,7 @@
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">Project Name</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="../assets/img/Initial/portfolio/1.jpg"
-                                    alt="..." />
+                                <img class="img-fluid d-block mx-auto" src="assets/img/Initial/portfolio/1.jpg" alt="..." />
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
@@ -458,8 +310,7 @@
                                         Illustration
                                     </li>
                                 </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-xmark me-1"></i>
                                     Close Project
                                 </button>
@@ -474,8 +325,7 @@
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -483,8 +333,7 @@
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">Project Name</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="../assets/img/Initial/portfolio/2.jpg"
-                                    alt="..." />
+                                <img class="img-fluid d-block mx-auto" src="assets/img/Initial/portfolio/2.jpg" alt="..." />
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
@@ -499,8 +348,7 @@
                                         Graphic Design
                                     </li>
                                 </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-xmark me-1"></i>
                                     Close Project
                                 </button>
@@ -515,8 +363,7 @@
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -524,8 +371,7 @@
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">Project Name</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="../assets/img/Initial/portfolio/3.jpg"
-                                    alt="..." />
+                                <img class="img-fluid d-block mx-auto" src="assets/img/Initial/portfolio/3.jpg" alt="..." />
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
@@ -540,8 +386,7 @@
                                         Identity
                                     </li>
                                 </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-xmark me-1"></i>
                                     Close Project
                                 </button>
@@ -556,8 +401,7 @@
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -565,8 +409,7 @@
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">Project Name</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="../assets/img/Initial/portfolio/4.jpg"
-                                    alt="..." />
+                                <img class="img-fluid d-block mx-auto" src="assets/img/Initial/portfolio/4.jpg" alt="..." />
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
@@ -581,8 +424,7 @@
                                         Branding
                                     </li>
                                 </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-xmark me-1"></i>
                                     Close Project
                                 </button>
@@ -597,8 +439,7 @@
     <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -606,8 +447,7 @@
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">Project Name</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="../assets/img/Initial/portfolio/5.jpg"
-                                    alt="..." />
+                                <img class="img-fluid d-block mx-auto" src="assets/img/Initial/portfolio/5.jpg" alt="..." />
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
@@ -622,8 +462,7 @@
                                         Website Design
                                     </li>
                                 </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-xmark me-1"></i>
                                     Close Project
                                 </button>
@@ -638,8 +477,7 @@
     <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -647,7 +485,7 @@
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">Project Name</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/6.jpg" alt="..." />
+                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
@@ -662,8 +500,7 @@
                                         Photography
                                     </li>
                                 </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-xmark me-1"></i>
                                     Close Project
                                 </button>
