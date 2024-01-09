@@ -56,7 +56,6 @@ require('./backend/listAgendamento.php')
                             <tr>
                                 <th scope="col" class="sortable" data-column="data" id="thData">Data</th>
                                 <th scope="col" class="sortable" data-column="data" id="thData">Horário</th>
-                                <th scope="col" class="sortable" data-column="nome_fantasia" id="thBarber">Cliente</th>
                                 <th scope="col" class="sortable" data-column="nome_item" id="thItem">Item</th>
                                 <th scope="col" class="sortable" data-column="valor" id="thValor">Valor</th>
                             </tr>
@@ -67,7 +66,6 @@ require('./backend/listAgendamento.php')
                                 echo '<tr>';
                                 echo '<td>' . date('d/m/Y', strtotime($row['data'])) . '</td>';
                                 echo '<td>' . substr($row['horario'], 0, 5) . '</td>';
-                                echo '<td>' . $row['nome_fantasia'] . '</td>'; // Nome da barbearia
                                 echo '<td>' . $row['nome_item'] . '</td>'; // Nome do item
                                 echo '<td>R$ ' . number_format($row['valor_item'], 2, ',', '.') . '</td>';
 
