@@ -42,7 +42,6 @@ h3{
     margin-top: 2%;
     margin-left: 10%;
     margin-right: 10%;
-    border: solid 1px;
 }
 
 .coverImg {
@@ -106,25 +105,25 @@ h3{
 
 }
 
-.minBarber {
-    border: 1px solid;
-}
-
-
 .barberItem {
-    width: 30%;
+    box-sizing: border-box;
+    width: calc(100% / 3 - 10px);
     height: 200px;
     display: inline-block;
-    border: 1px solid;
-    border-radius: 6px;
-    border-color: #8c8c8c;
-    transition: border-color 0.3s ease;
+    position: relative;
+    border-radius: 15px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adiciona sombra */
+    transition: transform 0.4s ease, box-shadow 0.2s ease;
+    background-color: #ffffff; /* Adiciona cor de fundo */
     padding: 10px 20px;
+    margin-bottom: 20px; /* Espaçamento entre as linhas */
 }
 
+
 .barberItem:hover {
-    border-color: #6a6a6a !important;
     cursor: pointer;
+    transform: scale(1.01);
+    box-shadow: 0 7px 14px 0 rgba(0,0,0,0.2); /* Aumenta a sombra no hover */
 }
 
 .barberItem p {
@@ -194,6 +193,7 @@ h3{
     color: rgb(251, 209, 0);
 }
 
+
 .distancia {
     color: rgba(0, 0, 0, 0.45);
 }
@@ -209,6 +209,16 @@ h3{
     position: relative;
 
 }
+
+.minImg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 5%;
+    
+}
+
 
 .images img {
     padding-right: 3% !important;

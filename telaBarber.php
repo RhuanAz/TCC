@@ -1,6 +1,7 @@
 <?php
 require('./backend/verificaLogin.php');
 require('./backend/functionBuscarBarber.php');
+require('./backend/functionGetInfo.php');
 
 ?>
 
@@ -90,7 +91,7 @@ require('./backend/functionBuscarBarber.php');
                     <span class="rightInfo">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#horarioModal">
-                            Informações
+                            Horário de funcionamento
                         </button>
 
                         <!-- Modal -->
@@ -102,13 +103,22 @@ require('./backend/functionBuscarBarber.php');
                                         <button type="button" class="btn-close" style="color: red !important;" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body text-center">
-                                        Domingo: Fechado <br>
-                                        Segunda-feira: 07h00<br>
-                                        Segunda-feira: 07h00<br>
-                                        Segunda-feira: 07h00<br>
-                                        Segunda-feira: 07h00<br>
-                                        Segunda-feira: 07h00<br>
-                                        Segunda-feira: 07h00<br>
+                                        <?php
+                                        $dias_da_semana = array(
+                                            'domingo' => 'Domingo',
+                                            'segunda' => 'Segunda-feira',
+                                            'terca' => 'Terça-feira',
+                                            'quarta' => 'Quarta-feira',
+                                            'quinta' => 'Quinta-feira',
+                                            'sexta' => 'Sexta-feira',
+                                            'sabado' => 'Sábado'
+                                        );
+
+                                        foreach ($dias_da_semana as $dia_em_ingles => $dia_em_portugues) {
+                                            $horario_do_dia = $horarios[$dia_em_ingles];
+                                            echo "<p style='margin-bottom: 10px;'><strong>{$dia_em_portugues}</strong>: {$horario_do_dia}</p>";
+                                        }
+                                        ?>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -124,20 +134,18 @@ require('./backend/functionBuscarBarber.php');
 
                         <!-- Modal -->
                         <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-dialog modal-dialog-centered modal-md">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5 position-relative" id="infoModal">Horário de funcionamento</h1>
+                                        <h1 class="modal-title fs-5 position-relative" id="infoModal">Informações do estabelecimento</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body text-center">
-                                        TESTE <br>
-                                        Segunda-feira: 07h00<br>
-                                        Segunda-feira: 07h00<br>
-                                        Segunda-feira: 07h00<br>
-                                        Segunda-feira: 07h00<br>
-                                        Segunda-feira: 07h00<br>
-                                        Segunda-feira: 07h00<br>
+                                        <?php echo $infos_barbearia['rua'] . ', ' . $infos_barbearia['numero'] . ', ' . $infos_barbearia['bairro'] . '. ' . $infos_barbearia['cidade'] . ' - ' . $infos_barbearia['uf']; ?>
+                                        <br><br>
+                                        <strong>Email:</strong> <?php echo $infos_barbearia['email']; ?>
+                                        <br><br>
+                                        <strong>Telefone:</strong> <?php echo $infos_barbearia['telefone']; ?>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -184,7 +192,9 @@ require('./backend/functionBuscarBarber.php');
                             <span class="price">R$
                                 <?php echo $item['valor']; ?>
                             </span>
-                            <img src="/" alt="">
+                        </div>
+                        <div class="minImg">
+                            <img src="assets/img/classiccorte.webp" alt="" style="width: 150px;">
                         </div>
                     </div>
                 <?php } ?>
@@ -192,7 +202,7 @@ require('./backend/functionBuscarBarber.php');
         </div>
     </div>
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="assets/js/barbearias.js"></script>

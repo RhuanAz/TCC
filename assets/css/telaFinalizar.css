@@ -52,6 +52,14 @@ a {
     font-weight: 700
 }
 
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh; /* Ajuste de acordo com suas necessidades */
+}
+
+
 nav {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;

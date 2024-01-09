@@ -1,9 +1,7 @@
 <?php
 require('./backend/conexao.php');
+include_once('backend/conexao.php');
 
-//Buscar as barbearias para exibi-las no horario tabela 
-$sql = "SELECT * FROM horario";
-$result = $conn->query($sql);
 ?>
 
 
@@ -11,17 +9,21 @@ $result = $conn->query($sql);
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Horários / Portal do Parceiro</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Our Custom CSS -->
+
     <link rel="stylesheet" href=".//assets/css/style4.css" />
 
 </head>
+
 
 <body>
 
@@ -32,163 +34,86 @@ $result = $conn->query($sql);
         include_once('menu.php');
         ?>
 
-        <!-- Page Content Holder -->
-        <div id="content">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                        <i class="glyphicon glyphicon-align-left"></i>
-
-                    </button>
+        <div class="wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <span class="material-symbols-outlined">
+                                menu
+                            </span>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            </nav>
-            <style>
-                #botao1,
-                #botao2 {
-                    background-color: #D21742;
-                    border: none;
-                    color: white;
-                    padding: 10px 20px;
-                    text-align: center;
-                    text-decoration: none;
-                    display: inline-block;
-                    font-size: 16px;
-                    margin: 10px;
-                    cursor: pointer;
-                    border-radius: 5px;
-                }
 
-                #botao1.disabled,
-                #botao2.disabled {
-                    background-color: gray;
-                    /* Cor de fundo cinza para botões desativados */
-                    cursor: not-allowed;
-                    /* Cursor de não permitido quando desativado */
-                }
-            </style>
+                <div class="content">
+                    <h2>Horário de Funcionamento</h2>
+                    <p>Escolha os horários que o seu estabelecimento estará aberto.</p>
+                    <p id="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eaque rerum excepturi alias, quia saepe perferendis consequatur rem? Labore corrupti maiores quas reiciendis deleniti. Similique architecto dolor assumenda odio dolores! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas labore dolorem architecto. Maiores, quo similique modi totam nostrum voluptatem, quasi doloribus aut expedita possimus ab officiis fuga odit. Repellat, quasi.</p>
 
-            </head>
-
-            <body>
-                <div class="wrapper">
-                    <?php
-                    //INCLUSÃO DO MENU
-                    include_once('menu.php');
-                    ?>
-                    <div id="content">
-
-                        <h1>Horário de Funcionamento</h1>
-                        <p>Escolha os horários que o seu estabelecimento estará aberto.</p>
-                        <br>
-
-                        <button id="botao1" onclick="selecionarBotao(1)">Aberto</button>
-
-                        <button id="botao2" onclick="selecionarBotao(2)">Fechado</button>
-                        <br>
-<br><br><br>
+                    <div class="line"></div>
 
 
+                    <!--Div teste horário-->
+                    <div>
+                        <form action="testehorario.php" method="post">
 
+                            <div class="linha">
+                                <h4>Domingo</h4>
+                                <label for="appt">Manhã:</label>
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt" name="segmanhafim">
+                            </div>
 
-                        <!--Div teste horário-->
-                        <div>
-                            <form action="testehorario.php" method="post">
+                            <div class="linha">
+                                <h4>Segunda-feira</h4>
+                                <label for="appt">Manhã:</label>
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt" name="segmanhafim">
+                            </div>
 
+                            <div class="linha">
                                 <h4>Terça-feira</h4>
                                 <label for="appt">Manhã:</label>
-                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt"
-                                    name="segmanhafim">
-                                <input type="submit" value="Enviar horário">
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt" name="segmanhafim">
+                            </div>
 
+                            <div class="linha">
                                 <h4>Quarta-feira</h4>
                                 <label for="appt">Manhã:</label>
-                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt"
-                                    name="segmanhafim">
-                                <input type="submit" value="Enviar horário">
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt" name="segmanhafim">
+                            </div>
 
+                            <div class="linha">
                                 <h4>Quinta-feira</h4>
                                 <label for="appt">Manhã:</label>
-                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt"
-                                    name="segmanhafim">
-                                <input type="submit" value="Enviar horário">
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt" name="segmanhafim">
+                            </div>
 
+                            <div class="linha">
                                 <h4>Sexta-feira</h4>
                                 <label for="appt">Manhã:</label>
-                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt"
-                                    name="segmanhafim">
-                                <input type="submit" value="Enviar horário">
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt" name="segmanhafim">
+                            </div>
 
-                                <h4>Sábado-feira</h4>
+                            <div class="linha">
+                                <h4>Sábado</h4>
                                 <label for="appt">Manhã:</label>
-                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt"
-                                    name="segmanhafim">
-                                <input type="submit" value="Enviar horário">
-                                
-                            </form>
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt" name="segmanhafim">
+                            </div>
 
-                        </div>
-
-
-
-
-
-
-<br><br><br><br><br><br>
-                        <?php
-                        // Supondo que a conexão já foi estabelecida e armazenada na variável $conn
-                        
-                        $sql = "SELECT id, dia_da_semana, manha, tarde, noite FROM horario"; // Substitua por sua consulta SQL
-                        $result = $conn->query($sql);
-
-                        if ($result->num_rows > 0) {
-                            echo "<table><tr><th>ID</th><th>Dia da Semana</th></tr><th>Manhã</th><th>Tarde</th><th>Noite</th>";
-
-                            // Saída de cada linha
-                        
-                            while ($row = $result->fetch_assoc()) {
-                                ?>
-                                <tr>
-                                    <td>
-                                        <?php echo $row["id"] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row["dia_da_semana"] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row["manha"] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row["tarde"] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row["noite"] ?>
-                                    </td>
-                                    <td><a href="editarHorario.php?id=<?php echo $row['id'] ?>">Editar</a></td>
-                                </tr>
-
-                                <?php
-                            }
-                            echo "</table>";
-                        } else {
-                            echo "0 resultados";
-                        }
-                        ?>
+                            <div class="linha">
+                                <h4>Domingo</h4>
+                                <label for="appt">Manhã:</label>
+                                <input type="time" id="appt" name="segmanhainicio"> a <input type="time" id="appt" name="segmanhafim">
+                            </div>
+                            <button type="submit" id="btn-cadastrar" class="btn btn-primary btn-lg meu-botao">Cadastrar</button>
+                        </form>
 
                     </div>
                 </div>
-                <script>
-                    function selecionarBotao(botaoSelecionado) {
-                        if (botaoSelecionado === 1) {
-                            document.getElementById('botao1').classList.add('disabled');
-                            document.getElementById('botao2').classList.remove('disabled');
-                        } else if (botaoSelecionado === 2) {
-                            document.getElementById('botao2').classList.add('disabled');
-                            document.getElementById('botao1').classList.remove('disabled');
-                        }
-                    }
-                </script>
-                <div class="line"></div>
+
+
+            </div>
+            <div class="line"></div>
         </div>
     </div>
 
@@ -197,13 +122,9 @@ $result = $conn->query($sql);
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

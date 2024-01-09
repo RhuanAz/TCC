@@ -50,7 +50,7 @@ require('./backend/functionUser.php');
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" id="agenda" href="#">
+                            <a class="dropdown-item" id="agenda" href="agendaUser.php">
                                 <i class="bi-calendar3" style="padding-right: 7% !important"></i>
                                 Agendamentos
                             </a>
@@ -79,7 +79,7 @@ require('./backend/functionUser.php');
                 <div class="form-group">
                     <div class="row">
                         <h6 class="heading-small text-muted mb-4">Informações do usuário</h6>
-                        <button title="Editar" type="button" class="btn btn-danger" id="btnEditar" onclick="atualizarInfo('btnEditar');"><i class="bi bi-pencil-square"></i></button>
+                        <button title="Editar" type="button" class="btn btn-primary" id="btnEditar" onclick="atualizarInfo('btnEditar');"><i class="bi bi-pencil-square"></i></button>
                         <div class="col-lg-6">
                             <?php while ($dado = $result->fetch_array()) { ?>
                                 <label for="nome" class="form-label">Nome:</label>
@@ -193,6 +193,19 @@ require('./backend/functionUser.php');
                         <div class="align-items-center d-flex flex-column" style="padding-top: 3%;">
                             <button type="submit" id="btnAtualizar" class="btn btn-primary btn-lg" onclick="" disabled>Atualizar
                                 informações</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1" id="modalSucesso">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Sucesso!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Atualizando informações...
+                            </div>
                         </div>
                     </div>
                 </div>

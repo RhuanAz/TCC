@@ -16,11 +16,16 @@ h3 {
 
 button:hover {
     cursor: pointer;
-    background-color: #930828 !important;
+    background-color: #072a57 !important;
     transition: 0.3s;
 }
 
 /*CLASSES*/
+.btn-primary{
+    background-color: #13396B;
+    border: none;
+}
+
 .nav-container {
     font-weight: 20px;
     padding-left: 10% !important;
@@ -29,7 +34,7 @@ button:hover {
 }
 
 .dropdown-item:active {
-    background-color: grey !important;
+    background-color: #13396B !important;
 }
 
 .content {
@@ -63,7 +68,7 @@ button:hover {
     font-size: 22px;
     border: none;
     border-radius: 4px;
-    background-color: #D21742;
+    background-color: #13396B;
     outline: none;
     width: 318px;
     height: 52px;
@@ -92,7 +97,7 @@ button:hover {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     border: none;
-    background-color: #D21742;
+    background-color: #13396B;
     text-decoration: none;
     color: white;
 }

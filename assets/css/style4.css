@@ -47,6 +47,10 @@ h3 {
     padding-bottom: 6% !important;
 }
 
+.linha{
+    padding-bottom: 3%;
+}
+
 .filtros button {
     align-items: center !important;
     justify-content: center;

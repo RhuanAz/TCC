@@ -71,7 +71,7 @@
             </li>
             <li>
                 <br>
-                <a href="editar.php">
+                <a href="backend/logoutBarber.php">
                     <i class="bi-box-arrow-right"></i>
                     Sair
                 </a>

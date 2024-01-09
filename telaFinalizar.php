@@ -22,6 +22,12 @@ require('./backend/functionFinalizar.php');
 
 <body>
     <div class="content">
+        <div class="parent">
+            <a href="barbearias.php">
+                <img src="assets/img/barberConn.svg" style="width: 170px;" alt="">
+            </a>
+        </div>
+
         <nav class="navbar navbar-expand-lg navbar-light bg-white pt-3 px-md-4 px-2">
             <div class="">
                 <h2>Finalizar Agendamento</h2>
@@ -65,15 +71,14 @@ require('./backend/functionFinalizar.php');
                         </div>
                     </div>
                 </div>
-                <div class="row" style="border: solid 1px;">
+                <div class="row">
                     <div class="col-lg-6 delivery">
                         <p class="pt-4 fw-bold">Data</p>
                         <div class="d-md-flex justify-content-between align-items-center mt-4 pb-4">
                             <input id="datetime" name="data" class="card" type="text" placeholder="Selecione uma data">
                         </div>
-
                     </div>
-                    <div class="col-lg-6 delivery" style="border: solid 1px;">
+                    <div class="col-lg-6 delivery">
                         <p class="pt-4 fw-bold">Horário</p>
                         <div class="d-md-flex justify-content-between align-items-center mt-4 pb-4">
                             <select class="card" id="selectHorario" name="selectHorario">
@@ -82,7 +87,6 @@ require('./backend/functionFinalizar.php');
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="col-lg-4">
                 <div class="payment-summary">
@@ -142,7 +146,7 @@ require('./backend/functionFinalizar.php');
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
     <script src="assets/js/telaFinalizar.js"></script>
-    
+
 </body>
 
 </html>

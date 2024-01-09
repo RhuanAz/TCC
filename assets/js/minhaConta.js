@@ -2,7 +2,7 @@
 $(document).ready(function () {
     // Função genérica para verificar dados
     function verificarDado(metodo, campoId, indexInput, indexSpan) {
-	var valor = $(campoId).val();
+        var valor = $(campoId).val();
         var tela = "minhaConta";
 
         // Criando objeto para enviar para o "verificaDado.php"
@@ -81,10 +81,24 @@ form.addEventListener('submit', (event) => {
     document.getElementById('uf_oculto').value = uf;
 
     if (verifError()) {
-        event.preventDefault(); // Impede o envio do formulário se houver erros
         alert('Há erros no formulário. Por favor, corrija-os antes de enviar.');
+    } else {
+        mostrarModalSucesso();
     }
 });
+
+
+function mostrarModalSucesso() {
+    var modalSucesso = new bootstrap.Modal(document.getElementById('modalSucesso'));
+    modalSucesso.show();
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('#fecharModal').addEventListener('click', function () {
+        location.reload();
+    });
+});
+
 
 //Add borda e span vermelhos
 function setError(indexInput, indexSpan) {
@@ -111,7 +125,6 @@ function verifError() {
 
     return hasError;
 }
-
 
 
 //--BUSCAR CEP NA API--
@@ -193,35 +206,18 @@ function pesquisacep(valor) {
         limpa_formulário_cep();
     }
 };
-//------
-
-
 
 //Formatar CEP
 function formatarCEP(cepInput) {
-
     // Remove todos os caracteres não numéricos
     var cepFormatado = cepInput.value.replace(/\D/g, '');
-
     // Verifica se o CEP tem pelo menos 8 dígitos
     if (cepFormatado.length >= 8) {
         // Formata o CEP como "XXXXX-XXX"
         cepFormatado = cepFormatado.substring(0, 5) + '-' + cepFormatado.substring(5, 8);
     }
-
     // Define o valor formatado no campo de entrada
     cepInput.value = cepFormatado;
-
 }
 
-function validarSenha(senha) {
-    // Verifica se a senha tem pelo menos 8 caracteres e contém pelo menos 1 letra maiúscula
-    return /^(?=.*[A-Z]).{8,}$/.test(senha);
-}
-
-function retornaSenha(senhaInput) {
-    if (!validarSenha(senhaInput)) {
-
-    }
-}
 
