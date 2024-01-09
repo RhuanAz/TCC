@@ -116,6 +116,7 @@ h3{
     transition: transform 0.4s ease, box-shadow 0.2s ease;
     background-color: #ffffff; /* Adiciona cor de fundo */
     padding: 10px 20px;
+    margin-right: 6px;
     margin-bottom: 20px; /* Espaçamento entre as linhas */
 }
 
