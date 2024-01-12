@@ -56,7 +56,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15vh; /* Ajuste de acordo com suas necessidades */
+    height: 15vh;
+    /* Ajuste de acordo com suas necessidades */
 }
 
 
@@ -149,7 +150,7 @@ small {
 .pic {
     width: 90px;
     height: 90px;
-    border-radius: 2px
+    border-radius: 6px
 }
 
 td {
@@ -175,15 +176,15 @@ table input {
     border: 1px solid #eee
 }
 
-#codigoCupom{
+#codigoCupom {
     border: 1px solid rgb(170, 170, 170) !important;
 }
 
-#mensagemErro{
+#mensagemErro {
     display: none;
 }
 
-#cupomAplicado{
+#cupomAplicado {
     display: none;
     color: green;
 }

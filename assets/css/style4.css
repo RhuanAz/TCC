@@ -143,19 +143,20 @@ h3 {
     font-weight: bold;
 }
 
-.minBarber {
-    border: 1px solid;
-}
 
 .barberItem {
-    width: 30%;
+    box-sizing: border-box;
+    width: calc(100% / 3 - 10px);
     height: 200px;
     display: inline-block;
-    border: 1px solid;
-    border-radius: 6px;
-    border-color: #8c8c8c;
-    transition: border-color 0.3s ease;
+    position: relative;
+    border-radius: 15px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adiciona sombra */
+    transition: transform 0.4s ease, box-shadow 0.2s ease;
+    background-color: #ffffff; /* Adiciona cor de fundo */
     padding: 10px 20px;
+    margin-right: 6px;
+    margin-bottom: 20px; /* Espaçamento entre as linhas */
 }
 
 .barberItem:hover {
@@ -218,7 +219,7 @@ h3 {
 }
 
 .barberInfo {
-    padding-top: 3%;
+    padding-top: 5%;
     font-size: 16px;
 }
 
@@ -281,6 +282,20 @@ a:focus {
     border-radius: 0;
     margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.minImg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 5%;
+    
+}
+
+
+.images img {
+    padding-right: 3% !important;
 }
 
 .navbar-btn {

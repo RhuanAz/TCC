@@ -52,7 +52,7 @@ require('./backend/functionFinalizar.php');
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div>
-                                                    <img class="pic" src="https://images.pexels.com/photos/7322083/pexels-photo-7322083.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="">
+                                                    <img class="pic" src="<?php echo $item['urlCorte']; ?>" alt="">
                                                 </div>
                                                 <div class="ps-3 d-flex flex-column justify-content">
                                                     <p class="fw-bold"><?php echo $item['nome_item']; ?></p>
